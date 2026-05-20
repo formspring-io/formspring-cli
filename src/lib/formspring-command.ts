@@ -28,6 +28,10 @@ export abstract class FormspringCommand extends Command {
       description: 'Skip confirmation prompts',
       default: false,
     }),
+    'dry-run': Flags.boolean({
+      description: 'Print the request without sending it',
+      default: false,
+    }),
   }
 
   declare flags: {
@@ -37,6 +41,7 @@ export abstract class FormspringCommand extends Command {
     profile?: string
     verbose: boolean
     yes: boolean
+    'dry-run': boolean
     [key: string]: unknown
   }
 
@@ -58,6 +63,7 @@ export abstract class FormspringCommand extends Command {
       ...config,
       baseUrl: this.flags['base-url'] ?? config.baseUrl,
       token: this.flags.token ?? config.token,
+      dryRun: Boolean(this.flags['dry-run']),
     }
   }
 

@@ -12,6 +12,7 @@ export FORMSPRING_TOKEN=...   # optional if profile saved
 ## Conventions
 
 - Pass **`--json`** on every call; stdout is JSON only (errors on stderr).
+- Use **`--dry-run`** to print the request without sending it.
 - Request bodies: **`--data @file.json`** or **`cat file.json | formspring ... --stdin`**.
 - Prefer **named commands** when listed in `formspring commands --json`.
 - For any `/api/v1` route: **`formspring api request <METHOD> <path>`** with `--form`, `--funnel`, etc. for path params.

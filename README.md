@@ -44,7 +44,7 @@ formspring mcp invoke list_templates --data '{"product":"form"}'
 formspring commands --json
 ```
 
-Global flags: `--json`, `--base-url`, `--token`, `--profile`, `--verbose`, `--yes`.
+Global flags: `--json`, `--base-url`, `--token`, `--profile`, `--verbose`, `--yes`, `--dry-run`.
 
 ## Schema sync (developers)
 

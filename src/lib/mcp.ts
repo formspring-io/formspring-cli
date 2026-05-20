@@ -42,6 +42,12 @@ export async function mcpCallTool(
   name: string,
   args: Record<string, unknown>,
 ) {
+  if (config.dryRun) {
+    process.stderr.write(`[dry-run] MCP ${name} ${JSON.stringify(args)}\n`)
+
+    return { content: [], isError: false }
+  }
+
   const client = await getClient(config)
   return client.callTool({ name, arguments: args })
 }

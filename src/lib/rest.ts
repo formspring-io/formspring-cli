@@ -12,6 +12,13 @@ export type RestRequestOptions = {
 export async function restRequest<T = unknown>(options: RestRequestOptions): Promise<T> {
   const { config, method, path, query, body } = options
 
+  if (config.dryRun) {
+    const preview = `${method.toUpperCase()} ${path}`
+    process.stderr.write(`[dry-run] ${preview}\n`)
+
+    return undefined as T
+  }
+
   if (!config.token) {
     throw new CliError(
       'No API token configured.',

@@ -6,6 +6,7 @@ export type CliConfig = {
   baseUrl: string
   token?: string
   profile?: string
+  dryRun?: boolean
 }
 
 const CONFIG_DIR = join(homedir(), '.config', 'formspring')

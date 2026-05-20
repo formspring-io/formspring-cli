@@ -32,11 +32,17 @@ if (!appPath) {
   process.exit(1)
 }
 
-const useSail = existsSync(join(appPath, 'vendor/bin/sail'))
-const command = useSail
-  ? `cd "${appPath}" && vendor/bin/sail artisan formspring:export-api-manifest --target="${schemaDir}"`
-  : `cd "${appPath}" && php artisan formspring:export-api-manifest --target="${schemaDir}"`
+// Host PHP can write to sibling ../formspring-cli/schema; Sail cannot mount outside the project.
+const result = spawnSync(
+  'php',
+  ['artisan', 'formspring:export-api-manifest', `--target=${schemaDir}`],
+  { cwd: appPath, stdio: 'inherit' },
+)
 
-const result = spawnSync(command, { shell: true, stdio: 'inherit' })
+if ((result.status ?? 1) !== 0) {
+  process.exit(result.status ?? 1)
+}
 
-process.exit(result.status ?? 1)
+const generate = spawnSync('npm', ['run', 'generate'], { cwd: root, stdio: 'inherit' })
+
+process.exit(generate.status ?? 0)
