@@ -1,0 +1,46 @@
+{
+  "name": "@formspring/cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agent-friendly CLI for the Formspring REST API and MCP tools",
+  "type": "module",
+  "bin": {
+    "formspring": "./bin/run.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "node --import tsx ./bin/dev.js",
+    "prepack": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "generate": "tsx scripts/generate-client.mts",
+    "sync-schema": "node scripts/sync-schema.mjs",
+    "check:parity": "tsx scripts/check-parity.mts",
+    "scaffold-commands": "tsx scripts/scaffold-commands.mts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "@oclif/core": "^4.2.10",
+    "@oclif/plugin-help": "^6.2.27",
+    "openapi-fetch": "^0.13.5",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "msw": "^2.7.3",
+    "openapi-typescript": "^7.6.1",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
+  },
+  "oclif": {
+    "bin": "formspring",
+    "commands": "./dist/commands",
+    "dirname": "formspring",
+    "topicSeparator": " ",
+    "plugins": ["@oclif/plugin-help"]
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

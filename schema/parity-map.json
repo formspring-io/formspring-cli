@@ -1,0 +1,714 @@
+[
+    {
+        "method": "GET",
+        "path": "/ai-insights",
+        "name": "api.ai-insights.index",
+        "transport": "rest",
+        "cli_command": "insights get",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/ai-insights/regenerate",
+        "name": "api.ai-insights.regenerate",
+        "transport": "rest",
+        "cli_command": "insights regenerate",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/billing/invoices",
+        "name": "api.billing.invoices",
+        "transport": "rest",
+        "cli_command": "billing invoices",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/billing/plan",
+        "name": "api.billing.plan",
+        "transport": "rest",
+        "cli_command": "billing plan",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/billing/subscription",
+        "name": "api.billing.subscription",
+        "transport": "rest",
+        "cli_command": "billing subscription",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/billing/team",
+        "name": "api.billing.team",
+        "transport": "rest",
+        "cli_command": "billing team",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/billing/usage",
+        "name": "api.billing.usage",
+        "transport": "rest",
+        "cli_command": "billing usage",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms",
+        "name": "api.forms.index",
+        "transport": "rest",
+        "cli_command": "forms list",
+        "mcp_tool": "forms.index"
+    },
+    {
+        "method": "POST",
+        "path": "/forms",
+        "name": "api.forms.store",
+        "transport": "rest",
+        "cli_command": "forms create",
+        "mcp_tool": "forms.store"
+    },
+    {
+        "method": "DELETE",
+        "path": "/forms/{form}",
+        "name": "api.forms.destroy",
+        "transport": "rest",
+        "cli_command": "forms delete",
+        "mcp_tool": "forms.destroy"
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}",
+        "name": "api.forms.show",
+        "transport": "rest",
+        "cli_command": "forms get",
+        "mcp_tool": "forms.show"
+    },
+    {
+        "method": "PATCH",
+        "path": "/forms/{form}",
+        "name": "api.forms.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": "forms.update"
+    },
+    {
+        "method": "PUT",
+        "path": "/forms/{form}",
+        "name": "api.forms.update",
+        "transport": "rest",
+        "cli_command": "forms update",
+        "mcp_tool": "forms.update"
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/automations",
+        "name": "api.forms.automations.index",
+        "transport": "rest",
+        "cli_command": "forms automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/automations",
+        "name": "api.forms.automations.store",
+        "transport": "rest",
+        "cli_command": "forms automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/forms/{form}/automations/{automation}",
+        "name": "api.forms.automations.destroy",
+        "transport": "rest",
+        "cli_command": "forms automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/automations/{automation}",
+        "name": "api.forms.automations.show",
+        "transport": "rest",
+        "cli_command": "forms automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/forms/{form}/automations/{automation}",
+        "name": "api.forms.automations.update",
+        "transport": "rest",
+        "cli_command": "forms automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/automations/{automation}/disable",
+        "name": "api.forms.automations.disable",
+        "transport": "rest",
+        "cli_command": "forms automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/automations/{automation}/enable",
+        "name": "api.forms.automations.enable",
+        "transport": "rest",
+        "cli_command": "forms automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/automations/{automation}/run",
+        "name": "api.forms.automations.run",
+        "transport": "rest",
+        "cli_command": "forms automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/automations/{automation}/runs",
+        "name": "api.forms.automations.runs.index",
+        "transport": "rest",
+        "cli_command": "forms automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/automations/{automation}/runs/{run}",
+        "name": "api.forms.automations.runs.show",
+        "transport": "rest",
+        "cli_command": "forms automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/automations/{automation}/runs/{run}/replay",
+        "name": "api.forms.automations.runs.replay",
+        "transport": "rest",
+        "cli_command": "forms automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/autoresponder/test",
+        "name": "api.forms.autoresponder.test",
+        "transport": "rest",
+        "cli_command": "forms test-autoresponder",
+        "mcp_tool": "forms.autoresponder.test"
+    },
+    {
+        "method": "DELETE",
+        "path": "/forms/{form}/force",
+        "name": "api.forms.force-delete",
+        "transport": "rest",
+        "cli_command": "forms force-delete",
+        "mcp_tool": "forms.force-delete"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/notifications/test",
+        "name": "api.forms.notifications.test",
+        "transport": "rest",
+        "cli_command": "forms test-notification",
+        "mcp_tool": "forms.notifications.test"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/publish",
+        "name": "api.forms.publish",
+        "transport": "rest",
+        "cli_command": "forms publish",
+        "mcp_tool": "forms.publish"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/restore",
+        "name": "api.forms.restore",
+        "transport": "rest",
+        "cli_command": "forms restore",
+        "mcp_tool": "forms.restore"
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/submissions",
+        "name": "api.forms.submissions.index",
+        "transport": "rest",
+        "cli_command": "forms submissions list",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/submissions/bulk",
+        "name": "api.forms.submissions.bulk",
+        "transport": "rest",
+        "cli_command": "forms submissions bulk",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/submissions/export",
+        "name": "api.forms.submissions.export",
+        "transport": "rest",
+        "cli_command": "forms submissions export",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/forms/{form}/submissions/{submission}",
+        "name": "api.forms.submissions.destroy",
+        "transport": "rest",
+        "cli_command": "forms submissions delete",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/submissions/{submission}",
+        "name": "api.forms.submissions.show",
+        "transport": "rest",
+        "cli_command": "forms submissions get",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/forms/{form}/submissions/{submission}",
+        "name": "api.forms.submissions.update",
+        "transport": "rest",
+        "cli_command": "forms submissions update",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/submissions/{submission}/files/{file}",
+        "name": "api.forms.submissions.files.download",
+        "transport": "rest",
+        "cli_command": "forms submissions download-file",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/unpublish",
+        "name": "api.forms.unpublish",
+        "transport": "rest",
+        "cli_command": "forms unpublish",
+        "mcp_tool": "forms.unpublish"
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/webhooks",
+        "name": "api.forms.webhooks.index",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/webhooks",
+        "name": "api.forms.webhooks.store",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/forms/{form}/webhooks/{webhook}",
+        "name": "api.forms.webhooks.destroy",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/webhooks/{webhook}",
+        "name": "api.forms.webhooks.show",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/forms/{form}/webhooks/{webhook}",
+        "name": "api.forms.webhooks.update",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/webhooks/{webhook}/deliveries",
+        "name": "api.forms.webhooks.deliveries",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/webhooks/{webhook}/deliveries/{delivery}/replay",
+        "name": "api.forms.webhooks.deliveries.replay",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/funnels",
+        "name": "api.funnels.index",
+        "transport": "rest",
+        "cli_command": "funnels",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/funnels",
+        "name": "api.funnels.store",
+        "transport": "rest",
+        "cli_command": "funnels",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/funnels/{funnel}",
+        "name": "api.funnels.destroy",
+        "transport": "rest",
+        "cli_command": "funnels",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/funnels/{funnel}",
+        "name": "api.funnels.show",
+        "transport": "rest",
+        "cli_command": "funnels",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/funnels/{funnel}",
+        "name": "api.funnels.update",
+        "transport": "rest",
+        "cli_command": "funnels",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/funnels/{funnel}/analytics",
+        "name": "api.funnels.analytics",
+        "transport": "rest",
+        "cli_command": "funnels",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/funnels/{funnel}/publish",
+        "name": "api.funnels.publish",
+        "transport": "rest",
+        "cli_command": "funnels",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/funnels/{funnel}/sessions",
+        "name": "api.funnels.sessions",
+        "transport": "rest",
+        "cli_command": "funnels",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/funnels/{funnel}/unpublish",
+        "name": "api.funnels.unpublish",
+        "transport": "rest",
+        "cli_command": "funnels",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/links",
+        "name": "api.links.index",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/links",
+        "name": "api.links.store",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/links/query",
+        "name": "api.links.query",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/links/search",
+        "name": "api.links.search",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/links/upsert",
+        "name": "api.links.upsert",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/links/{link}",
+        "name": "api.links.destroy",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/links/{link}",
+        "name": "api.links.show",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/links/{link}",
+        "name": "api.links.update",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/links/{link}/qr",
+        "name": "api.links.qr",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/links/{link}/stats/counters",
+        "name": "api.links.stats.counters",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/links/{link}/stats/events",
+        "name": "api.links.stats.events",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/links/{link}/stats/heatmap",
+        "name": "api.links.stats.heatmap",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/links/{link}/stats/locations",
+        "name": "api.links.stats.locations",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/links/{link}/stats/metrics",
+        "name": "api.links.stats.metrics",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/links/{link}/stats/views",
+        "name": "api.links.stats.views",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/me",
+        "name": "api.me",
+        "transport": "rest",
+        "cli_command": "me get",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys",
+        "name": "api.surveys.index",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys",
+        "name": "api.surveys.store",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/surveys/{survey}",
+        "name": "api.surveys.destroy",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}",
+        "name": "api.surveys.show",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/surveys/{survey}",
+        "name": "api.surveys.patch",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/surveys/{survey}",
+        "name": "api.surveys.update",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/publish",
+        "name": "api.surveys.publish",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/unpublish",
+        "name": "api.surveys.unpublish",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/tokens",
+        "name": "api.tokens.index",
+        "transport": "rest",
+        "cli_command": "tokens list",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/tokens",
+        "name": "api.tokens.store",
+        "transport": "rest",
+        "cli_command": "tokens create",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/tokens/{token}",
+        "name": "api.tokens.destroy",
+        "transport": "rest",
+        "cli_command": "tokens revoke",
+        "mcp_tool": null
+    },
+    {
+        "method": null,
+        "path": null,
+        "name": null,
+        "transport": "mcp",
+        "cli_command": "templates list",
+        "mcp_tool": "list_templates"
+    },
+    {
+        "method": null,
+        "path": null,
+        "name": null,
+        "transport": "mcp",
+        "cli_command": "forms stats get",
+        "mcp_tool": "get_form_stats"
+    },
+    {
+        "method": null,
+        "path": null,
+        "name": null,
+        "transport": "mcp",
+        "cli_command": "integrations catalog",
+        "mcp_tool": "get_framework_integration_catalog"
+    },
+    {
+        "method": null,
+        "path": null,
+        "name": null,
+        "transport": "mcp",
+        "cli_command": "funnels screens add",
+        "mcp_tool": "add_screen"
+    },
+    {
+        "method": null,
+        "path": null,
+        "name": null,
+        "transport": "mcp",
+        "cli_command": "funnels blocks add",
+        "mcp_tool": "add_block"
+    },
+    {
+        "method": null,
+        "path": null,
+        "name": null,
+        "transport": "mcp",
+        "cli_command": "funnels logic set",
+        "mcp_tool": "set_logic"
+    },
+    {
+        "method": null,
+        "path": null,
+        "name": null,
+        "transport": "mcp",
+        "cli_command": "funnels score set",
+        "mcp_tool": "set_score"
+    },
+    {
+        "method": null,
+        "path": null,
+        "name": null,
+        "transport": "mcp",
+        "cli_command": "funnels pixel set",
+        "mcp_tool": "set_pixel"
+    },
+    {
+        "method": null,
+        "path": null,
+        "name": null,
+        "transport": "mcp",
+        "cli_command": "funnels capi set",
+        "mcp_tool": "set_capi_token"
+    }
+]

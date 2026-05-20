@@ -1,0 +1,520 @@
+[
+    {
+        "group": "Forms",
+        "name": "list_forms",
+        "description": "List forms in the current team. Requires token ability `forms:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Forms",
+        "name": "get_form",
+        "description": "Fetch a single form by public_id. Requires token ability `forms:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Forms",
+        "name": "create_form",
+        "description": "Create a new form. Requires token ability `forms:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Forms",
+        "name": "update_form",
+        "description": "Update a form. Requires token ability `forms:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Forms",
+        "name": "publish_form",
+        "description": "Publish a form so it accepts submissions. Requires `forms:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Forms",
+        "name": "unpublish_form",
+        "description": "Unpublish a form so it stops accepting submissions. Requires `forms:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Forms",
+        "name": "archive_form",
+        "description": "Archive a form (soft-delete; reversible via restore). Requires `forms:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Forms",
+        "name": "restore_form",
+        "description": "Restore a previously archived form. Requires `forms:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Forms",
+        "name": "send_test_autoresponder",
+        "description": "Send a test autoresponder to the calling user. Requires `forms:test-email`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Forms",
+        "name": "send_test_notification",
+        "description": "Send a test owner-notification to the calling user. Requires `forms:test-email`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Templates",
+        "name": "list_templates",
+        "description": "List starter templates for forms, surveys, or funnels. Call before create_* when the user wants a template. Requires forms:read (form), surveys:read (survey), or funnels:read (funnel).",
+        "input_schema": null,
+        "mcp_only": true
+    },
+    {
+        "group": "Submissions",
+        "name": "list_submissions",
+        "description": "List submissions for a form. Requires token ability `submissions:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Submissions",
+        "name": "get_submission",
+        "description": "Fetch a single submission with its files. Requires `submissions:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Submissions",
+        "name": "update_submission",
+        "description": "Update a submission payload or status. Requires `submissions:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Submissions",
+        "name": "delete_submission",
+        "description": "Permanently delete a submission and its files. Requires `submissions:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Submissions",
+        "name": "bulk_submissions",
+        "description": "Apply a bulk action (delete, mark_spam, mark_not_spam) to up to 500 submissions. Requires `submissions:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Submissions",
+        "name": "export_submissions",
+        "description": "Export the first 500 submissions of a form as inline JSON. For larger exports use the REST API stream. Requires `submissions:export`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Submissions",
+        "name": "get_submission_file",
+        "description": "Return a short-TTL signed URL to download a submission file. Requires `submissions:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Submissions",
+        "name": "mark_as_spam",
+        "description": "Flag a submission as spam. Requires token ability `submissions:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Submissions",
+        "name": "get_form_stats",
+        "description": "Get 30-day stats for a form. Requires `submissions:read`.",
+        "input_schema": null,
+        "mcp_only": true
+    },
+    {
+        "group": "Webhooks",
+        "name": "list_webhooks",
+        "description": "List webhooks for a form. Requires `webhooks:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Webhooks",
+        "name": "get_webhook",
+        "description": "Fetch a single webhook (no secret). Requires `webhooks:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Webhooks",
+        "name": "create_webhook",
+        "description": "Create a webhook for a form. Returns the plaintext signing secret ONCE in this response. Requires `webhooks:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Webhooks",
+        "name": "update_webhook",
+        "description": "Update a webhook URL/label/active flag. Requires `webhooks:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Webhooks",
+        "name": "delete_webhook",
+        "description": "Delete a webhook. Requires `webhooks:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Webhooks",
+        "name": "list_webhook_deliveries",
+        "description": "List the most recent webhook deliveries (default 50, max 200). Requires `webhooks:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Webhooks",
+        "name": "replay_webhook_delivery",
+        "description": "Re-dispatch a previously sent webhook delivery. Requires `webhooks:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Surveys",
+        "name": "list_surveys",
+        "description": "List surveys belonging to the current team. Requires `surveys:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Surveys",
+        "name": "get_survey",
+        "description": "Fetch a single survey by public_id. Requires `surveys:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Surveys",
+        "name": "create_survey",
+        "description": "Create a new survey for the current team. Use this when the user asks to build a survey, questionnaire, quiz, or form with multiple screens (not a regular contact-style form). Requires `surveys:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Surveys",
+        "name": "update_survey",
+        "description": "Update survey config: name, fields, theme, settings, scoring, notification emails. Requires `surveys:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Surveys",
+        "name": "publish_survey",
+        "description": "Publish a survey - make it live and respondable. Requires `surveys:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Surveys",
+        "name": "unpublish_survey",
+        "description": "Unpublish a survey - return it to draft, stop accepting responses. Requires `surveys:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Surveys",
+        "name": "delete_survey",
+        "description": "Move a survey to trash (soft-delete). Recoverable from the dashboard within the retention window. Requires `surveys:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Funnels",
+        "name": "list_funnels",
+        "description": "List funnels for the current team. Requires `funnels:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Funnels",
+        "name": "get_funnel",
+        "description": "Get a funnel by public_id (preferred) or slug. Requires `funnels:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Funnels",
+        "name": "create_funnel",
+        "description": "Create a new funnel for the current team. Optional `template` hydrates a gallery starter via TemplateHydrator. Requires `funnels:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Funnels",
+        "name": "update_funnel",
+        "description": "Update funnel config and screens. Screens with an `id` matching an existing screen are updated in place; screens without an `id` are created; screens not referenced in the payload are deleted. Same diff applies to nested blocks. Requires `funnels:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Funnels",
+        "name": "publish_funnel",
+        "description": "Publish or unpublish a funnel. Identify by public_id (preferred) or slug. Requires `funnels:publish`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Funnels",
+        "name": "delete_funnel",
+        "description": "Move a funnel to trash (soft-delete). Recoverable from the dashboard within the retention window. Requires `funnels:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Funnels",
+        "name": "get_funnel_analytics",
+        "description": "Get funnel analytics summary. Requires `funnels:analytics`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Funnels",
+        "name": "list_funnel_sessions",
+        "description": "List recent sessions for a funnel. Requires `funnels:analytics`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Funnels",
+        "name": "add_screen",
+        "description": "Add a screen to a funnel. Requires `funnels:write`.",
+        "input_schema": null,
+        "mcp_only": true
+    },
+    {
+        "group": "Funnels",
+        "name": "add_block",
+        "description": "Add a block to a funnel screen. Requires `funnels:write`.",
+        "input_schema": null,
+        "mcp_only": true
+    },
+    {
+        "group": "Funnels",
+        "name": "set_logic",
+        "description": "Attach a logic rule (AND/OR DSL) to a block. Requires `funnels:write`.",
+        "input_schema": null,
+        "mcp_only": true
+    },
+    {
+        "group": "Funnels",
+        "name": "set_score",
+        "description": "Attach a per-block score map (bucket \u2192 points). Requires `funnels:write`.",
+        "input_schema": null,
+        "mcp_only": true
+    },
+    {
+        "group": "Funnels",
+        "name": "set_pixel",
+        "description": "Set browser-side pixel IDs on a funnel (GA4/GTM/Meta/TikTok/LinkedIn/Pinterest/Snap/Bing/Reddit/Twitter). Requires `funnels:write`.",
+        "input_schema": null,
+        "mcp_only": true
+    },
+    {
+        "group": "Funnels",
+        "name": "set_capi_token",
+        "description": "Configure server-side CAPI credentials for a vendor (meta|tiktok|linkedin|pinterest). Requires `funnels:write`.",
+        "input_schema": null,
+        "mcp_only": true
+    },
+    {
+        "group": "Links",
+        "name": "list_links",
+        "description": "List short links for the current team. Requires `links:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Links",
+        "name": "get_link",
+        "description": "Fetch one short link by id or slug. Requires `links:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Links",
+        "name": "create_link",
+        "description": "Create a new short link. Requires `links:write` and a paid plan.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Links",
+        "name": "update_link",
+        "description": "Update an existing short link. Requires `links:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Links",
+        "name": "delete_link",
+        "description": "Soft-delete a short link. Requires `links:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Automations",
+        "name": "list_automations",
+        "description": "List automations for a form. Requires `automations:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Automations",
+        "name": "get_automation",
+        "description": "Get a single automation with its steps. Requires `automations:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Automations",
+        "name": "create_automation",
+        "description": "Create a new automation. Requires `automations:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Automations",
+        "name": "update_automation",
+        "description": "Update an automation (top-level fields only). Requires `automations:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Automations",
+        "name": "enable_automation",
+        "description": "Enable an automation. Requires `automations:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Automations",
+        "name": "disable_automation",
+        "description": "Disable an automation. Requires `automations:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Automations",
+        "name": "run_automation",
+        "description": "Manually trigger an automation. Requires `automations:run`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Automations",
+        "name": "list_automation_runs",
+        "description": "List recent automation runs. Requires `automations:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Automations",
+        "name": "get_automation_run",
+        "description": "Get an automation run with step outputs. Requires `automations:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Automations",
+        "name": "replay_automation_run",
+        "description": "Replay a previous automation run. Requires `automations:run`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Automations",
+        "name": "delete_automation",
+        "description": "Delete an automation (and its steps + runs). Permanent. Requires `automations:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Billing (read-only)",
+        "name": "get_team",
+        "description": "Get the current team summary. Requires `billing:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Billing (read-only)",
+        "name": "get_plan",
+        "description": "Get the current team's plan, features, and limits. Requires `billing:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Billing (read-only)",
+        "name": "get_usage",
+        "description": "Get the current team's usage for the current period. Requires `billing:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Billing (read-only)",
+        "name": "get_subscription_state",
+        "description": "Get the current team's subscription state (active, on_trial, on_grace_period, past_due, canceled, none). Requires `billing:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "AI Insights",
+        "name": "get_ai_insights",
+        "description": "Read AI insights for the current team. Returns `{locked: true}` when the plan lacks AI features. Requires `insights:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "AI Insights",
+        "name": "regenerate_ai_insights",
+        "description": "Trigger an AI insights regeneration. Idempotency-locked for 5 minutes. Requires `insights:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Tokens (self-management)",
+        "name": "list_tokens",
+        "description": "List the calling user's API tokens. Requires `tokens:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Tokens (self-management)",
+        "name": "create_token",
+        "description": "Mint a new API token. Requested abilities must be a subset of the calling token's abilities. Plaintext token is returned ONCE in this response. Requires `tokens:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Tokens (self-management)",
+        "name": "revoke_token",
+        "description": "Revoke an API token by id. Refuses to revoke the token currently in use. Requires `tokens:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Integration reference",
+        "name": "get_framework_integration_catalog",
+        "description": "Maximum-breadth catalog of Formspring ingestion patterns across frameworks (short snippets + docs links). Requires token ability `forms:read`. Use optional `category` and pagination (`page`, `per_page`, max 100 per page). Replace FORMSPRING_ENDPOINT in snippets with your form URL (e.g. https://your-host/f/{public_id}).",
+        "input_schema": null,
+        "mcp_only": true
+    }
+]

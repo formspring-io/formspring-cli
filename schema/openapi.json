@@ -1,0 +1,3430 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Formspring REST API",
+        "version": "1.0.0",
+        "description": "REST API for managing forms, submissions, webhooks, billing, and AI insights. Pair with the MCP server for agent-driven workflows. The REST API and MCP server use the same token abilities, so the permission model is identical whether code or an agent makes the call.",
+        "contact": {
+            "name": "Support",
+            "url": "https://pixel-forms.test/contact"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://pixel-forms.test/api/v1"
+        }
+    ],
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "API token",
+                "description": "Personal access token created in your account API page. Tokens carry abilities (forms:read, submissions:write, etc.). Each endpoint lists the ability it requires."
+            }
+        },
+        "schemas": {
+            "MeResponse": {
+                "type": "object"
+            },
+            "FormResource": {
+                "type": "object"
+            },
+            "FormCollection": {
+                "type": "object"
+            },
+            "FormCreate": {
+                "type": "object",
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "slug": {
+                        "type": "string"
+                    },
+                    "redirect_url": {
+                        "type": "string"
+                    },
+                    "notification_emails": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "FormUpdate": {
+                "type": "object"
+            },
+            "TestAutoresponder": {
+                "type": "object",
+                "required": [
+                    "subject",
+                    "body_md"
+                ],
+                "properties": {
+                    "from_name": {
+                        "type": "string"
+                    },
+                    "subject": {
+                        "type": "string"
+                    },
+                    "body_md": {
+                        "type": "string"
+                    }
+                }
+            },
+            "SubmissionResource": {
+                "type": "object"
+            },
+            "SubmissionCollection": {
+                "type": "object"
+            },
+            "SubmissionUpdate": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "type": "object"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "received",
+                            "spam",
+                            "processed",
+                            "failed"
+                        ]
+                    }
+                }
+            },
+            "SubmissionBulk": {
+                "type": "object",
+                "required": [
+                    "ids",
+                    "action"
+                ],
+                "properties": {
+                    "ids": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "action": {
+                        "type": "string",
+                        "enum": [
+                            "delete",
+                            "mark_spam",
+                            "mark_not_spam"
+                        ]
+                    }
+                }
+            },
+            "WebhookResource": {
+                "type": "object"
+            },
+            "WebhookCollection": {
+                "type": "object"
+            },
+            "WebhookCreate": {
+                "type": "object",
+                "properties": {
+                    "provider": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "label": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "config": {
+                        "type": "object"
+                    }
+                }
+            },
+            "WebhookUpdate": {
+                "type": "object"
+            },
+            "WebhookCreatedResponse": {
+                "type": "object"
+            },
+            "WebhookDeliveryCollection": {
+                "type": "object"
+            },
+            "AutomationResource": {
+                "type": "object"
+            },
+            "AutomationCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AutomationResource"
+                        }
+                    }
+                }
+            },
+            "AutomationCreate": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "trigger_type"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "maxLength": 120
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "trigger_type": {
+                        "type": "string"
+                    },
+                    "trigger_config": {
+                        "type": "object"
+                    },
+                    "is_active": {
+                        "type": "boolean"
+                    },
+                    "steps": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "AutomationUpdate": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "trigger_type": {
+                        "type": "string"
+                    },
+                    "trigger_config": {
+                        "type": "object"
+                    },
+                    "is_active": {
+                        "type": "boolean"
+                    },
+                    "run_order": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "AutomationRunResource": {
+                "type": "object"
+            },
+            "AutomationRunCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AutomationRunResource"
+                        }
+                    }
+                }
+            },
+            "TeamResource": {
+                "type": "object"
+            },
+            "PlanResource": {
+                "type": "object"
+            },
+            "UsageResource": {
+                "type": "object"
+            },
+            "SubscriptionResource": {
+                "type": "object"
+            },
+            "InvoiceCollection": {
+                "type": "object"
+            },
+            "AiInsightsResource": {
+                "type": "object"
+            },
+            "TokenResource": {
+                "type": "object"
+            },
+            "TokenCollection": {
+                "type": "object"
+            },
+            "TokenCreate": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "abilities"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "abilities": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "TokenCreatedResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "$ref": "#/components/schemas/TokenResource"
+                    },
+                    "token": {
+                        "type": "string"
+                    }
+                }
+            },
+            "SurveyResource": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "public_id"
+                    },
+                    "public_id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "slug": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "public_url": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Hosted survey URL on the team's short / branded domain"
+                    },
+                    "fields": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SurveyField"
+                        }
+                    },
+                    "theme": {
+                        "type": "object"
+                    },
+                    "settings": {
+                        "type": "object"
+                    },
+                    "scoring": {
+                        "type": "object"
+                    },
+                    "notification_emails": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "allowed_origins": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "redirect_url": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "draft | published | archived"
+                    },
+                    "is_published": {
+                        "type": "boolean"
+                    },
+                    "published_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "archived_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "submissions_count": {
+                        "type": "integer",
+                        "description": "Present when the resource was loaded with withCount."
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "SurveyField": {
+                "type": "object",
+                "description": "A single question field. `id` is required for the builder/renderer; if you omit it the API will generate one for you.",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "fld_xxxxxxxx - generated when missing"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "text",
+                            "textarea",
+                            "email",
+                            "tel",
+                            "url",
+                            "number",
+                            "date",
+                            "time",
+                            "datetime",
+                            "select",
+                            "radio",
+                            "checkbox",
+                            "checkbox-group",
+                            "file",
+                            "rating",
+                            "consent",
+                            "hidden"
+                        ]
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Submission payload key; slugified from label when missing"
+                    },
+                    "label": {
+                        "type": "string"
+                    },
+                    "required": {
+                        "type": "boolean"
+                    },
+                    "placeholder": {
+                        "type": "string"
+                    },
+                    "options": {
+                        "type": "array",
+                        "description": "Required for select/radio/checkbox-group",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "type": "string"
+                                },
+                                "label": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "SurveyCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SurveyResource"
+                        }
+                    }
+                }
+            },
+            "SurveyCreate": {
+                "type": "object",
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "maxLength": 120
+                    },
+                    "slug": {
+                        "type": "string",
+                        "maxLength": 60
+                    },
+                    "template": {
+                        "type": "string",
+                        "description": "Key from the survey template registry; populates fields/theme/settings"
+                    },
+                    "fields": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SurveyField"
+                        }
+                    }
+                }
+            },
+            "SurveyUpdate": {
+                "type": "object",
+                "description": "All fields optional - partial update. Send `fields` to replace the whole field array.",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "maxLength": 120
+                    },
+                    "slug": {
+                        "type": "string",
+                        "maxLength": 60
+                    },
+                    "redirect_url": {
+                        "type": "string"
+                    },
+                    "fields": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SurveyField"
+                        }
+                    },
+                    "theme": {
+                        "type": "object"
+                    },
+                    "settings": {
+                        "type": "object"
+                    },
+                    "scoring": {
+                        "type": "object"
+                    },
+                    "notification_emails": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "allowed_origins": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "custom_rules": {
+                        "type": "object"
+                    }
+                }
+            },
+            "FunnelResource": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "public_id"
+                    },
+                    "public_id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "slug": {
+                        "type": "string"
+                    },
+                    "public_url": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "custom_domain": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "tracking": {
+                        "type": "object"
+                    },
+                    "ab_test_config": {
+                        "type": "object"
+                    },
+                    "is_published": {
+                        "type": "boolean"
+                    },
+                    "published_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "screens_count": {
+                        "type": "integer"
+                    },
+                    "sessions_count": {
+                        "type": "integer"
+                    },
+                    "submissions_count": {
+                        "type": "integer"
+                    },
+                    "screens": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FunnelScreen"
+                        },
+                        "description": "Present on show responses"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "FunnelScreen": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "position": {
+                        "type": "integer"
+                    },
+                    "kind": {
+                        "type": "string",
+                        "description": "Screen kind from Funnel::SCREEN_KINDS (welcome, question, form-collect, thank-you, ...)"
+                    },
+                    "config": {
+                        "type": "object"
+                    },
+                    "ab_variant_key": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "blocks": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "FunnelCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FunnelResource"
+                        }
+                    }
+                }
+            },
+            "FunnelCreate": {
+                "type": "object",
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "maxLength": 120
+                    },
+                    "slug": {
+                        "type": "string",
+                        "description": "URL slug under /u/{slug}; auto-generated when omitted"
+                    }
+                }
+            },
+            "FunnelUpdate": {
+                "type": "object",
+                "description": "Send `screens` to replace the whole screen array.",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "slug": {
+                        "type": "string"
+                    },
+                    "custom_domain": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "tracking": {
+                        "type": "object"
+                    },
+                    "ab_test_config": {
+                        "type": "object"
+                    },
+                    "screens": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FunnelScreen"
+                        }
+                    }
+                }
+            },
+            "FunnelAnalyticsResource": {
+                "type": "object",
+                "description": "Aggregated funnel metrics - sessions, completions, per-step drop-off."
+            },
+            "FunnelSessionCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "LinkResource": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "ULID"
+                    },
+                    "slug": {
+                        "type": "string"
+                    },
+                    "short_url": {
+                        "type": "string",
+                        "description": "Branded or shortener-domain URL"
+                    },
+                    "target_url": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "branded_domain": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "cloaking": {
+                        "type": "boolean"
+                    },
+                    "unsafe": {
+                        "type": "boolean"
+                    },
+                    "utm_params": {
+                        "type": "object",
+                        "nullable": true
+                    },
+                    "clicks_cache": {
+                        "type": "integer"
+                    },
+                    "last_click_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "expires_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "disabled_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "LinkCollection": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LinkResource"
+                        }
+                    }
+                }
+            },
+            "LinkCreate": {
+                "type": "object",
+                "required": [
+                    "target_url"
+                ],
+                "properties": {
+                    "target_url": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "slug": {
+                        "type": "string",
+                        "description": "Optional explicit slug; auto-generated when omitted"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "branded_domain_id": {
+                        "type": "integer",
+                        "description": "Bind to a verified branded domain"
+                    },
+                    "utm_params": {
+                        "type": "object"
+                    },
+                    "cloaking": {
+                        "type": "boolean"
+                    },
+                    "expires_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "LinkUpdate": {
+                "type": "object",
+                "description": "Partial update. Omit a field to leave it unchanged.",
+                "properties": {
+                    "target_url": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "utm_params": {
+                        "type": "object"
+                    },
+                    "cloaking": {
+                        "type": "boolean"
+                    },
+                    "expires_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "disabled_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "Set to a timestamp to disable the redirect, or null to re-enable"
+                    }
+                }
+            },
+            "LinkUpsert": {
+                "type": "object",
+                "required": [
+                    "slug",
+                    "target_url"
+                ],
+                "description": "Idempotent: returns 201 on create, 200 on update of the same slug.",
+                "properties": {
+                    "slug": {
+                        "type": "string"
+                    },
+                    "target_url": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "utm_params": {
+                        "type": "object"
+                    }
+                }
+            },
+            "LinkStatsCounters": {
+                "type": "object"
+            },
+            "LinkStatsViews": {
+                "type": "object"
+            },
+            "LinkStatsHeatmap": {
+                "type": "object"
+            },
+            "LinkStatsMetrics": {
+                "type": "object"
+            },
+            "LinkStatsEvents": {
+                "type": "object"
+            },
+            "LinkStatsLocations": {
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Forms",
+            "description": "Create, read, update, archive, publish, and delete forms."
+        },
+        {
+            "name": "Submissions",
+            "description": "Inspect, edit, delete, bulk-act on, and export submissions."
+        },
+        {
+            "name": "Webhooks",
+            "description": "Manage webhooks and replay deliveries."
+        },
+        {
+            "name": "Automations",
+            "description": "Create, enable, disable, and run form automations; inspect and replay runs."
+        },
+        {
+            "name": "Surveys",
+            "description": "Create, read, update, publish, unpublish, and delete surveys. Surveys are a separate product from forms - multi-screen, conditional logic, scoring."
+        },
+        {
+            "name": "Funnels",
+            "description": "Create, read, update, publish, unpublish, and delete funnels. Includes session analytics and the per-step summary."
+        },
+        {
+            "name": "Links",
+            "description": "Branded short links + QR codes. CRUD, idempotent upsert, free-text search, query by exact slug, and click analytics."
+        },
+        {
+            "name": "Billing",
+            "description": "Read-only access to plan, usage, subscription, and invoice info."
+        },
+        {
+            "name": "AI Insights",
+            "description": "Read AI-generated insights and trigger regeneration."
+        },
+        {
+            "name": "Tokens",
+            "description": "Self-manage your own API tokens."
+        },
+        {
+            "name": "Account",
+            "description": "Identity and current-team helpers."
+        }
+    ],
+    "paths": {
+        "/me": {
+            "get": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Current user, team, plan, and token abilities",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MeResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms": {
+            "get": {
+                "tags": [
+                    "Forms"
+                ],
+                "summary": "List forms (forms:read)",
+                "parameters": [
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 25
+                        }
+                    }
+                ],
+                "x-codeSamples": [
+                    {
+                        "lang": "JavaScript",
+                        "label": "fetch",
+                        "source": "const response = await fetch('https://formspring.io/api/v1/forms?per_page=10', {\n  headers: {\n    Authorization: `Bearer ${process.env.FORMSPRING_TOKEN}`,\n    Accept: 'application/json',\n  },\n});\n\nif (!response.ok) {\n  throw new Error(`${response.status} ${await response.text()}`);\n}\n\nconsole.log(await response.json());"
+                    },
+                    {
+                        "lang": "Python",
+                        "label": "requests",
+                        "source": "import os\nimport requests\n\nresponse = requests.get(\n    \"https://formspring.io/api/v1/forms\",\n    headers={\n        \"Authorization\": f\"Bearer {os.environ['FORMSPRING_TOKEN']}\",\n        \"Accept\": \"application/json\",\n    },\n    params={\"per_page\": 10},\n    timeout=10,\n)\nresponse.raise_for_status()\nprint(response.json())"
+                    },
+                    {
+                        "lang": "Go",
+                        "label": "net/http",
+                        "source": "req, _ := http.NewRequest(\n\thttp.MethodGet,\n\t\"https://formspring.io/api/v1/forms?per_page=10\",\n\tnil,\n)\nreq.Header.Set(\"Authorization\", \"Bearer \"+os.Getenv(\"FORMSPRING_TOKEN\"))\nreq.Header.Set(\"Accept\", \"application/json\")\n\nres, err := http.DefaultClient.Do(req)\nif err != nil {\n\tpanic(err)\n}\ndefer res.Body.Close()"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FormCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Forms"
+                ],
+                "summary": "Create a form (forms:write)",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FormCreate"
+                            }
+                        }
+                    }
+                },
+                "x-codeSamples": [
+                    {
+                        "lang": "JavaScript",
+                        "label": "fetch",
+                        "source": "const response = await fetch('https://formspring.io/api/v1/forms', {\n  method: 'POST',\n  headers: {\n    Authorization: `Bearer ${process.env.FORMSPRING_TOKEN}`,\n    Accept: 'application/json',\n    'Content-Type': 'application/json',\n  },\n  body: JSON.stringify({\n    name: 'Contact form',\n    notification_emails: ['ops@example.com'],\n  }),\n});\n\nconsole.log(await response.json());"
+                    },
+                    {
+                        "lang": "Python",
+                        "label": "requests",
+                        "source": "import os\nimport requests\n\nresponse = requests.post(\n    \"https://formspring.io/api/v1/forms\",\n    headers={\n        \"Authorization\": f\"Bearer {os.environ['FORMSPRING_TOKEN']}\",\n        \"Accept\": \"application/json\",\n        \"Content-Type\": \"application/json\",\n    },\n    json={\n        \"name\": \"Contact form\",\n        \"notification_emails\": [\"ops@example.com\"],\n    },\n    timeout=10,\n)\nresponse.raise_for_status()\nprint(response.json())"
+                    },
+                    {
+                        "lang": "Go",
+                        "label": "net/http",
+                        "source": "body, _ := json.Marshal(map[string]any{\n\t\"name\": \"Contact form\",\n\t\"notification_emails\": []string{\"ops@example.com\"},\n})\n\nreq, _ := http.NewRequest(\n\thttp.MethodPost,\n\t\"https://formspring.io/api/v1/forms\",\n\tbytes.NewReader(body),\n)\nreq.Header.Set(\"Authorization\", \"Bearer \"+os.Getenv(\"FORMSPRING_TOKEN\"))\nreq.Header.Set(\"Accept\", \"application/json\")\nreq.Header.Set(\"Content-Type\", \"application/json\")\n\nres, err := http.DefaultClient.Do(req)\nif err != nil {\n\tpanic(err)\n}\ndefer res.Body.Close()"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FormResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Forms"
+                ],
+                "summary": "Show form (forms:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FormResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Forms"
+                ],
+                "summary": "Update form (forms:write)",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FormUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FormResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Forms"
+                ],
+                "summary": "Partially update form (forms:write)",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FormUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FormResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Forms"
+                ],
+                "summary": "Archive form (forms:write)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/publish": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Forms"
+                ],
+                "summary": "Publish form (forms:write)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FormResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/unpublish": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Forms"
+                ],
+                "summary": "Unpublish form (forms:write)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FormResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/restore": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Forms"
+                ],
+                "summary": "Restore archived form (forms:write)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FormResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/force": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "delete": {
+                "tags": [
+                    "Forms"
+                ],
+                "summary": "Permanently delete form (forms:write, owner-only)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/autoresponder/test": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Forms"
+                ],
+                "summary": "Send test autoresponder (forms:test-email)",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TestAutoresponder"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/notifications/test": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Forms"
+                ],
+                "summary": "Send test notification email (forms:test-email)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/submissions": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Submissions"
+                ],
+                "summary": "List submissions (submissions:read)",
+                "parameters": [
+                    {
+                        "name": "folder",
+                        "in": "query",
+                        "required": false,
+                        "description": "inbox|spam|all",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 25
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmissionCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/submissions/bulk": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Submissions"
+                ],
+                "summary": "Bulk action (submissions:write)",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SubmissionBulk"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/submissions/export": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Submissions"
+                ],
+                "summary": "Export submissions as CSV/JSON (submissions:export)",
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "description": "csv|json",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "CSV or JSON stream"
+                    }
+                }
+            }
+        },
+        "/forms/{form}/submissions/{submission}": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "submission",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Submissions"
+                ],
+                "summary": "Show submission (submissions:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmissionResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Submissions"
+                ],
+                "summary": "Update submission (submissions:write)",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SubmissionUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubmissionResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Submissions"
+                ],
+                "summary": "Delete submission (submissions:write)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/submissions/{submission}/files/{file}": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "submission",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "file",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Submissions"
+                ],
+                "summary": "Download submission file via redirect to signed URL (submissions:read)",
+                "responses": {
+                    "302": {
+                        "description": "Redirect to signed URL"
+                    }
+                }
+            }
+        },
+        "/forms/{form}/webhooks": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Webhooks"
+                ],
+                "summary": "List webhooks (webhooks:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/WebhookCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Webhooks"
+                ],
+                "summary": "Create webhook (webhooks:write); plaintext secret returned once",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/WebhookCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/WebhookCreatedResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/webhooks/{webhook}": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "webhook",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Webhooks"
+                ],
+                "summary": "Show webhook (webhooks:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/WebhookResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Webhooks"
+                ],
+                "summary": "Update webhook (webhooks:write)",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/WebhookUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/WebhookResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Webhooks"
+                ],
+                "summary": "Delete webhook (webhooks:write)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/webhooks/{webhook}/deliveries": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "webhook",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Webhooks"
+                ],
+                "summary": "List deliveries (webhooks:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/WebhookDeliveryCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/webhooks/{webhook}/deliveries/{delivery}/replay": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "webhook",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "delivery",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Webhooks"
+                ],
+                "summary": "Replay delivery (webhooks:write)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/automations": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Automations"
+                ],
+                "summary": "List automations (automations:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AutomationCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Automations"
+                ],
+                "summary": "Create automation (automations:write)",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AutomationCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AutomationResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/automations/{automation}": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "automation",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Automations"
+                ],
+                "summary": "Show automation (automations:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AutomationResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Automations"
+                ],
+                "summary": "Update automation (automations:write)",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AutomationUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AutomationResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Automations"
+                ],
+                "summary": "Delete automation (automations:write)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/automations/{automation}/enable": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "automation",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Automations"
+                ],
+                "summary": "Enable automation (automations:write)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AutomationResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/automations/{automation}/disable": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "automation",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Automations"
+                ],
+                "summary": "Disable automation (automations:write)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AutomationResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/automations/{automation}/run": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "automation",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Automations"
+                ],
+                "summary": "Run automation now (automations:run)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/automations/{automation}/runs": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "automation",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Automations"
+                ],
+                "summary": "List automation runs (automations:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AutomationRunCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/automations/{automation}/runs/{run}": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "automation",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "run",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Automations"
+                ],
+                "summary": "Show automation run (automations:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AutomationRunResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forms/{form}/automations/{automation}/runs/{run}/replay": {
+            "parameters": [
+                {
+                    "name": "form",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "automation",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "run",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Automations"
+                ],
+                "summary": "Replay automation run (automations:run)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/surveys": {
+            "get": {
+                "tags": [
+                    "Surveys"
+                ],
+                "summary": "List surveys (surveys:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SurveyCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Surveys"
+                ],
+                "summary": "Create a survey (surveys:write); requires a paid plan",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SurveyCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SurveyResource"
+                                }
+                            }
+                        }
+                    },
+                    "402": {
+                        "description": "Plan does not include surveys"
+                    }
+                }
+            }
+        },
+        "/surveys/{survey}": {
+            "parameters": [
+                {
+                    "name": "survey",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Surveys"
+                ],
+                "summary": "Show survey (surveys:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SurveyResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Surveys"
+                ],
+                "summary": "Replace survey (surveys:write)",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SurveyUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SurveyResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Surveys"
+                ],
+                "summary": "Partially update survey (surveys:write)",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SurveyUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SurveyResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Surveys"
+                ],
+                "summary": "Soft-delete survey + clear published_at (surveys:write)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/surveys/{survey}/publish": {
+            "parameters": [
+                {
+                    "name": "survey",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Surveys"
+                ],
+                "summary": "Publish survey - URL accepts responses (surveys:write)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SurveyResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/surveys/{survey}/unpublish": {
+            "parameters": [
+                {
+                    "name": "survey",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Surveys"
+                ],
+                "summary": "Unpublish survey - back to draft (surveys:write)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SurveyResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/funnels": {
+            "get": {
+                "tags": [
+                    "Funnels"
+                ],
+                "summary": "List funnels (funnels:read)",
+                "parameters": [
+                    {
+                        "name": "project_id",
+                        "in": "query",
+                        "required": false,
+                        "description": "Filter by project public_id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FunnelCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Funnels"
+                ],
+                "summary": "Create a funnel (funnels:write); requires a paid plan",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FunnelCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FunnelResource"
+                                }
+                            }
+                        }
+                    },
+                    "402": {
+                        "description": "Plan does not include funnels"
+                    }
+                }
+            }
+        },
+        "/funnels/{funnel}": {
+            "parameters": [
+                {
+                    "name": "funnel",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Funnels"
+                ],
+                "summary": "Show funnel with screens + blocks (funnels:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FunnelResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Funnels"
+                ],
+                "summary": "Update funnel; replaces screens when supplied (funnels:write)",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FunnelUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FunnelResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Funnels"
+                ],
+                "summary": "Soft-delete funnel + flip is_published off (funnels:write)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/funnels/{funnel}/publish": {
+            "parameters": [
+                {
+                    "name": "funnel",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Funnels"
+                ],
+                "summary": "Publish funnel (funnels:publish)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FunnelResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/funnels/{funnel}/unpublish": {
+            "parameters": [
+                {
+                    "name": "funnel",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Funnels"
+                ],
+                "summary": "Unpublish funnel (funnels:publish)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FunnelResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/funnels/{funnel}/analytics": {
+            "parameters": [
+                {
+                    "name": "funnel",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Funnels"
+                ],
+                "summary": "Aggregated session + step funnel analytics (funnels:analytics)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FunnelAnalyticsResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/funnels/{funnel}/sessions": {
+            "parameters": [
+                {
+                    "name": "funnel",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Funnels"
+                ],
+                "summary": "Recent funnel sessions, capped at 100 (funnels:analytics)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FunnelSessionCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/links": {
+            "get": {
+                "tags": [
+                    "Links"
+                ],
+                "summary": "List links (links:read)",
+                "parameters": [
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 25
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LinkCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Links"
+                ],
+                "summary": "Create a link (links:write)",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LinkCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LinkResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/links/search": {
+            "get": {
+                "tags": [
+                    "Links"
+                ],
+                "summary": "Free-text search by slug, title, or target URL (links:read)",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "required": false,
+                        "description": "Search needle, 1-200 chars",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LinkCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/links/query": {
+            "get": {
+                "tags": [
+                    "Links"
+                ],
+                "summary": "Look up a single link by exact slug (links:read)",
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "query",
+                        "required": false,
+                        "description": "Exact slug match",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LinkResource"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "No link with that slug"
+                    }
+                }
+            }
+        },
+        "/links/upsert": {
+            "post": {
+                "tags": [
+                    "Links"
+                ],
+                "summary": "Idempotent create-or-update by slug (links:write)",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LinkUpsert"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LinkResource"
+                                }
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LinkResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/links/{link}": {
+            "parameters": [
+                {
+                    "name": "link",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Links"
+                ],
+                "summary": "Show link (links:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LinkResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Links"
+                ],
+                "summary": "Partial update (links:write)",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LinkUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LinkResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Links"
+                ],
+                "summary": "Soft-delete link + disable redirect (links:write)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/links/{link}/qr": {
+            "parameters": [
+                {
+                    "name": "link",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Links"
+                ],
+                "summary": "Render the link's QR code as SVG/PNG (links:read)",
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "required": false,
+                        "description": "svg|png",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Image stream (SVG or PNG)"
+                    }
+                }
+            }
+        },
+        "/links/{link}/stats/counters": {
+            "parameters": [
+                {
+                    "name": "link",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Links"
+                ],
+                "summary": "Click counters by horizon (links:analytics:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LinkStatsCounters"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/links/{link}/stats/views": {
+            "parameters": [
+                {
+                    "name": "link",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Links"
+                ],
+                "summary": "Time-series of click views (links:analytics:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LinkStatsViews"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/links/{link}/stats/heatmap": {
+            "parameters": [
+                {
+                    "name": "link",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Links"
+                ],
+                "summary": "Day-of-week \u00d7 hour-of-day click matrix (links:analytics:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LinkStatsHeatmap"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/links/{link}/stats/metrics": {
+            "parameters": [
+                {
+                    "name": "link",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Links"
+                ],
+                "summary": "Bucketed metrics (links:analytics:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LinkStatsMetrics"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/links/{link}/stats/events": {
+            "parameters": [
+                {
+                    "name": "link",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Links"
+                ],
+                "summary": "Recent click events (links:analytics:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LinkStatsEvents"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/links/{link}/stats/locations": {
+            "parameters": [
+                {
+                    "name": "link",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Links"
+                ],
+                "summary": "Top clicker geographies (links:analytics:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LinkStatsLocations"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/team": {
+            "get": {
+                "tags": [
+                    "Billing"
+                ],
+                "summary": "Show current team (billing:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TeamResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/plan": {
+            "get": {
+                "tags": [
+                    "Billing"
+                ],
+                "summary": "Show current plan (billing:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PlanResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/usage": {
+            "get": {
+                "tags": [
+                    "Billing"
+                ],
+                "summary": "Show current usage (billing:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UsageResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/subscription": {
+            "get": {
+                "tags": [
+                    "Billing"
+                ],
+                "summary": "Show subscription state (billing:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubscriptionResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/billing/invoices": {
+            "get": {
+                "tags": [
+                    "Billing"
+                ],
+                "summary": "List invoices (billing:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/InvoiceCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ai-insights": {
+            "get": {
+                "tags": [
+                    "AI Insights"
+                ],
+                "summary": "AI insights for current team (insights:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AiInsightsResource"
+                                }
+                            }
+                        }
+                    },
+                    "423": {
+                        "description": "Plan does not include AI features"
+                    }
+                }
+            }
+        },
+        "/ai-insights/regenerate": {
+            "post": {
+                "tags": [
+                    "AI Insights"
+                ],
+                "summary": "Trigger insights regeneration (insights:write)",
+                "responses": {
+                    "202": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Already running"
+                    },
+                    "423": {
+                        "description": "Plan locked"
+                    }
+                }
+            }
+        },
+        "/tokens": {
+            "get": {
+                "tags": [
+                    "Tokens"
+                ],
+                "summary": "List your tokens (tokens:read)",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TokenCollection"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Tokens"
+                ],
+                "summary": "Create a new token (tokens:write); plaintext value returned once",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TokenCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TokenCreatedResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tokens/{token}": {
+            "parameters": [
+                {
+                    "name": "token",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "delete": {
+                "tags": [
+                    "Tokens"
+                ],
+                "summary": "Revoke a token (tokens:write); cannot revoke the token in use",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "ok": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
