@@ -2,15 +2,36 @@ import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import { existsSync } from 'node:fs'
+
 type ParityRow = {
+  name: string | null
   cli_command: string | null
   transport: string
 }
 
+type GeneratedRow = {
+  name: string
+  cli_command: string
+}
+
 const root = join(fileURLToPath(new URL('.', import.meta.url)), '..')
-const parity = JSON.parse(
+const exported = JSON.parse(
   readFileSync(join(root, 'schema/parity-map.json'), 'utf8'),
 ) as ParityRow[]
+
+// Commands written by `npm run scaffold-resources` replace the exporter's generic entries.
+const generatedFile = join(root, 'schema/cli-commands.json')
+const generated = existsSync(generatedFile)
+  ? (JSON.parse(readFileSync(generatedFile, 'utf8')) as GeneratedRow[])
+  : []
+const generatedByRoute = new Map(generated.map((row) => [row.name, row.cli_command]))
+const parity = exported.map((row) =>
+  row.name && generatedByRoute.has(row.name)
+    ? { ...row, cli_command: generatedByRoute.get(row.name) ?? row.cli_command }
+    : row,
+)
+const exportedRoutes = new Set(exported.map((row) => row.name))
 
 const commandsDir = join(root, 'src/commands')
 
@@ -58,6 +79,14 @@ const required = new Set(
 )
 
 const missing: string[] = []
+
+for (const row of generated) {
+  if (!exportedRoutes.has(row.name)) {
+    missing.push(`${row.cli_command} (route ${row.name} is gone: run npm run scaffold-resources)`)
+  } else if (!implemented.has(row.cli_command)) {
+    missing.push(`${row.cli_command} (file missing: run npm run scaffold-resources)`)
+  }
+}
 
 for (const command of required) {
   if (command === 'api request') {
