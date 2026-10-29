@@ -29,7 +29,7 @@ const spec: ResourceSpec = {
 }
 
 export default class FormsSubmissionsSigningEvidenceResource extends ResourceCommand {
-  static description = "Download the evidence bundle (ZIP) of a completed signing request (submissions:read)"
+  static description = "Download the evidence bundle (ZIP): the verified completion bundle, or a labelled incomplete bundle for a declined, voided or expired request. 409 artifact_pending until finalization has finished (signing:export)"
 
   static examples = ["<%= config.bin %> forms submissions signing evidence --form VALUE --submission VALUE --envelope VALUE --json"]
 

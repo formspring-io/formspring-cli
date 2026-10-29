@@ -897,6 +897,13 @@
     },
     {
         "group": "Surveys",
+        "name": "rotate_survey_webhook_secret",
+        "description": "Rotate the signing secret of a survey webhook. The new secret is returned ONCE; the old one keeps signing alongside it for `overlap_hours` (default 24, max 168, 0 revokes it at once). Pass `end_overlap` to stop the old secret early instead of rotating. Requires `webhooks:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Surveys",
         "name": "test_survey_webhook",
         "description": "Send a test delivery through a survey integration/webhook using the most recent response (queued). Requires `webhooks:write`.",
         "input_schema": null,
@@ -1479,6 +1486,13 @@
     {
         "group": "Feedback",
         "name": "delete_feedback_webhook",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Feedback",
+        "name": "rotate_feedback_webhook_secret",
         "description": "",
         "input_schema": null,
         "mcp_only": false
@@ -2367,6 +2381,13 @@
     },
     {
         "group": "Contacts",
+        "name": "rollback_contacts_import",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Contacts",
         "name": "get_contacts_import",
         "description": "",
         "input_schema": null,
@@ -2710,6 +2731,27 @@
     },
     {
         "group": "CRM",
+        "name": "get_crm_capture_owner",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM",
+        "name": "set_crm_capture_owner",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM",
+        "name": "set_contact_default_view",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM",
         "name": "get_crm_entitlements",
         "description": "",
         "input_schema": null,
@@ -2912,6 +2954,13 @@
         "mcp_only": false
     },
     {
+        "group": "Documents and signing",
+        "name": "get_signing_metrics",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
         "group": "SDK keys",
         "name": "list_sdk_keys",
         "description": "",
@@ -3041,6 +3090,20 @@
         "group": "Funnels",
         "name": "get_funnel_attribution",
         "description": "Source-to-outcome attribution report for a funnel, like the dashboard \"From source to outcome\" table and `GET /funnels/{funnel}/attribution`: leads, qualified leads, bookings, orders and CRM won/lost per source, attributed vs unattributed lead counts, and net revenue per currency (refunds subtracted, no currency conversion). `model` picks how a journey is credited: `journey_source` (default, one source per journey), `first_touch`, `last_touch` or `linear` (shared across visits, so counts can be fractions); the multi-touch models take `lookback_days` (1-90) to leave out visits that long before the converting visit. Optional `from` / `to` date range. Requires `funnels:analytics`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Funnels",
+        "name": "record_funnel_crm_outcome",
+        "description": "Report what a CRM decided about a funnel lead, like `POST /funnels/{funnel}/outcomes/crm`. Give the lead's `submission_id` and either a CRM `stage` (mapped to won or lost by the funnel's CRM stage map) or an explicit `status` of won or lost. A won deal with `value_minor` and `currency` records an order that keeps the lead's attribution. Idempotent per `source_fact_id`: a retry answers `applied: false` and changes nothing. Requires `funnels:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Funnels",
+        "name": "record_funnel_revenue_adjustment",
+        "description": "Record a refund or dispute against a funnel order, like `POST /funnels/{funnel}/outcomes/adjustments`. Net revenue moves; the qualified-lead count does not. `order_fact_id` names the order (the `source_fact_id` it was reported with); the amount cannot exceed what is left of the order. Idempotent per `source_fact_id`. Requires `funnels:write`.",
         "input_schema": null,
         "mcp_only": false
     },
@@ -3398,6 +3461,13 @@
         "group": "Funnels",
         "name": "delete_funnel_webhook",
         "description": "Delete a funnel webhook / integration and stop delivering to it. Requires `webhooks:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Funnels",
+        "name": "rotate_funnel_webhook_secret",
+        "description": "Rotate the signing secret of a funnel webhook. The new secret is returned ONCE; the old one keeps signing alongside it for `overlap_hours` (default 24, max 168, 0 revokes it at once). Pass `end_overlap` to stop the old secret early instead of rotating. Requires `webhooks:write`.",
         "input_schema": null,
         "mcp_only": false
     },
@@ -4055,7 +4125,7 @@
     {
         "group": "Automations",
         "name": "create_automation",
-        "description": "Create a new automation on a form, survey, funnel or booking page. Same validation as the automation builder: the trigger must be valid for the owner type and trigger and step configs are checked against get_automation_config (kind: condition|action|delay|branch). Requires `automations:write`.",
+        "description": "Create a new automation on a form, survey, funnel or booking page, or on the workspace itself (`target_type: \"workspace\"`, for contact, account, desk and other workspace triggers). Same validation as the automation builder: the trigger must be valid for the owner type and trigger and step configs are checked against get_automation_config (kind: condition|action|delay|branch). Requires `automations:write`.",
         "input_schema": null,
         "mcp_only": false
     },
@@ -4370,6 +4440,41 @@
     {
         "group": "Bookings",
         "name": "force_delete_booking_page",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Bookings",
+        "name": "list_booking_resources",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Bookings",
+        "name": "save_booking_resource",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Bookings",
+        "name": "delete_booking_resource",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Bookings",
+        "name": "set_booking_page_resource",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Bookings",
+        "name": "request_booking_balance",
         "description": "",
         "input_schema": null,
         "mcp_only": false

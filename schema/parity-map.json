@@ -489,6 +489,38 @@
     },
     {
         "method": "POST",
+        "path": "/bookings/appointments/{appointment}/approve",
+        "name": "api.bookings.appointments.approve",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bookings/appointments/{appointment}/balance",
+        "name": "api.bookings.appointments.balance",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bookings/appointments/{appointment}/cancel",
+        "name": "api.bookings.appointments.cancel",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bookings/appointments/{appointment}/decline",
+        "name": "api.bookings.appointments.decline",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
         "path": "/bookings/appointments/{appointment}/retry-calendar-sync",
         "name": "api.bookings.appointments.retry-calendar-sync",
         "transport": "rest",
@@ -560,6 +592,14 @@
         "mcp_tool": null
     },
     {
+        "method": "PUT",
+        "path": "/bookings/pages/{bookingPage}/resource",
+        "name": "api.bookings.pages.resource.assign",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
         "method": "POST",
         "path": "/bookings/pages/{bookingPage}/restore",
         "name": "api.bookings.pages.restore",
@@ -579,6 +619,38 @@
         "method": "PUT",
         "path": "/bookings/pages/{bookingPage}/routing",
         "name": "api.bookings.pages.routing.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bookings/resources",
+        "name": "api.bookings.resources.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bookings/resources",
+        "name": "api.bookings.resources.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/bookings/resources/{bookingResource}",
+        "name": "api.bookings.resources.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/bookings/resources/{bookingResource}",
+        "name": "api.bookings.resources.update",
         "transport": "rest",
         "cli_command": "api request",
         "mcp_tool": null
@@ -848,6 +920,14 @@
         "mcp_tool": null
     },
     {
+        "method": "PUT",
+        "path": "/contact-views/default",
+        "name": "api.contact-views.default",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
         "method": "DELETE",
         "path": "/contact-views/{contactView}",
         "name": "api.contact-views.destroy",
@@ -971,6 +1051,14 @@
         "method": "GET",
         "path": "/contacts/imports/{contactImport}/errors",
         "name": "api.contacts.imports.errors",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/imports/{contactImport}/rollback",
+        "name": "api.contacts.imports.rollback",
         "transport": "rest",
         "cli_command": "api request",
         "mcp_tool": null
@@ -1243,6 +1331,22 @@
         "method": "GET",
         "path": "/contacts/{contact}/timeline",
         "name": "api.contacts.timeline",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/capture-owner",
+        "name": "api.crm.capture-owner.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/crm/capture-owner",
+        "name": "api.crm.capture-owner.update",
         "transport": "rest",
         "cli_command": "api request",
         "mcp_tool": null
@@ -1673,6 +1777,134 @@
     },
     {
         "method": "GET",
+        "path": "/document-templates",
+        "name": "api.document-templates.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/document-templates",
+        "name": "api.document-templates.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/document-templates/{template}",
+        "name": "api.document-templates.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/document-templates/{template}/archive",
+        "name": "api.document-templates.archive",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/document-templates/{template}/publish",
+        "name": "api.document-templates.publish",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/document-templates/{template}/unarchive",
+        "name": "api.document-templates.unarchive",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/document-templates/{template}/versions",
+        "name": "api.document-templates.versions.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/documents",
+        "name": "api.documents.list",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/documents/export",
+        "name": "api.documents.export",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/documents/exports/{export}",
+        "name": "api.documents.exports.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/documents/exports/{export}/download",
+        "name": "api.documents.exports.download",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/documents/upload",
+        "name": "api.documents.upload",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/documents/{document}",
+        "name": "api.documents.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/documents/{document}/file",
+        "name": "api.documents.file",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/documents/{document}/requests",
+        "name": "api.documents.requests.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/documents/{document}/retry",
+        "name": "api.documents.retry",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
         "path": "/email/deliveries",
         "name": "api.email.deliveries.index",
         "transport": "rest",
@@ -1973,6 +2205,22 @@
         "name": "api.feedback-boards.webhooks.destroy",
         "transport": "rest",
         "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/feedback-boards/{board}/webhooks/{webhook}/previous-secret",
+        "name": "api.feedback-boards.webhooks.previous-secret.destroy",
+        "transport": "rest",
+        "cli_command": "forms webhooks end-rotation",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-boards/{board}/webhooks/{webhook}/rotate-secret",
+        "name": "api.feedback-boards.webhooks.rotate-secret",
+        "transport": "rest",
+        "cli_command": "forms webhooks rotate-secret",
         "mcp_tool": null
     },
     {
@@ -2465,6 +2713,14 @@
     },
     {
         "method": "POST",
+        "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/replace",
+        "name": "api.forms.submissions.signing.replace",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
         "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/send",
         "name": "api.forms.submissions.signing.send",
         "transport": "rest",
@@ -2925,6 +3181,22 @@
         "name": "api.funnels.unpublish",
         "transport": "rest",
         "cli_command": "funnels",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/funnels/{funnel}/webhooks/{webhook}/previous-secret",
+        "name": "api.funnels.webhooks.previous-secret.destroy",
+        "transport": "rest",
+        "cli_command": "forms webhooks end-rotation",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/funnels/{funnel}/webhooks/{webhook}/rotate-secret",
+        "name": "api.funnels.webhooks.rotate-secret",
+        "transport": "rest",
+        "cli_command": "forms webhooks rotate-secret",
         "mcp_tool": null
     },
     {
@@ -3953,6 +4225,190 @@
     },
     {
         "method": "GET",
+        "path": "/signing-requests",
+        "name": "api.signing-requests.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/signing-requests/metrics",
+        "name": "api.signing-requests.metrics",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/signing-requests/{envelope}",
+        "name": "api.signing-requests.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/signing-requests/{envelope}/approve",
+        "name": "api.signing-requests.approve",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/signing-requests/{envelope}/delegation-requests/{delegation}/approve",
+        "name": "api.signing-requests.delegations.approve",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/signing-requests/{envelope}/delegation-requests/{delegation}/reject",
+        "name": "api.signing-requests.delegations.reject",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/signing-requests/{envelope}/draft",
+        "name": "api.signing-requests.draft.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/signing-requests/{envelope}/evidence",
+        "name": "api.signing-requests.evidence",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/signing-requests/{envelope}/fields",
+        "name": "api.signing-requests.fields.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/signing-requests/{envelope}/fields",
+        "name": "api.signing-requests.fields.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/signing-requests/{envelope}/fields",
+        "name": "api.signing-requests.fields.replace",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/signing-requests/{envelope}/fields/{field}",
+        "name": "api.signing-requests.fields.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/signing-requests/{envelope}/fields/{field}",
+        "name": "api.signing-requests.fields.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/signing-requests/{envelope}/preview",
+        "name": "api.signing-requests.preview",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/signing-requests/{envelope}/preview",
+        "name": "api.signing-requests.preview",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/signing-requests/{envelope}/preview/recipients/{signer}",
+        "name": "api.signing-requests.preview.recipient",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/signing-requests/{envelope}/readiness",
+        "name": "api.signing-requests.readiness",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/signing-requests/{envelope}/remind",
+        "name": "api.signing-requests.remind",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/signing-requests/{envelope}/replace",
+        "name": "api.signing-requests.replace",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/signing-requests/{envelope}/send",
+        "name": "api.signing-requests.send",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/signing-requests/{envelope}/signed-document",
+        "name": "api.signing-requests.signed-document",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/signing-requests/{envelope}/verify",
+        "name": "api.signing-requests.verify",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/signing-requests/{envelope}/void",
+        "name": "api.signing-requests.void",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
         "path": "/survey-dashboards",
         "name": "api.survey-dashboards.index",
         "transport": "rest",
@@ -4424,6 +4880,38 @@
         "mcp_tool": null
     },
     {
+        "method": "GET",
+        "path": "/surveys/{survey}/quotas",
+        "name": "api.surveys.quotas.index",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/quotas",
+        "name": "api.surveys.quotas.store",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/surveys/{survey}/quotas/{quota}",
+        "name": "api.surveys.quotas.destroy",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/surveys/{survey}/quotas/{quota}",
+        "name": "api.surveys.quotas.update",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
         "method": "POST",
         "path": "/surveys/{survey}/restore",
         "name": "api.surveys.restore",
@@ -4520,6 +5008,22 @@
         "mcp_tool": null
     },
     {
+        "method": "DELETE",
+        "path": "/surveys/{survey}/webhooks/{webhook}/previous-secret",
+        "name": "api.surveys.webhooks.previous-secret.destroy",
+        "transport": "rest",
+        "cli_command": "forms webhooks end-rotation",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/webhooks/{webhook}/rotate-secret",
+        "name": "api.surveys.webhooks.rotate-secret",
+        "transport": "rest",
+        "cli_command": "forms webhooks rotate-secret",
+        "mcp_tool": null
+    },
+    {
         "method": "GET",
         "path": "/tasks",
         "name": "api.tasks.index",
@@ -4605,6 +5109,126 @@
         "name": "api.tokens.audit",
         "transport": "rest",
         "cli_command": "tokens audit",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/workspace/automations",
+        "name": "api.workspace.automations.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/workspace/automations",
+        "name": "api.workspace.automations.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/workspace/automations/{automation}",
+        "name": "api.workspace.automations.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/workspace/automations/{automation}",
+        "name": "api.workspace.automations.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/workspace/automations/{automation}",
+        "name": "api.workspace.automations.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/workspace/automations/{automation}/disable",
+        "name": "api.workspace.automations.disable",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/workspace/automations/{automation}/enable",
+        "name": "api.workspace.automations.enable",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/workspace/automations/{automation}/run",
+        "name": "api.workspace.automations.run",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/workspace/automations/{automation}/runs",
+        "name": "api.workspace.automations.runs.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/workspace/automations/{automation}/runs/{run}",
+        "name": "api.workspace.automations.runs.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/workspace/automations/{automation}/runs/{run}/cancel",
+        "name": "api.workspace.automations.runs.cancel",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/workspace/automations/{automation}/runs/{run}/replay",
+        "name": "api.workspace.automations.runs.replay",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/workspace/automations/{automation}/versions",
+        "name": "api.workspace.automations.versions.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/workspace/automations/{automation}/versions/{version}",
+        "name": "api.workspace.automations.versions.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/workspace/automations/{automation}/versions/{version}/restore",
+        "name": "api.workspace.automations.versions.restore",
+        "transport": "rest",
+        "cli_command": "api request",
         "mcp_tool": null
     },
     {

@@ -22,7 +22,7 @@ const spec: ResourceSpec = {
 }
 
 export default class FormsSubmissionsDocumentsCreateResource extends ResourceCommand {
-  static description = "Generate a document from a template version asynchronously; 402 when the plan does not include it or the monthly allowance is used (submissions:write)"
+  static description = "Generate a document from a template version asynchronously; 402 when the plan does not include it or the monthly allowance is used (documents:create)"
 
   static examples = ["<%= config.bin %> forms submissions documents create --form VALUE --submission VALUE --json"]
 

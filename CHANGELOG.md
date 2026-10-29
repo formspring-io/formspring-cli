@@ -4,7 +4,7 @@
 
 ### Changed
 
-- Synced `schema/` with the current API: 576 REST operations (was 80), 830 agent tools (was 74), and a new
+- Synced `schema/` with the current API: 653 REST operations (was 80), 845 agent tools (was 74), and a new
   `schema/import-contract.json` describing the response import steps, limits and checksum.
 - `schema/routes.json` now keeps only the public route table (domain, method, uri, name). `npm run sync-schema`
   applies this automatically.

@@ -13,7 +13,7 @@ const spec: ResourceSpec = {
 }
 
 export default class ContactsBulkCreateResource extends ResourceCommand {
-  static description = "Start a bulk action (tag, untag, add_to_list, remove_from_list, assign_owner, delete) over listed contact ids or everything a filter set matches (all_matching with the expected_count you confirmed). Queued; every contact is authorised on its own (contacts:write)"
+  static description = "Start a bulk action (tag, untag, add_to_list, remove_from_list, assign_owner, set_stage, record_consent, delete) over listed contact ids or everything a filter set matches (all_matching with the expected_count you confirmed). Queued; every contact is authorised on its own (contacts:write)"
 
   static examples = ["<%= config.bin %> contacts bulk create --json"]
 

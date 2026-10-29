@@ -26,7 +26,7 @@ const spec: ResourceSpec = {
 }
 
 export default class FormsSubmissionsSigningVerifyResource extends ResourceCommand {
-  static description = "Verify the tamper-evident event history of a signing request (submissions:read)"
+  static description = "Verify the tamper-evident event history of a signing request (documents:read)"
 
   static examples = ["<%= config.bin %> forms submissions signing verify --form VALUE --submission VALUE --envelope VALUE --json"]
 

@@ -26,7 +26,7 @@ const spec: ResourceSpec = {
 }
 
 export default class FormsSubmissionsSigningVoidResource extends ResourceCommand {
-  static description = "Cancel an unfinished signing request; every link stops working (submissions:write)"
+  static description = "Cancel an unfinished signing request; every link stops working. A request whose signatures are all in (completing or completed) answers 409 request_not_voidable (signing:void)"
 
   static examples = ["<%= config.bin %> forms submissions signing void --form VALUE --submission VALUE --envelope VALUE --json"]
 

@@ -18,7 +18,7 @@ const spec: ResourceSpec = {
 }
 
 export default class FormsDocumentTemplatesCreateResource extends ResourceCommand {
-  static description = "Create the next version of a template. JSON for an HTML template (name, body, locale, mappings, template_key); multipart with kind=pdf_form, pdf and field_map for an uploaded PDF form (forms:write)"
+  static description = "Create the next version of a template. JSON for an HTML template (name, body, locale, mappings, template_key); multipart with kind=pdf_form, pdf and field_map for an uploaded PDF form (templates:manage)"
 
   static examples = ["<%= config.bin %> forms document-templates create --form VALUE --json"]
 

@@ -26,7 +26,7 @@ const spec: ResourceSpec = {
 }
 
 export default class FormsSubmissionsSigningGetResource extends ResourceCommand {
-  static description = "Read a signing request: status, signers, reminders and the verified event chain (submissions:read)"
+  static description = "Read a signing request: status, signers, per-recipient delivery diagnostics, retention, assurance and the verified event chain (documents:read)"
 
   static examples = ["<%= config.bin %> forms submissions signing get --form VALUE --submission VALUE --envelope VALUE --json"]
 
