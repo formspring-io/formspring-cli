@@ -43,6 +43,12 @@ if ((result.status ?? 1) !== 0) {
   process.exit(result.status ?? 1)
 }
 
+const sanitize = spawnSync('node', [join(root, 'scripts/sanitize-routes.mjs')], { cwd: root, stdio: 'inherit' })
+
+if ((sanitize.status ?? 1) !== 0) {
+  process.exit(sanitize.status ?? 1)
+}
+
 const generate = spawnSync('npm', ['run', 'generate'], { cwd: root, stdio: 'inherit' })
 
 process.exit(generate.status ?? 0)

@@ -1,6 +1,230 @@
 [
     {
         "method": "GET",
+        "path": "/action-classes",
+        "name": "api.action-classes.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/action-classes",
+        "name": "api.action-classes.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/action-classes/{action_class}",
+        "name": "api.action-classes.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/action-classes/{action_class}",
+        "name": "api.action-classes.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/action-classes/{action_class}",
+        "name": "api.action-classes.patch",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/action-classes/{action_class}",
+        "name": "api.action-classes.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/agency/bundles",
+        "name": "api.agency.bundles.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/agency/bundles",
+        "name": "api.agency.bundles.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/agency/bundles/{bundle}",
+        "name": "api.agency.bundles.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/agency/bundles/{bundle}/versions/{version}/deployments",
+        "name": "api.agency.bundles.deploy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/agency/bundles/{bundle}/versions/{version}/draft",
+        "name": "api.agency.bundles.draft",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/agency/bundles/{bundle}/versions/{version}/preview",
+        "name": "api.agency.bundles.preview",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/agency/bundles/{bundle}/versions/{version}/publish",
+        "name": "api.agency.bundles.publish",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/agency/bundles/{bundle}/versions/{version}/review",
+        "name": "api.agency.bundles.review",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/agency/clients/{client}/report",
+        "name": "api.agency.clients.report",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/agency/deployments",
+        "name": "api.agency.deployments.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/agency/deployments/{deployment}",
+        "name": "api.agency.deployments.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/agency/deployments/{deployment}/go-live",
+        "name": "api.agency.deployments.go-live",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/agency/deployments/{deployment}/rebind",
+        "name": "api.agency.deployments.rebind",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/agency/deployments/{deployment}/rollback",
+        "name": "api.agency.deployments.rollback",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/agency/overview",
+        "name": "api.agency.overview",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/agency/report-schedules",
+        "name": "api.agency.report-schedules.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/agency/report-schedules",
+        "name": "api.agency.report-schedules.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/agency/report-schedules/{schedule}/recipients",
+        "name": "api.agency.report-schedules.recipients.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/agency/report-schedules/{schedule}/recipients/{recipient}",
+        "name": "api.agency.report-schedules.recipients.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/agency/report-schedules/{schedule}/recipients/{recipient}/resend",
+        "name": "api.agency.report-schedules.recipients.resend",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/agency/report-schedules/{schedule}/send",
+        "name": "api.agency.report-schedules.send",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/agency/report-schedules/{schedule}/status",
+        "name": "api.agency.report-schedules.status",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
         "path": "/ai-insights",
         "name": "api.ai-insights.index",
         "transport": "rest",
@@ -13,6 +237,22 @@
         "name": "api.ai-insights.regenerate",
         "transport": "rest",
         "cli_command": "insights regenerate",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/automation-limits",
+        "name": "api.automation-limits.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/automation-limits",
+        "name": "api.automation-limits.update",
+        "transport": "rest",
+        "cli_command": "api request",
         "mcp_tool": null
     },
     {
@@ -53,6 +293,1734 @@
         "name": "api.billing.usage",
         "transport": "rest",
         "cli_command": "billing usage",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bio-pages",
+        "name": "api.bio.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bio-pages",
+        "name": "api.bio.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bio-pages/audience/export",
+        "name": "api.bio.audience.export.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bio-pages/audience/export/{audienceExport}",
+        "name": "api.bio.audience.export.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bio-pages/audience/export/{audienceExport}/download",
+        "name": "api.bio.audience.export.download",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bio-pages/audience/sync",
+        "name": "api.bio.audience.sync",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bio-pages/audience/sync-targets",
+        "name": "api.bio.audience.sync-targets",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bio-pages/search",
+        "name": "api.bio.search",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/bio-pages/{bioPage}",
+        "name": "api.bio.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bio-pages/{bioPage}",
+        "name": "api.bio.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/bio-pages/{bioPage}",
+        "name": "api.bio.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/bio-pages/{bioPage}/force",
+        "name": "api.bio.force-delete",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bio-pages/{bioPage}/import",
+        "name": "api.bio.import.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bio-pages/{bioPage}/import/preview",
+        "name": "api.bio.import.preview",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bio-pages/{bioPage}/instagram",
+        "name": "api.bio.instagram.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bio-pages/{bioPage}/instagram/disconnect",
+        "name": "api.bio.instagram.disconnect",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bio-pages/{bioPage}/instagram/rules",
+        "name": "api.bio.instagram.rules.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/bio-pages/{bioPage}/instagram/rules/{rule}",
+        "name": "api.bio.instagram.rules.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/bio-pages/{bioPage}/instagram/rules/{rule}",
+        "name": "api.bio.instagram.rules.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bio-pages/{bioPage}/restore",
+        "name": "api.bio.restore",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bio-pages/{bioPage}/stats/counters",
+        "name": "api.bio.stats.counters",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bio-pages/{bioPage}/stats/views",
+        "name": "api.bio.stats.views",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bookings/appointments",
+        "name": "api.bookings.appointments.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bookings/appointments/{appointment}",
+        "name": "api.bookings.appointments.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bookings/appointments/{appointment}/retry-calendar-sync",
+        "name": "api.bookings.appointments.retry-calendar-sync",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bookings/pages",
+        "name": "api.bookings.pages.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bookings/pages",
+        "name": "api.bookings.pages.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/bookings/pages/{bookingPage}",
+        "name": "api.bookings.pages.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bookings/pages/{bookingPage}",
+        "name": "api.bookings.pages.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/bookings/pages/{bookingPage}",
+        "name": "api.bookings.pages.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bookings/pages/{bookingPage}/analytics",
+        "name": "api.bookings.pages.analytics",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/bookings/pages/{bookingPage}/force",
+        "name": "api.bookings.pages.force-delete",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/bookings/pages/{bookingPage}/hosts",
+        "name": "api.bookings.pages.hosts.sync",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bookings/pages/{bookingPage}/restore",
+        "name": "api.bookings.pages.restore",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/bookings/pages/{bookingPage}/routing",
+        "name": "api.bookings.pages.routing.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/bookings/pages/{bookingPage}/routing",
+        "name": "api.bookings.pages.routing.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/client/approvals",
+        "name": "api.client.approvals.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/client/approvals/{deployment}/approve",
+        "name": "api.client.approvals.approve",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/client/approvals/{deployment}/reject",
+        "name": "api.client.approvals.reject",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/companies",
+        "name": "api.companies.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/companies",
+        "name": "api.companies.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/companies/{company}",
+        "name": "api.companies.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/companies/{company}",
+        "name": "api.companies.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/companies/{company}",
+        "name": "api.companies.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/companies/{company}/contacts",
+        "name": "api.companies.contacts.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/companies/{company}/contacts",
+        "name": "api.companies.contacts.link",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/companies/{company}/contacts/{contact}",
+        "name": "api.companies.contacts.unlink",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/companies/{company}/feedback-accounts",
+        "name": "api.companies.feedback-accounts.attach",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/companies/{company}/merge",
+        "name": "api.companies.merge",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/companies/{company}/revenue",
+        "name": "api.companies.revenue",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contact-access-exports/{contactAccessExport}",
+        "name": "api.contact-access-exports.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contact-access-exports/{contactAccessExport}/download",
+        "name": "api.contact-access-exports.download",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contact-fields",
+        "name": "api.contact-fields.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contact-fields",
+        "name": "api.contact-fields.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/contact-fields/{fieldKey}",
+        "name": "api.contact-fields.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contact-fields/{fieldKey}",
+        "name": "api.contact-fields.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/contact-fields/{fieldKey}",
+        "name": "api.contact-fields.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contact-lists",
+        "name": "api.contact-lists.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contact-lists",
+        "name": "api.contact-lists.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/contact-lists/{contactList}",
+        "name": "api.contact-lists.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/contact-lists/{contactList}",
+        "name": "api.contact-lists.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contact-lists/{contactList}/members",
+        "name": "api.contact-lists.members.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/contact-lists/{contactList}/members/{contact}",
+        "name": "api.contact-lists.members.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contact-tags",
+        "name": "api.contact-tags.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contact-tags",
+        "name": "api.contact-tags.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/contact-tags/{contactTag}",
+        "name": "api.contact-tags.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/contact-tags/{contactTag}",
+        "name": "api.contact-tags.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contact-views",
+        "name": "api.contact-views.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contact-views",
+        "name": "api.contact-views.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/contact-views/{contactView}",
+        "name": "api.contact-views.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contact-views/{contactView}",
+        "name": "api.contact-views.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/contact-views/{contactView}",
+        "name": "api.contact-views.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts",
+        "name": "api.contacts.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts",
+        "name": "api.contacts.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/bulk",
+        "name": "api.contacts.bulk.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/bulk/{contactBulkOperation}",
+        "name": "api.contacts.bulk.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/duplicates",
+        "name": "api.contacts.duplicates",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/exports",
+        "name": "api.contacts.exports.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/exports/{contactExport}",
+        "name": "api.contacts.exports.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/exports/{contactExport}/download",
+        "name": "api.contacts.exports.download",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/imports",
+        "name": "api.contacts.imports.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/imports/{contactImport}",
+        "name": "api.contacts.imports.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/contacts/imports/{contactImport}",
+        "name": "api.contacts.imports.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/imports/{contactImport}/dry-run",
+        "name": "api.contacts.imports.dry-run",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/imports/{contactImport}/errors",
+        "name": "api.contacts.imports.errors",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/imports/{contactImport}/run",
+        "name": "api.contacts.imports.run",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/contacts/{contact}",
+        "name": "api.contacts.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/{contact}",
+        "name": "api.contacts.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/contacts/{contact}",
+        "name": "api.contacts.patch",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/contacts/{contact}",
+        "name": "api.contacts.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/{contact}/access-exports",
+        "name": "api.contacts.access-exports.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/{contact}/activities",
+        "name": "api.contacts.activities.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/{contact}/activities",
+        "name": "api.contacts.activities.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/contacts/{contact}/activities/{activity}",
+        "name": "api.contacts.activities.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/contacts/{contact}/activities/{activity}",
+        "name": "api.contacts.activities.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/{contact}/companies",
+        "name": "api.contacts.companies",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/{contact}/consents",
+        "name": "api.contacts.consents.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/{contact}/consents",
+        "name": "api.contacts.consents.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/{contact}/email",
+        "name": "api.contacts.email.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/{contact}/email",
+        "name": "api.contacts.email.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/{contact}/follow-up",
+        "name": "api.contacts.follow-up",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/{contact}/identifiers",
+        "name": "api.contacts.identifiers.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/{contact}/identifiers",
+        "name": "api.contacts.identifiers.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/contacts/{contact}/identifiers/{identifier}",
+        "name": "api.contacts.identifiers.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/contacts/{contact}/identifiers/{identifier}",
+        "name": "api.contacts.identifiers.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/contacts/{contact}/lifecycle-stage",
+        "name": "api.contacts.lifecycle-stage",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/{contact}/merge",
+        "name": "api.contacts.merge",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/{contact}/merges",
+        "name": "api.contacts.merges.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/{contact}/merges/{merge}/undo",
+        "name": "api.contacts.merges.undo",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/{contact}/notes",
+        "name": "api.contacts.notes.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/{contact}/notes",
+        "name": "api.contacts.notes.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/contacts/{contact}/notes/{note}",
+        "name": "api.contacts.notes.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/contacts/{contact}/notes/{note}",
+        "name": "api.contacts.notes.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/contacts/{contact}/notes/{note}/pin",
+        "name": "api.contacts.notes.pin",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/{contact}/notes/{note}/revisions",
+        "name": "api.contacts.notes.revisions",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/contacts/{contact}/owner",
+        "name": "api.contacts.owner",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/contacts/{contact}/tags",
+        "name": "api.contacts.tags.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/contacts/{contact}/tags/{contactTag}",
+        "name": "api.contacts.tags.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/{contact}/timeline",
+        "name": "api.contacts.timeline",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/entitlements",
+        "name": "api.crm.entitlements",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/retention",
+        "name": "api.crm.retention.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/crm/retention",
+        "name": "api.crm.retention.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/data-tables",
+        "name": "api.data-tables.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/data-tables",
+        "name": "api.data-tables.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/data-tables/{dataTable}",
+        "name": "api.data-tables.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/data-tables/{dataTable}",
+        "name": "api.data-tables.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/data-tables/{dataTable}",
+        "name": "api.data-tables.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/data-tables/{dataTable}/rows",
+        "name": "api.data-tables.rows.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/data-tables/{dataTable}/rows",
+        "name": "api.data-tables.rows.upsert",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/data-tables/{dataTable}/rows",
+        "name": "api.data-tables.rows.replace",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/deals",
+        "name": "api.deals.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/deals",
+        "name": "api.deals.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/deals/totals",
+        "name": "api.deals.totals",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/deals/{deal}",
+        "name": "api.deals.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/deals/{deal}",
+        "name": "api.deals.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/deals/{deal}",
+        "name": "api.deals.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/deals/{deal}/move",
+        "name": "api.deals.move",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/desk/availability",
+        "name": "api.desk.availability.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/email-channels",
+        "name": "api.desk.email-channels.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/email-channels",
+        "name": "api.desk.email-channels.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/email/inbound-secret/end-overlap",
+        "name": "api.desk.email.inbound-secret.end-overlap",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/email/inbound-secret/rotate",
+        "name": "api.desk.email.inbound-secret.rotate",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/email/senders/refresh",
+        "name": "api.desk.email.senders.refresh",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/email/status",
+        "name": "api.desk.email.status",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/imports",
+        "name": "api.desk.imports.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/imports/dry-run",
+        "name": "api.desk.imports.dry-run",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/imports/{run}",
+        "name": "api.desk.imports.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/queues",
+        "name": "api.desk.queues.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/desk/queues/{queue}",
+        "name": "api.desk.queues.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/desk/queues/{queue}",
+        "name": "api.desk.queues.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/reports",
+        "name": "api.desk.reports.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/reports/export",
+        "name": "api.desk.reports.export",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/sla",
+        "name": "api.desk.sla.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/sla/escalation-rules",
+        "name": "api.desk.sla.escalation-rules.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/desk/sla/escalation-rules/{rule}",
+        "name": "api.desk.sla.escalation-rules.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/desk/sla/escalation-rules/{rule}",
+        "name": "api.desk.sla.escalation-rules.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/desk/sla/holidays",
+        "name": "api.desk.sla.holidays.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/sla/policies",
+        "name": "api.desk.sla.policies.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/desk/sla/policies/{policy}",
+        "name": "api.desk.sla.policies.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/desk/sla/policies/{policy}",
+        "name": "api.desk.sla.policies.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/threads",
+        "name": "api.desk.threads.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/threads/bulk",
+        "name": "api.desk.threads.bulk",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/threads/{thread}",
+        "name": "api.desk.threads.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/desk/threads/{thread}",
+        "name": "api.desk.threads.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/threads/{thread}/messages",
+        "name": "api.desk.threads.messages.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/developer-applications",
+        "name": "api.developer-applications.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/developer-applications",
+        "name": "api.developer-applications.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/developer-applications/{developerApplication}",
+        "name": "api.developer-applications.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/developer-applications/{developerApplication}",
+        "name": "api.developer-applications.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/developer-applications/{developerApplication}",
+        "name": "api.developer-applications.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/displays",
+        "name": "api.displays.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/displays/{display}",
+        "name": "api.displays.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/email/deliveries",
+        "name": "api.email.deliveries.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/feedback-boards",
+        "name": "api.feedback-boards.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-boards",
+        "name": "api.feedback-boards.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/feedback-boards/{board}",
+        "name": "api.feedback-boards.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/feedback-boards/{board}",
+        "name": "api.feedback-boards.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/feedback-boards/{board}",
+        "name": "api.feedback-boards.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/feedback-boards/{board}",
+        "name": "api.feedback-boards.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/feedback-boards/{board}/accounts",
+        "name": "api.feedback-boards.accounts.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/feedback-boards/{board}/accounts/{externalId}",
+        "name": "api.feedback-boards.accounts.upsert",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/feedback-boards/{board}/announcements",
+        "name": "api.feedback-boards.announcements.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-boards/{board}/announcements",
+        "name": "api.feedback-boards.announcements.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-boards/{board}/announcements/{announcement}/publish",
+        "name": "api.feedback-boards.announcements.publish",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-boards/{board}/on-behalf/posts",
+        "name": "api.feedback-boards.on-behalf.posts.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/feedback-boards/{board}/posts",
+        "name": "api.feedback-boards.posts.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-boards/{board}/posts",
+        "name": "api.feedback-boards.posts.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/feedback-boards/{board}/posts/{post}",
+        "name": "api.feedback-boards.posts.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/feedback-boards/{board}/posts/{post}/delivery-decision",
+        "name": "api.feedback-boards.posts.delivery-decision.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-boards/{board}/posts/{post}/delivery-decision",
+        "name": "api.feedback-boards.posts.delivery-decision.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/feedback-boards/{board}/posts/{post}/issues",
+        "name": "api.feedback-boards.posts.issues.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-boards/{board}/posts/{post}/issues",
+        "name": "api.feedback-boards.posts.issues.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/feedback-boards/{board}/posts/{post}/issues/{issueLink}",
+        "name": "api.feedback-boards.posts.issues.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/feedback-boards/{board}/posts/{post}/issues/{issueLink}",
+        "name": "api.feedback-boards.posts.issues.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-boards/{board}/posts/{post}/on-behalf-votes",
+        "name": "api.feedback-boards.posts.on-behalf-votes.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/feedback-boards/{board}/posts/{post}/status",
+        "name": "api.feedback-boards.posts.status",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/feedback-boards/{board}/prioritization",
+        "name": "api.feedback-boards.prioritization.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-boards/{board}/publish",
+        "name": "api.feedback-boards.publish",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/feedback-boards/{board}/statuses",
+        "name": "api.feedback-boards.statuses.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-boards/{board}/statuses",
+        "name": "api.feedback-boards.statuses.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/feedback-boards/{board}/statuses/{status}",
+        "name": "api.feedback-boards.statuses.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/feedback-boards/{board}/statuses/{status}",
+        "name": "api.feedback-boards.statuses.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/feedback-boards/{board}/tags",
+        "name": "api.feedback-boards.tags.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-boards/{board}/tags",
+        "name": "api.feedback-boards.tags.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/feedback-boards/{board}/tags/{tag}",
+        "name": "api.feedback-boards.tags.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/feedback-boards/{board}/tags/{tag}",
+        "name": "api.feedback-boards.tags.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-boards/{board}/unpublish",
+        "name": "api.feedback-boards.unpublish",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/feedback-boards/{board}/webhooks",
+        "name": "api.feedback-boards.webhooks.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-boards/{board}/webhooks",
+        "name": "api.feedback-boards.webhooks.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/feedback-boards/{board}/webhooks/{webhook}",
+        "name": "api.feedback-boards.webhooks.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/feedback-hub/digest",
+        "name": "api.feedback-hub.digest.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/feedback-hub/digest",
+        "name": "api.feedback-hub.digest.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-hub/digest/test",
+        "name": "api.feedback-hub.digest.test",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/feedback-hub/helpdesk-sources",
+        "name": "api.feedback-hub.helpdesk-sources.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-hub/helpdesk-sources",
+        "name": "api.feedback-hub.helpdesk-sources.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/feedback-hub/helpdesk-sources/{source}/private-scope",
+        "name": "api.feedback-hub.helpdesk-sources.private-scope",
+        "transport": "rest",
+        "cli_command": "api request",
         "mcp_tool": null
     },
     {
@@ -102,6 +2070,14 @@
         "transport": "rest",
         "cli_command": "forms update",
         "mcp_tool": "forms.update"
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/attribution",
+        "name": "api.forms.attribution",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": "forms.attribution"
     },
     {
         "method": "GET",
@@ -185,8 +2161,40 @@
     },
     {
         "method": "POST",
+        "path": "/forms/{form}/automations/{automation}/runs/{run}/cancel",
+        "name": "api.forms.automations.runs.cancel",
+        "transport": "rest",
+        "cli_command": "forms automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
         "path": "/forms/{form}/automations/{automation}/runs/{run}/replay",
         "name": "api.forms.automations.runs.replay",
+        "transport": "rest",
+        "cli_command": "forms automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/automations/{automation}/versions",
+        "name": "api.forms.automations.versions.index",
+        "transport": "rest",
+        "cli_command": "forms automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/automations/{automation}/versions/{version}",
+        "name": "api.forms.automations.versions.show",
+        "transport": "rest",
+        "cli_command": "forms automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/automations/{automation}/versions/{version}/restore",
+        "name": "api.forms.automations.versions.restore",
         "transport": "rest",
         "cli_command": "forms automations",
         "mcp_tool": null
@@ -200,12 +2208,92 @@
         "mcp_tool": "forms.autoresponder.test"
     },
     {
+        "method": "GET",
+        "path": "/forms/{form}/document-templates",
+        "name": "api.forms.document-templates.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": "forms.document-templates.index"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/document-templates",
+        "name": "api.forms.document-templates.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": "forms.document-templates.store"
+    },
+    {
         "method": "DELETE",
         "path": "/forms/{form}/force",
         "name": "api.forms.force-delete",
         "transport": "rest",
         "cli_command": "forms force-delete",
         "mcp_tool": "forms.force-delete"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/imports",
+        "name": "api.forms.imports.store",
+        "transport": "rest",
+        "cli_command": "forms imports create",
+        "mcp_tool": "forms.imports.store"
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/imports/{importRun}",
+        "name": "api.forms.imports.show",
+        "transport": "rest",
+        "cli_command": "forms imports show",
+        "mcp_tool": "forms.imports.show"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/imports/{importRun}/confirm",
+        "name": "api.forms.imports.confirm",
+        "transport": "rest",
+        "cli_command": "forms imports confirm",
+        "mcp_tool": "forms.imports.confirm"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/imports/{importRun}/dry-run",
+        "name": "api.forms.imports.dry-run",
+        "transport": "rest",
+        "cli_command": "forms imports dry-run",
+        "mcp_tool": "forms.imports.dry-run"
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/imports/{importRun}/reconcile",
+        "name": "api.forms.imports.reconcile",
+        "transport": "rest",
+        "cli_command": "forms imports reconcile",
+        "mcp_tool": "forms.imports.reconcile"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/imports/{importRun}/resume",
+        "name": "api.forms.imports.resume",
+        "transport": "rest",
+        "cli_command": "forms imports resume",
+        "mcp_tool": "forms.imports.resume"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/imports/{importRun}/retry",
+        "name": "api.forms.imports.retry",
+        "transport": "rest",
+        "cli_command": "forms imports show",
+        "mcp_tool": "forms.imports.retry"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/imports/{importRun}/rollback",
+        "name": "api.forms.imports.rollback",
+        "transport": "rest",
+        "cli_command": "forms imports rollback",
+        "mcp_tool": "forms.imports.rollback"
     },
     {
         "method": "POST",
@@ -222,6 +2310,14 @@
         "transport": "rest",
         "cli_command": "forms publish",
         "mcp_tool": "forms.publish"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/record-sync-operations/{operation}/resolve",
+        "name": "api.forms.record-sync.resolve",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": "forms.record-sync.resolve"
     },
     {
         "method": "POST",
@@ -281,10 +2377,122 @@
     },
     {
         "method": "GET",
+        "path": "/forms/{form}/submissions/{submission}/documents",
+        "name": "api.forms.submissions.documents.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/submissions/{submission}/documents",
+        "name": "api.forms.submissions.documents.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/submissions/{submission}/documents/{document}",
+        "name": "api.forms.submissions.documents.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/submissions/{submission}/documents/{document}/download",
+        "name": "api.forms.submissions.documents.download",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/submissions/{submission}/documents/{document}/retry",
+        "name": "api.forms.submissions.documents.retry",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
         "path": "/forms/{form}/submissions/{submission}/files/{file}",
         "name": "api.forms.submissions.files.download",
         "transport": "rest",
         "cli_command": "forms submissions download-file",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/submissions/{submission}/revisions",
+        "name": "api.forms.submissions.revisions",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/submissions/{submission}/signing",
+        "name": "api.forms.submissions.signing.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/submissions/{submission}/signing/{envelope}",
+        "name": "api.forms.submissions.signing.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/evidence",
+        "name": "api.forms.submissions.signing.evidence",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/remind",
+        "name": "api.forms.submissions.signing.remind",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/send",
+        "name": "api.forms.submissions.signing.send",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/signed-document",
+        "name": "api.forms.submissions.signing.signed-document",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/verify",
+        "name": "api.forms.submissions.signing.verify",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/void",
+        "name": "api.forms.submissions.signing.void",
+        "transport": "rest",
+        "cli_command": "api request",
         "mcp_tool": null
     },
     {
@@ -337,10 +2545,42 @@
     },
     {
         "method": "GET",
+        "path": "/forms/{form}/webhooks/{webhook}/connection/destinations/{kind}",
+        "name": "api.forms.webhooks.connection.destinations",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/webhooks/{webhook}/connection/mapping",
+        "name": "api.forms.webhooks.connection.mapping",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/webhooks/{webhook}/connection/test",
+        "name": "api.forms.webhooks.connection.test",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
         "path": "/forms/{form}/webhooks/{webhook}/deliveries",
         "name": "api.forms.webhooks.deliveries",
         "transport": "rest",
         "cli_command": "forms webhooks",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/webhooks/{webhook}/deliveries/{delivery}/inspect",
+        "name": "api.forms.webhooks.deliveries.inspect",
+        "transport": "rest",
+        "cli_command": "forms webhooks inspect",
         "mcp_tool": null
     },
     {
@@ -350,6 +2590,110 @@
         "transport": "rest",
         "cli_command": "forms webhooks",
         "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/forms/{form}/webhooks/{webhook}/previous-secret",
+        "name": "api.forms.webhooks.previous-secret.destroy",
+        "transport": "rest",
+        "cli_command": "forms webhooks end-rotation",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/forms/{form}/webhooks/{webhook}/record-sync",
+        "name": "api.forms.record-sync.destroy",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": "forms.record-sync.destroy"
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/webhooks/{webhook}/record-sync",
+        "name": "api.forms.record-sync.show",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": "forms.record-sync.show"
+    },
+    {
+        "method": "PUT",
+        "path": "/forms/{form}/webhooks/{webhook}/record-sync",
+        "name": "api.forms.record-sync.update",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": "forms.record-sync.update"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/webhooks/{webhook}/record-sync/disable",
+        "name": "api.forms.record-sync.disable",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": "forms.record-sync.disable"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/webhooks/{webhook}/record-sync/enable",
+        "name": "api.forms.record-sync.enable",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": "forms.record-sync.enable"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/webhooks/{webhook}/record-sync/preview",
+        "name": "api.forms.record-sync.preview",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": "forms.record-sync.preview"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/webhooks/{webhook}/record-sync/reconcile",
+        "name": "api.forms.record-sync.reconcile",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": "forms.record-sync.reconcile"
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/webhooks/{webhook}/record-sync/schema",
+        "name": "api.forms.record-sync.schema",
+        "transport": "rest",
+        "cli_command": "forms webhooks",
+        "mcp_tool": "forms.record-sync.schema"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/webhooks/{webhook}/rotate-secret",
+        "name": "api.forms.webhooks.rotate-secret",
+        "transport": "rest",
+        "cli_command": "forms webhooks rotate-secret",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/forms/{form}/zapier/sample",
+        "name": "api.forms.zapier.sample",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": "forms.zapier.sample"
+    },
+    {
+        "method": "POST",
+        "path": "/forms/{form}/zapier/subscribe",
+        "name": "api.forms.zapier.subscribe",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": "forms.zapier.subscribe"
+    },
+    {
+        "method": "DELETE",
+        "path": "/forms/{form}/zapier/unsubscribe/{webhook}",
+        "name": "api.forms.zapier.unsubscribe",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": "forms.zapier.unsubscribe"
     },
     {
         "method": "GET",
@@ -400,9 +2744,169 @@
         "mcp_tool": null
     },
     {
+        "method": "GET",
+        "path": "/funnels/{funnel}/attribution",
+        "name": "api.funnels.attribution",
+        "transport": "rest",
+        "cli_command": "funnels",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/funnels/{funnel}/automations",
+        "name": "api.funnels.automations.index",
+        "transport": "rest",
+        "cli_command": "funnels automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/funnels/{funnel}/automations",
+        "name": "api.funnels.automations.store",
+        "transport": "rest",
+        "cli_command": "funnels automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/funnels/{funnel}/automations/{automation}",
+        "name": "api.funnels.automations.destroy",
+        "transport": "rest",
+        "cli_command": "funnels automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/funnels/{funnel}/automations/{automation}",
+        "name": "api.funnels.automations.show",
+        "transport": "rest",
+        "cli_command": "funnels automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/funnels/{funnel}/automations/{automation}",
+        "name": "api.funnels.automations.update",
+        "transport": "rest",
+        "cli_command": "funnels automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/funnels/{funnel}/automations/{automation}/disable",
+        "name": "api.funnels.automations.disable",
+        "transport": "rest",
+        "cli_command": "funnels automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/funnels/{funnel}/automations/{automation}/enable",
+        "name": "api.funnels.automations.enable",
+        "transport": "rest",
+        "cli_command": "funnels automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/funnels/{funnel}/automations/{automation}/run",
+        "name": "api.funnels.automations.run",
+        "transport": "rest",
+        "cli_command": "funnels automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/funnels/{funnel}/automations/{automation}/runs",
+        "name": "api.funnels.automations.runs.index",
+        "transport": "rest",
+        "cli_command": "funnels automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/funnels/{funnel}/automations/{automation}/runs/{run}",
+        "name": "api.funnels.automations.runs.show",
+        "transport": "rest",
+        "cli_command": "funnels automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/funnels/{funnel}/automations/{automation}/runs/{run}/cancel",
+        "name": "api.funnels.automations.runs.cancel",
+        "transport": "rest",
+        "cli_command": "funnels automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/funnels/{funnel}/automations/{automation}/runs/{run}/replay",
+        "name": "api.funnels.automations.runs.replay",
+        "transport": "rest",
+        "cli_command": "funnels automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/funnels/{funnel}/automations/{automation}/versions",
+        "name": "api.funnels.automations.versions.index",
+        "transport": "rest",
+        "cli_command": "funnels automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/funnels/{funnel}/automations/{automation}/versions/{version}",
+        "name": "api.funnels.automations.versions.show",
+        "transport": "rest",
+        "cli_command": "funnels automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/funnels/{funnel}/automations/{automation}/versions/{version}/restore",
+        "name": "api.funnels.automations.versions.restore",
+        "transport": "rest",
+        "cli_command": "funnels automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/funnels/{funnel}/force",
+        "name": "api.funnels.force-delete",
+        "transport": "rest",
+        "cli_command": "funnels",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/funnels/{funnel}/outcomes/adjustments",
+        "name": "api.funnels.outcomes.adjustments",
+        "transport": "rest",
+        "cli_command": "funnels",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/funnels/{funnel}/outcomes/crm",
+        "name": "api.funnels.outcomes.crm",
+        "transport": "rest",
+        "cli_command": "funnels",
+        "mcp_tool": null
+    },
+    {
         "method": "POST",
         "path": "/funnels/{funnel}/publish",
         "name": "api.funnels.publish",
+        "transport": "rest",
+        "cli_command": "funnels",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/funnels/{funnel}/restore",
+        "name": "api.funnels.restore",
         "transport": "rest",
         "cli_command": "funnels",
         "mcp_tool": null
@@ -425,6 +2929,390 @@
     },
     {
         "method": "GET",
+        "path": "/issue-trackers",
+        "name": "api.issue-trackers.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/issue-trackers",
+        "name": "api.issue-trackers.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/issue-trackers/{connection}",
+        "name": "api.issue-trackers.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/issue-trackers/{connection}",
+        "name": "api.issue-trackers.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/issue-trackers/{connection}/test",
+        "name": "api.issue-trackers.test",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/knowledge/access",
+        "name": "api.knowledge.access.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/knowledge/access/groups",
+        "name": "api.knowledge.access.groups.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/knowledge/access/groups/{group}",
+        "name": "api.knowledge.access.groups.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/knowledge/access/groups/{group}",
+        "name": "api.knowledge.access.groups.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/knowledge/access/groups/{group}/members",
+        "name": "api.knowledge.access.members.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/knowledge/access/groups/{group}/members/{member}",
+        "name": "api.knowledge.access.members.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/knowledge/access/links",
+        "name": "api.knowledge.access.links.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/knowledge/access/links/{link}",
+        "name": "api.knowledge.access.links.revoke",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/knowledge/answers",
+        "name": "api.knowledge.answers.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/knowledge/answers/{answer}",
+        "name": "api.knowledge.answers.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/knowledge/articles",
+        "name": "api.knowledge.articles.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/knowledge/articles",
+        "name": "api.knowledge.articles.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/knowledge/articles/{article}",
+        "name": "api.knowledge.articles.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/knowledge/articles/{article}",
+        "name": "api.knowledge.articles.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/knowledge/articles/{article}",
+        "name": "api.knowledge.articles.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/knowledge/articles/{article}/check-links",
+        "name": "api.knowledge.articles.check-links",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/knowledge/articles/{article}/review",
+        "name": "api.knowledge.articles.review",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/knowledge/articles/{article}/revisions",
+        "name": "api.knowledge.articles.revisions",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/knowledge/articles/{article}/revisions/{version}/rollback",
+        "name": "api.knowledge.articles.rollback",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/knowledge/articles/{article}/translations",
+        "name": "api.knowledge.articles.translations.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/knowledge/articles/{article}/translations/{locale}",
+        "name": "api.knowledge.articles.translations.save",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/knowledge/articles/{article}/translations/{locale}/ai",
+        "name": "api.knowledge.articles.translations.ai",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/knowledge/articles/{article}/translations/{locale}/approve",
+        "name": "api.knowledge.articles.translations.approve",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/knowledge/articles/{article}/translations/{locale}/pending",
+        "name": "api.knowledge.articles.translations.pending",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/knowledge/collections",
+        "name": "api.knowledge.collections.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/knowledge/collections",
+        "name": "api.knowledge.collections.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/knowledge/collections/{collection}",
+        "name": "api.knowledge.collections.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/knowledge/collections/{collection}",
+        "name": "api.knowledge.collections.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/knowledge/collections/{collection}/access",
+        "name": "api.knowledge.collections.access",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/knowledge/exports",
+        "name": "api.knowledge.exports.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/knowledge/exports/{export}",
+        "name": "api.knowledge.exports.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/knowledge/help-centers",
+        "name": "api.knowledge.help-centers.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/knowledge/help-centers/{helpCenter}",
+        "name": "api.knowledge.help-centers.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/knowledge/help-centers/{helpCenter}",
+        "name": "api.knowledge.help-centers.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/knowledge/imports",
+        "name": "api.knowledge.imports.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/knowledge/imports/{import}",
+        "name": "api.knowledge.imports.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/knowledge/insights",
+        "name": "api.knowledge.insights",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/knowledge/insights/gaps",
+        "name": "api.knowledge.insights.gaps",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/lifecycle-stages",
+        "name": "api.lifecycle-stages.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/lifecycle-stages",
+        "name": "api.lifecycle-stages.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/lifecycle-stages/order",
+        "name": "api.lifecycle-stages.reorder",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/lifecycle-stages/{stage}",
+        "name": "api.lifecycle-stages.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/lifecycle-stages/{stage}",
+        "name": "api.lifecycle-stages.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
         "path": "/links",
         "name": "api.links.index",
         "transport": "rest",
@@ -435,6 +3323,22 @@
         "method": "POST",
         "path": "/links",
         "name": "api.links.store",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/links/imports",
+        "name": "api.links.imports.store",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/links/imports/{linkImport}",
+        "name": "api.links.imports.show",
         "transport": "rest",
         "cli_command": "links",
         "mcp_tool": null
@@ -488,9 +3392,73 @@
         "mcp_tool": null
     },
     {
+        "method": "PATCH",
+        "path": "/links/{link}/attribution",
+        "name": "api.links.attribution.update",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/links/{link}/conversions",
+        "name": "api.links.conversions.store",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/links/{link}/destination-history",
+        "name": "api.links.destination-history",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/links/{link}/destinations",
+        "name": "api.links.destinations.index",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/links/{link}/destinations",
+        "name": "api.links.destinations.update",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/links/{link}/force",
+        "name": "api.links.force-delete",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
         "method": "GET",
         "path": "/links/{link}/qr",
         "name": "api.links.qr",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/links/{link}/restore",
+        "name": "api.links.restore",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/links/{link}/review-request",
+        "name": "api.links.review-request",
         "transport": "rest",
         "cli_command": "links",
         "mcp_tool": null
@@ -537,6 +3505,14 @@
     },
     {
         "method": "GET",
+        "path": "/links/{link}/stats/outcomes",
+        "name": "api.links.stats.outcomes",
+        "transport": "rest",
+        "cli_command": "links",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
         "path": "/links/{link}/stats/views",
         "name": "api.links.stats.views",
         "transport": "rest",
@@ -549,6 +3525,502 @@
         "name": "api.me",
         "transport": "rest",
         "cli_command": "me get",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/migrations",
+        "name": "api.migrations.store",
+        "transport": "rest",
+        "cli_command": "migrations start",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/migrations/dry-run",
+        "name": "api.migrations.dry-run",
+        "transport": "rest",
+        "cli_command": "migrations plan",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/migrations/{run}",
+        "name": "api.migrations.show",
+        "transport": "rest",
+        "cli_command": "migrations status",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/migrations/{run}/apply",
+        "name": "api.migrations.apply",
+        "transport": "rest",
+        "cli_command": "migrations apply",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/migrations/{run}/cutover",
+        "name": "api.migrations.cutover",
+        "transport": "rest",
+        "cli_command": "migrations cutover",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/migrations/{run}/reconcile",
+        "name": "api.migrations.reconcile",
+        "transport": "rest",
+        "cli_command": "migrations reconcile",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/migrations/{run}/rollback",
+        "name": "api.migrations.rollback",
+        "transport": "rest",
+        "cli_command": "migrations rollback",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/mobile/v1/desk/inbox",
+        "name": "api.mobile.desk.inbox",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/orders",
+        "name": "api.orders.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/orders/summary",
+        "name": "api.orders.summary",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/orders/{order}",
+        "name": "api.orders.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/pipelines",
+        "name": "api.pipelines.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/pipelines",
+        "name": "api.pipelines.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/pipelines/{pipeline}",
+        "name": "api.pipelines.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/pipelines/{pipeline}",
+        "name": "api.pipelines.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/pipelines/{pipeline}/stages",
+        "name": "api.pipelines.stages.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/pipelines/{pipeline}/stages/{stage}",
+        "name": "api.pipelines.stages.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/pipelines/{pipeline}/stages/{stage}",
+        "name": "api.pipelines.stages.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/poll-events",
+        "name": "api.poll-events.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/poll-events",
+        "name": "api.poll-events.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/poll-events/{event}",
+        "name": "api.poll-events.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/poll-events/{event}/actions",
+        "name": "api.poll-events.actions",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/poll-events/{event}/export",
+        "name": "api.poll-events.export",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/poll-events/{event}/moderation-log",
+        "name": "api.poll-events.moderation-log",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/poll-events/{event}/polls",
+        "name": "api.poll-events.polls.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/poll-events/{event}/polls/{poll}/results",
+        "name": "api.poll-events.polls.results",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/poll-events/{event}/questions",
+        "name": "api.poll-events.questions.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/poll-events/{event}/questions/{question}/moderate",
+        "name": "api.poll-events.questions.moderate",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/polls",
+        "name": "api.polls.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/polls",
+        "name": "api.polls.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/polls/{poll}",
+        "name": "api.polls.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/polls/{poll}",
+        "name": "api.polls.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/polls/{poll}",
+        "name": "api.polls.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/polls/{poll}",
+        "name": "api.polls.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/polls/{poll}/publish",
+        "name": "api.polls.publish",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/polls/{poll}/results",
+        "name": "api.polls.results",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/polls/{poll}/unpublish",
+        "name": "api.polls.unpublish",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/polls/{poll}/votes",
+        "name": "api.polls.votes.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/sandbox/workspaces",
+        "name": "api.sandbox.workspaces.index",
+        "transport": "rest",
+        "cli_command": "sandbox list",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/sandbox/workspaces",
+        "name": "api.sandbox.workspaces.store",
+        "transport": "rest",
+        "cli_command": "sandbox create",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/sandbox/workspaces/{team}",
+        "name": "api.sandbox.workspaces.destroy",
+        "transport": "rest",
+        "cli_command": "sandbox delete",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/sdk-keys",
+        "name": "api.sdk-keys.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/sdk-keys",
+        "name": "api.sdk-keys.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/sdk-keys/{sdkKey}",
+        "name": "api.sdk-keys.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/sdk-keys/{sdkKey}",
+        "name": "api.sdk-keys.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/sdk-keys/{sdkKey}",
+        "name": "api.sdk-keys.patch",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/sdk-keys/{sdkKey}",
+        "name": "api.sdk-keys.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/segments",
+        "name": "api.segments.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/segments",
+        "name": "api.segments.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/segments/{segment}",
+        "name": "api.segments.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/segments/{segment}",
+        "name": "api.segments.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/segments/{segment}",
+        "name": "api.segments.patch",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/segments/{segment}",
+        "name": "api.segments.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/survey-dashboards",
+        "name": "api.survey-dashboards.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/survey-dashboards/{dashboard}/reports",
+        "name": "api.survey-dashboards.reports.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/survey-dashboards/{dashboard}/reports/{report}",
+        "name": "api.survey-dashboards.reports.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/survey-dashboards/{dashboard}/shares",
+        "name": "api.survey-dashboards.shares.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/survey-dashboards/{dashboard}/shares/{share}/revoke",
+        "name": "api.survey-dashboards.shares.revoke",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/survey-dashboards/{dashboard}/sharing",
+        "name": "api.survey-dashboards.sharing.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/survey-dashboards/{dashboard}/snapshots",
+        "name": "api.survey-dashboards.snapshots.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/survey-dashboards/{dashboard}/snapshots/{snapshot}",
+        "name": "api.survey-dashboards.snapshots.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/survey-dashboards/{dashboard}/snapshots/{snapshot}/{format}",
+        "name": "api.survey-dashboards.snapshots.download",
+        "transport": "rest",
+        "cli_command": "api request",
         "mcp_tool": null
     },
     {
@@ -601,8 +4073,440 @@
     },
     {
         "method": "POST",
+        "path": "/surveys/{survey}/analysis/crosstab",
+        "name": "api.surveys.analysis.crosstab",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/analysis/crosstab/export",
+        "name": "api.surveys.analysis.crosstab.export",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/analysis/questions",
+        "name": "api.surveys.analysis.questions",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/analysis/views",
+        "name": "api.surveys.analysis.views.index",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/analysis/views",
+        "name": "api.surveys.analysis.views.store",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/surveys/{survey}/analysis/views/{view}",
+        "name": "api.surveys.analysis.views.destroy",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/analysis/views/{view}",
+        "name": "api.surveys.analysis.views.show",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/surveys/{survey}/analysis/views/{view}",
+        "name": "api.surveys.analysis.views.update",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/analysis/views/{view}/export",
+        "name": "api.surveys.analysis.views.export",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/automations",
+        "name": "api.surveys.automations.index",
+        "transport": "rest",
+        "cli_command": "surveys automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/automations",
+        "name": "api.surveys.automations.store",
+        "transport": "rest",
+        "cli_command": "surveys automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/surveys/{survey}/automations/{automation}",
+        "name": "api.surveys.automations.destroy",
+        "transport": "rest",
+        "cli_command": "surveys automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/automations/{automation}",
+        "name": "api.surveys.automations.show",
+        "transport": "rest",
+        "cli_command": "surveys automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/surveys/{survey}/automations/{automation}",
+        "name": "api.surveys.automations.update",
+        "transport": "rest",
+        "cli_command": "surveys automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/automations/{automation}/disable",
+        "name": "api.surveys.automations.disable",
+        "transport": "rest",
+        "cli_command": "surveys automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/automations/{automation}/enable",
+        "name": "api.surveys.automations.enable",
+        "transport": "rest",
+        "cli_command": "surveys automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/automations/{automation}/run",
+        "name": "api.surveys.automations.run",
+        "transport": "rest",
+        "cli_command": "surveys automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/automations/{automation}/runs",
+        "name": "api.surveys.automations.runs.index",
+        "transport": "rest",
+        "cli_command": "surveys automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/automations/{automation}/runs/{run}",
+        "name": "api.surveys.automations.runs.show",
+        "transport": "rest",
+        "cli_command": "surveys automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/automations/{automation}/runs/{run}/cancel",
+        "name": "api.surveys.automations.runs.cancel",
+        "transport": "rest",
+        "cli_command": "surveys automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/automations/{automation}/runs/{run}/replay",
+        "name": "api.surveys.automations.runs.replay",
+        "transport": "rest",
+        "cli_command": "surveys automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/automations/{automation}/versions",
+        "name": "api.surveys.automations.versions.index",
+        "transport": "rest",
+        "cli_command": "surveys automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/automations/{automation}/versions/{version}",
+        "name": "api.surveys.automations.versions.show",
+        "transport": "rest",
+        "cli_command": "surveys automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/automations/{automation}/versions/{version}/restore",
+        "name": "api.surveys.automations.versions.restore",
+        "transport": "rest",
+        "cli_command": "surveys automations",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/display-analytics",
+        "name": "api.surveys.display-analytics",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/displays/count",
+        "name": "api.surveys.displays.count",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/distribution/event",
+        "name": "api.surveys.distribution.event",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/distribution/waves",
+        "name": "api.surveys.distribution.waves.index",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/distribution/waves",
+        "name": "api.surveys.distribution.waves.store",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/distribution/waves/{wave}",
+        "name": "api.surveys.distribution.waves.show",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/surveys/{survey}/distribution/waves/{wave}",
+        "name": "api.surveys.distribution.waves.update",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/distribution/waves/{wave}/close",
+        "name": "api.surveys.distribution.waves.close",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/distribution/waves/{wave}/invitations",
+        "name": "api.surveys.distribution.waves.invitations.index",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/distribution/waves/{wave}/invitations",
+        "name": "api.surveys.distribution.waves.invitations.import",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/distribution/waves/{wave}/launch",
+        "name": "api.surveys.distribution.waves.launch",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/distribution/waves/{wave}/send",
+        "name": "api.surveys.distribution.waves.send",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/surveys/{survey}/force",
+        "name": "api.surveys.force-delete",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/insights",
+        "name": "api.surveys.insights.index",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/insights/regenerate",
+        "name": "api.surveys.insights.regenerate",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
         "path": "/surveys/{survey}/publish",
         "name": "api.surveys.publish",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/quality",
+        "name": "api.surveys.quality.show",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/quality/responses/{submission}",
+        "name": "api.surveys.quality.decide",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/quality/scan",
+        "name": "api.surveys.quality.scan",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/surveys/{survey}/quality/settings",
+        "name": "api.surveys.quality.settings",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/restore",
+        "name": "api.surveys.restore",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/surveys/{survey}/segment",
+        "name": "api.surveys.segment.unassign",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/segment",
+        "name": "api.surveys.segment.show",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/surveys/{survey}/segment/{segment}",
+        "name": "api.surveys.segment.assign",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/trends",
+        "name": "api.surveys.trends.show",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/trends/concepts",
+        "name": "api.surveys.trends.concepts.index",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/surveys/{survey}/trends/concepts",
+        "name": "api.surveys.trends.concepts.assign",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/trends/export",
+        "name": "api.surveys.trends.export",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/surveys/{survey}/triggers",
+        "name": "api.surveys.triggers.index",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/surveys/{survey}/triggers/{action_class}",
+        "name": "api.surveys.triggers.detach",
+        "transport": "rest",
+        "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/surveys/{survey}/triggers/{action_class}",
+        "name": "api.surveys.triggers.attach",
         "transport": "rest",
         "cli_command": "surveys",
         "mcp_tool": null
@@ -613,6 +4517,62 @@
         "name": "api.surveys.unpublish",
         "transport": "rest",
         "cli_command": "surveys",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/tasks",
+        "name": "api.tasks.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/tasks",
+        "name": "api.tasks.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/tasks/{task}",
+        "name": "api.tasks.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/tasks/{task}",
+        "name": "api.tasks.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/tasks/{task}",
+        "name": "api.tasks.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/tasks/{task}/complete",
+        "name": "api.tasks.complete",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/tasks/{task}/reopen",
+        "name": "api.tasks.reopen",
+        "transport": "rest",
+        "cli_command": "api request",
         "mcp_tool": null
     },
     {
@@ -637,6 +4597,14 @@
         "name": "api.tokens.destroy",
         "transport": "rest",
         "cli_command": "tokens revoke",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/tokens/{token}/audit",
+        "name": "api.tokens.audit",
+        "transport": "rest",
+        "cli_command": "tokens audit",
         "mcp_tool": null
     },
     {

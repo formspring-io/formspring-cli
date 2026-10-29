@@ -1,0 +1,88 @@
+{
+    "version": 1,
+    "description": "Response import for migrations. Create a run from rows, dry-run a column mapping, confirm, then poll the run. Every step can be repeated.",
+    "limits": {
+        "max_rows": 10000,
+        "max_bytes": 5242880,
+        "max_columns": 200,
+        "max_cell_chars": 20000,
+        "batch_size": 250
+    },
+    "abilities": {
+        "write": "submissions:write",
+        "read": "submissions:read"
+    },
+    "steps": [
+        {
+            "name": "create",
+            "method": "POST",
+            "path": "/forms/{form}/imports",
+            "idempotency_key": true,
+            "cli_command": "forms imports create"
+        },
+        {
+            "name": "dry_run",
+            "method": "POST",
+            "path": "/forms/{form}/imports/{importRun}/dry-run",
+            "repeatable": true,
+            "cli_command": "forms imports dry-run"
+        },
+        {
+            "name": "confirm",
+            "method": "POST",
+            "path": "/forms/{form}/imports/{importRun}/confirm",
+            "requires": "a dry run of the current mapping",
+            "cli_command": "forms imports confirm"
+        },
+        {
+            "name": "status",
+            "method": "GET",
+            "path": "/forms/{form}/imports/{importRun}",
+            "cli_command": "forms imports show"
+        },
+        {
+            "name": "resume",
+            "method": "POST",
+            "path": "/forms/{form}/imports/{importRun}/resume",
+            "repeatable": true,
+            "cli_command": "forms imports resume"
+        },
+        {
+            "name": "reconcile",
+            "method": "GET",
+            "path": "/forms/{form}/imports/{importRun}/reconcile",
+            "cli_command": "forms imports reconcile"
+        },
+        {
+            "name": "rollback",
+            "method": "POST",
+            "path": "/forms/{form}/imports/{importRun}/rollback",
+            "cli_command": "forms imports rollback"
+        }
+    ],
+    "states": [
+        "uploaded",
+        "dry_run",
+        "queued",
+        "running",
+        "completed",
+        "completed_with_errors",
+        "failed",
+        "rolled_back"
+    ],
+    "settled_states": [
+        "completed",
+        "completed_with_errors",
+        "failed",
+        "rolled_back"
+    ],
+    "resume": "A run that stops (queued, running or failed) is continued with the resume step from `resume_from_row`. A row whose source id is already stored is skipped, so resuming and repeating an import never duplicates a record. A settled run cannot be resumed; create a new run from the rows that failed.",
+    "idempotency": "Rows are identified by the value of `source_id_column`, stored as `source_id_prefix` followed by that value. Without a source id column the row number is used, which only makes a repeat safe for the same file.",
+    "checksum": {
+        "algorithm": "sha256 over the source ids sorted as strings and joined with a newline",
+        "expected": "dry_run.source_id_checksum, the stored ids (source_id_prefix plus the source id value) this run will write",
+        "stored": "reconcile.stored_checksum, the ids stored by this run",
+        "balanced": "reconcile.balanced is true when every row was processed, none failed and the two checksums are equal"
+    },
+    "reverse_route": "rollback removes exactly the records this run wrote (queued) and nothing written by other runs or by hand."
+}
