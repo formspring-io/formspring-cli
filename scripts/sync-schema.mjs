@@ -19,7 +19,7 @@ if (fromUrl) {
 
   mkdirSync(schemaDir, { recursive: true })
   writeFileSync(join(schemaDir, 'openapi.json'), `${await response.text()}\n`)
-  console.log('Downloaded openapi.json. Export from pixel-forms for full manifest.')
+  console.log('Downloaded openapi.json. Export from the Formspring app for the full manifest.')
   process.exit(0)
 }
 
@@ -28,7 +28,7 @@ const appPath =
   (existsSync(join(root, '../pixel-forms')) ? join(root, '../pixel-forms') : null)
 
 if (!appPath) {
-  console.error('Set FORMSPRING_APP_PATH or clone pixel-forms as ../pixel-forms')
+  console.error('Set FORMSPRING_APP_PATH to your Formspring app checkout (or place it next to this repository)')
   process.exit(1)
 }
 
