@@ -29,7 +29,7 @@ const spec: ResourceSpec = {
 }
 
 export default class FormsSubmissionsSigningSignedDocumentResource extends ResourceCommand {
-  static description = "Download the final PDF with the signature page appended (submissions:read)"
+  static description = "Download the final PDF with the signature page appended (signing:export)"
 
   static examples = ["<%= config.bin %> forms submissions signing signed-document --form VALUE --submission VALUE --envelope VALUE --json"]
 

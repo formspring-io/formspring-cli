@@ -21,12 +21,12 @@ const spec: ResourceSpec = {
   ],
   "query": [],
   "hasBody": true,
-  "idempotent": false,
+  "idempotent": true,
   "paginated": false
 }
 
 export default class FormsSubmissionsSigningSendResource extends ResourceCommand {
-  static description = "Send the invitations of a draft signing request (submissions:write)"
+  static description = "Send the invitations of a draft signing request. Repeating the call on a request that is already sent returns it unchanged and sends nothing again; pass expected_version to fail with revision_conflict when it changed. Reserves one use of the monthly allowance (signing:send)"
 
   static examples = ["<%= config.bin %> forms submissions signing send --form VALUE --submission VALUE --envelope VALUE --json"]
 

@@ -26,7 +26,7 @@ const spec: ResourceSpec = {
 }
 
 export default class FormsSubmissionsDocumentsGetResource extends ResourceCommand {
-  static description = "Read a generated document: status queued, rendering, ready or failed, with the failure reason (submissions:read)"
+  static description = "Read a generated document: status queued, rendering, ready or failed, with the failure reason (documents:read)"
 
   static examples = ["<%= config.bin %> forms submissions documents get --form VALUE --submission VALUE --document VALUE --json"]
 

@@ -26,7 +26,7 @@ const spec: ResourceSpec = {
 }
 
 export default class FormsSubmissionsDocumentsRetryResource extends ResourceCommand {
-  static description = "Retry a failed document; any other status answers 409 (submissions:write)"
+  static description = "Retry a failed document; any other status answers 409 (documents:create)"
 
   static examples = ["<%= config.bin %> forms submissions documents retry --form VALUE --submission VALUE --document VALUE --json"]
 

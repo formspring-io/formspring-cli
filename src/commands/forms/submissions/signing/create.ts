@@ -17,12 +17,12 @@ const spec: ResourceSpec = {
   ],
   "query": [],
   "hasBody": true,
-  "idempotent": false,
+  "idempotent": true,
   "paginated": false
 }
 
 export default class FormsSubmissionsSigningCreateResource extends ResourceCommand {
-  static description = "Create a signing request for a ready document, optionally sending it at once. Simple electronic signatures only; 402 when the plan does not include it (submissions:write)"
+  static description = "Create a signing request for a ready document, optionally sending it at once (send needs signing:send as well). Simple electronic signatures only; each recipient confirms their email address with a code and signs for themselves. 402 when the plan does not include it; 422 sender_unverified when neither the sender email nor a sending domain is verified; 403 signing_suspended after a complaint; 42..."
 
   static examples = ["<%= config.bin %> forms submissions signing create --form VALUE --submission VALUE --json"]
 

@@ -18,7 +18,7 @@ const spec: ResourceSpec = {
 }
 
 export default class FormsDocumentTemplatesListResource extends ResourceCommand {
-  static description = "List the document templates of a form, newest version first (forms:read)"
+  static description = "List the document templates of a form, newest version first (documents:read)"
 
   static examples = ["<%= config.bin %> forms document-templates list --form VALUE --json"]
 

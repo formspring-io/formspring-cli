@@ -22,7 +22,7 @@ const spec: ResourceSpec = {
 }
 
 export default class FormsSubmissionsDocumentsListResource extends ResourceCommand {
-  static description = "List the generated documents of a response with their status, failure reason and signing requests (submissions:read)"
+  static description = "List the generated documents of a response with their status, failure reason and signing requests (documents:read)"
 
   static examples = ["<%= config.bin %> forms submissions documents list --form VALUE --submission VALUE --json"]
 

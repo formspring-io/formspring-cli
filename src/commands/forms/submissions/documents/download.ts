@@ -29,7 +29,7 @@ const spec: ResourceSpec = {
 }
 
 export default class FormsSubmissionsDocumentsDownloadResource extends ResourceCommand {
-  static description = "Download the PDF of a ready document (submissions:read)"
+  static description = "Download the PDF of a ready document (documents:read)"
 
   static examples = ["<%= config.bin %> forms submissions documents download --form VALUE --submission VALUE --document VALUE --json"]
 

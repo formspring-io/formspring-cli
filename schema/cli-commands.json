@@ -24,6 +24,30 @@
     "name": "api.bookings.appointments.show"
   },
   {
+    "cli_command": "bookings appointments approve",
+    "method": "POST",
+    "path": "/bookings/appointments/{appointment}/approve",
+    "name": "api.bookings.appointments.approve"
+  },
+  {
+    "cli_command": "bookings appointments balance",
+    "method": "POST",
+    "path": "/bookings/appointments/{appointment}/balance",
+    "name": "api.bookings.appointments.balance"
+  },
+  {
+    "cli_command": "bookings appointments cancel",
+    "method": "POST",
+    "path": "/bookings/appointments/{appointment}/cancel",
+    "name": "api.bookings.appointments.cancel"
+  },
+  {
+    "cli_command": "bookings appointments decline",
+    "method": "POST",
+    "path": "/bookings/appointments/{appointment}/decline",
+    "name": "api.bookings.appointments.decline"
+  },
+  {
     "cli_command": "bookings appointments retry-calendar-sync",
     "method": "POST",
     "path": "/bookings/appointments/{appointment}/retry-calendar-sync",
@@ -78,6 +102,12 @@
     "name": "api.bookings.pages.hosts.sync"
   },
   {
+    "cli_command": "bookings pages resource assign",
+    "method": "PUT",
+    "path": "/bookings/pages/{bookingPage}/resource",
+    "name": "api.bookings.pages.resource.assign"
+  },
+  {
     "cli_command": "bookings pages restore",
     "method": "POST",
     "path": "/bookings/pages/{bookingPage}/restore",
@@ -94,6 +124,30 @@
     "method": "PUT",
     "path": "/bookings/pages/{bookingPage}/routing",
     "name": "api.bookings.pages.routing.update"
+  },
+  {
+    "cli_command": "bookings resources list",
+    "method": "GET",
+    "path": "/bookings/resources",
+    "name": "api.bookings.resources.index"
+  },
+  {
+    "cli_command": "bookings resources create",
+    "method": "POST",
+    "path": "/bookings/resources",
+    "name": "api.bookings.resources.store"
+  },
+  {
+    "cli_command": "bookings resources delete",
+    "method": "DELETE",
+    "path": "/bookings/resources/{bookingResource}",
+    "name": "api.bookings.resources.destroy"
+  },
+  {
+    "cli_command": "bookings resources update",
+    "method": "PUT",
+    "path": "/bookings/resources/{bookingResource}",
+    "name": "api.bookings.resources.update"
   },
   {
     "cli_command": "companies list",
@@ -276,6 +330,12 @@
     "name": "api.contact-views.store"
   },
   {
+    "cli_command": "contact-views default",
+    "method": "PUT",
+    "path": "/contact-views/default",
+    "name": "api.contact-views.default"
+  },
+  {
     "cli_command": "contact-views delete",
     "method": "DELETE",
     "path": "/contact-views/{contactView}",
@@ -370,6 +430,12 @@
     "method": "GET",
     "path": "/contacts/imports/{contactImport}/errors",
     "name": "api.contacts.imports.errors"
+  },
+  {
+    "cli_command": "contacts imports rollback",
+    "method": "POST",
+    "path": "/contacts/imports/{contactImport}/rollback",
+    "name": "api.contacts.imports.rollback"
   },
   {
     "cli_command": "contacts imports run",
@@ -574,6 +640,18 @@
     "method": "GET",
     "path": "/contacts/{contact}/timeline",
     "name": "api.contacts.timeline"
+  },
+  {
+    "cli_command": "crm capture-owner get",
+    "method": "GET",
+    "path": "/crm/capture-owner",
+    "name": "api.crm.capture-owner.show"
+  },
+  {
+    "cli_command": "crm capture-owner update",
+    "method": "PUT",
+    "path": "/crm/capture-owner",
+    "name": "api.crm.capture-owner.update"
   },
   {
     "cli_command": "crm entitlements",
@@ -934,6 +1012,12 @@
     "method": "POST",
     "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/remind",
     "name": "api.forms.submissions.signing.remind"
+  },
+  {
+    "cli_command": "forms submissions signing replace",
+    "method": "POST",
+    "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/replace",
+    "name": "api.forms.submissions.signing.replace"
   },
   {
     "cli_command": "forms submissions signing send",

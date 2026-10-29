@@ -26,7 +26,7 @@ const spec: ResourceSpec = {
 }
 
 export default class FormsSubmissionsSigningRemindResource extends ResourceCommand {
-  static description = "Remind every signer whose turn it is now, with a fresh link (submissions:write)"
+  static description = "Remind every signer whose turn it is now, with a fresh link. A signer waits an hour between manual reminders (429 reminder_cooldown) and a recipient whose mail bounced cannot be reminded (409 recipient_unreachable) (signing:send)"
 
   static examples = ["<%= config.bin %> forms submissions signing remind --form VALUE --submission VALUE --envelope VALUE --json"]
 
