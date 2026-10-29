@@ -1,0 +1,1568 @@
+[
+  {
+    "cli_command": "automation-limits get",
+    "method": "GET",
+    "path": "/automation-limits",
+    "name": "api.automation-limits.show"
+  },
+  {
+    "cli_command": "automation-limits update",
+    "method": "PUT",
+    "path": "/automation-limits",
+    "name": "api.automation-limits.update"
+  },
+  {
+    "cli_command": "bookings appointments list",
+    "method": "GET",
+    "path": "/bookings/appointments",
+    "name": "api.bookings.appointments.index"
+  },
+  {
+    "cli_command": "bookings appointments get",
+    "method": "GET",
+    "path": "/bookings/appointments/{appointment}",
+    "name": "api.bookings.appointments.show"
+  },
+  {
+    "cli_command": "bookings appointments retry-calendar-sync",
+    "method": "POST",
+    "path": "/bookings/appointments/{appointment}/retry-calendar-sync",
+    "name": "api.bookings.appointments.retry-calendar-sync"
+  },
+  {
+    "cli_command": "bookings pages list",
+    "method": "GET",
+    "path": "/bookings/pages",
+    "name": "api.bookings.pages.index"
+  },
+  {
+    "cli_command": "bookings pages create",
+    "method": "POST",
+    "path": "/bookings/pages",
+    "name": "api.bookings.pages.store"
+  },
+  {
+    "cli_command": "bookings pages delete",
+    "method": "DELETE",
+    "path": "/bookings/pages/{bookingPage}",
+    "name": "api.bookings.pages.destroy"
+  },
+  {
+    "cli_command": "bookings pages get",
+    "method": "GET",
+    "path": "/bookings/pages/{bookingPage}",
+    "name": "api.bookings.pages.show"
+  },
+  {
+    "cli_command": "bookings pages update",
+    "method": "PUT",
+    "path": "/bookings/pages/{bookingPage}",
+    "name": "api.bookings.pages.update"
+  },
+  {
+    "cli_command": "bookings pages analytics",
+    "method": "GET",
+    "path": "/bookings/pages/{bookingPage}/analytics",
+    "name": "api.bookings.pages.analytics"
+  },
+  {
+    "cli_command": "bookings pages force-delete",
+    "method": "DELETE",
+    "path": "/bookings/pages/{bookingPage}/force",
+    "name": "api.bookings.pages.force-delete"
+  },
+  {
+    "cli_command": "bookings pages hosts sync",
+    "method": "PUT",
+    "path": "/bookings/pages/{bookingPage}/hosts",
+    "name": "api.bookings.pages.hosts.sync"
+  },
+  {
+    "cli_command": "bookings pages restore",
+    "method": "POST",
+    "path": "/bookings/pages/{bookingPage}/restore",
+    "name": "api.bookings.pages.restore"
+  },
+  {
+    "cli_command": "bookings pages routing get",
+    "method": "GET",
+    "path": "/bookings/pages/{bookingPage}/routing",
+    "name": "api.bookings.pages.routing.show"
+  },
+  {
+    "cli_command": "bookings pages routing update",
+    "method": "PUT",
+    "path": "/bookings/pages/{bookingPage}/routing",
+    "name": "api.bookings.pages.routing.update"
+  },
+  {
+    "cli_command": "companies list",
+    "method": "GET",
+    "path": "/companies",
+    "name": "api.companies.index"
+  },
+  {
+    "cli_command": "companies create",
+    "method": "POST",
+    "path": "/companies",
+    "name": "api.companies.store"
+  },
+  {
+    "cli_command": "companies delete",
+    "method": "DELETE",
+    "path": "/companies/{company}",
+    "name": "api.companies.destroy"
+  },
+  {
+    "cli_command": "companies get",
+    "method": "GET",
+    "path": "/companies/{company}",
+    "name": "api.companies.show"
+  },
+  {
+    "cli_command": "companies update",
+    "method": "PATCH",
+    "path": "/companies/{company}",
+    "name": "api.companies.update"
+  },
+  {
+    "cli_command": "companies contacts list",
+    "method": "GET",
+    "path": "/companies/{company}/contacts",
+    "name": "api.companies.contacts.index"
+  },
+  {
+    "cli_command": "companies contacts link",
+    "method": "POST",
+    "path": "/companies/{company}/contacts",
+    "name": "api.companies.contacts.link"
+  },
+  {
+    "cli_command": "companies contacts unlink",
+    "method": "DELETE",
+    "path": "/companies/{company}/contacts/{contact}",
+    "name": "api.companies.contacts.unlink"
+  },
+  {
+    "cli_command": "companies feedback-accounts attach",
+    "method": "POST",
+    "path": "/companies/{company}/feedback-accounts",
+    "name": "api.companies.feedback-accounts.attach"
+  },
+  {
+    "cli_command": "companies merge",
+    "method": "POST",
+    "path": "/companies/{company}/merge",
+    "name": "api.companies.merge"
+  },
+  {
+    "cli_command": "companies revenue",
+    "method": "GET",
+    "path": "/companies/{company}/revenue",
+    "name": "api.companies.revenue"
+  },
+  {
+    "cli_command": "contact-access-exports get",
+    "method": "GET",
+    "path": "/contact-access-exports/{contactAccessExport}",
+    "name": "api.contact-access-exports.show"
+  },
+  {
+    "cli_command": "contact-access-exports download",
+    "method": "GET",
+    "path": "/contact-access-exports/{contactAccessExport}/download",
+    "name": "api.contact-access-exports.download"
+  },
+  {
+    "cli_command": "contact-fields list",
+    "method": "GET",
+    "path": "/contact-fields",
+    "name": "api.contact-fields.index"
+  },
+  {
+    "cli_command": "contact-fields create",
+    "method": "POST",
+    "path": "/contact-fields",
+    "name": "api.contact-fields.store"
+  },
+  {
+    "cli_command": "contact-fields delete",
+    "method": "DELETE",
+    "path": "/contact-fields/{fieldKey}",
+    "name": "api.contact-fields.destroy"
+  },
+  {
+    "cli_command": "contact-fields get",
+    "method": "GET",
+    "path": "/contact-fields/{fieldKey}",
+    "name": "api.contact-fields.show"
+  },
+  {
+    "cli_command": "contact-fields update",
+    "method": "PATCH",
+    "path": "/contact-fields/{fieldKey}",
+    "name": "api.contact-fields.update"
+  },
+  {
+    "cli_command": "contact-lists list",
+    "method": "GET",
+    "path": "/contact-lists",
+    "name": "api.contact-lists.index"
+  },
+  {
+    "cli_command": "contact-lists create",
+    "method": "POST",
+    "path": "/contact-lists",
+    "name": "api.contact-lists.store"
+  },
+  {
+    "cli_command": "contact-lists delete",
+    "method": "DELETE",
+    "path": "/contact-lists/{contactList}",
+    "name": "api.contact-lists.destroy"
+  },
+  {
+    "cli_command": "contact-lists update",
+    "method": "PATCH",
+    "path": "/contact-lists/{contactList}",
+    "name": "api.contact-lists.update"
+  },
+  {
+    "cli_command": "contact-lists members create",
+    "method": "POST",
+    "path": "/contact-lists/{contactList}/members",
+    "name": "api.contact-lists.members.store"
+  },
+  {
+    "cli_command": "contact-lists members delete",
+    "method": "DELETE",
+    "path": "/contact-lists/{contactList}/members/{contact}",
+    "name": "api.contact-lists.members.destroy"
+  },
+  {
+    "cli_command": "contact-tags list",
+    "method": "GET",
+    "path": "/contact-tags",
+    "name": "api.contact-tags.index"
+  },
+  {
+    "cli_command": "contact-tags create",
+    "method": "POST",
+    "path": "/contact-tags",
+    "name": "api.contact-tags.store"
+  },
+  {
+    "cli_command": "contact-tags delete",
+    "method": "DELETE",
+    "path": "/contact-tags/{contactTag}",
+    "name": "api.contact-tags.destroy"
+  },
+  {
+    "cli_command": "contact-tags update",
+    "method": "PATCH",
+    "path": "/contact-tags/{contactTag}",
+    "name": "api.contact-tags.update"
+  },
+  {
+    "cli_command": "contact-views list",
+    "method": "GET",
+    "path": "/contact-views",
+    "name": "api.contact-views.index"
+  },
+  {
+    "cli_command": "contact-views create",
+    "method": "POST",
+    "path": "/contact-views",
+    "name": "api.contact-views.store"
+  },
+  {
+    "cli_command": "contact-views delete",
+    "method": "DELETE",
+    "path": "/contact-views/{contactView}",
+    "name": "api.contact-views.destroy"
+  },
+  {
+    "cli_command": "contact-views get",
+    "method": "GET",
+    "path": "/contact-views/{contactView}",
+    "name": "api.contact-views.show"
+  },
+  {
+    "cli_command": "contact-views update",
+    "method": "PATCH",
+    "path": "/contact-views/{contactView}",
+    "name": "api.contact-views.update"
+  },
+  {
+    "cli_command": "contacts list",
+    "method": "GET",
+    "path": "/contacts",
+    "name": "api.contacts.index"
+  },
+  {
+    "cli_command": "contacts create",
+    "method": "POST",
+    "path": "/contacts",
+    "name": "api.contacts.store"
+  },
+  {
+    "cli_command": "contacts bulk create",
+    "method": "POST",
+    "path": "/contacts/bulk",
+    "name": "api.contacts.bulk.store"
+  },
+  {
+    "cli_command": "contacts bulk get",
+    "method": "GET",
+    "path": "/contacts/bulk/{contactBulkOperation}",
+    "name": "api.contacts.bulk.show"
+  },
+  {
+    "cli_command": "contacts duplicates",
+    "method": "GET",
+    "path": "/contacts/duplicates",
+    "name": "api.contacts.duplicates"
+  },
+  {
+    "cli_command": "contacts exports create",
+    "method": "POST",
+    "path": "/contacts/exports",
+    "name": "api.contacts.exports.store"
+  },
+  {
+    "cli_command": "contacts exports get",
+    "method": "GET",
+    "path": "/contacts/exports/{contactExport}",
+    "name": "api.contacts.exports.show"
+  },
+  {
+    "cli_command": "contacts exports download",
+    "method": "GET",
+    "path": "/contacts/exports/{contactExport}/download",
+    "name": "api.contacts.exports.download"
+  },
+  {
+    "cli_command": "contacts imports create",
+    "method": "POST",
+    "path": "/contacts/imports",
+    "name": "api.contacts.imports.store"
+  },
+  {
+    "cli_command": "contacts imports get",
+    "method": "GET",
+    "path": "/contacts/imports/{contactImport}",
+    "name": "api.contacts.imports.show"
+  },
+  {
+    "cli_command": "contacts imports update",
+    "method": "PUT",
+    "path": "/contacts/imports/{contactImport}",
+    "name": "api.contacts.imports.update"
+  },
+  {
+    "cli_command": "contacts imports dry-run",
+    "method": "POST",
+    "path": "/contacts/imports/{contactImport}/dry-run",
+    "name": "api.contacts.imports.dry-run"
+  },
+  {
+    "cli_command": "contacts imports errors",
+    "method": "GET",
+    "path": "/contacts/imports/{contactImport}/errors",
+    "name": "api.contacts.imports.errors"
+  },
+  {
+    "cli_command": "contacts imports run",
+    "method": "POST",
+    "path": "/contacts/imports/{contactImport}/run",
+    "name": "api.contacts.imports.run"
+  },
+  {
+    "cli_command": "contacts delete",
+    "method": "DELETE",
+    "path": "/contacts/{contact}",
+    "name": "api.contacts.destroy"
+  },
+  {
+    "cli_command": "contacts get",
+    "method": "GET",
+    "path": "/contacts/{contact}",
+    "name": "api.contacts.show"
+  },
+  {
+    "cli_command": "contacts patch",
+    "method": "PATCH",
+    "path": "/contacts/{contact}",
+    "name": "api.contacts.patch"
+  },
+  {
+    "cli_command": "contacts update",
+    "method": "PUT",
+    "path": "/contacts/{contact}",
+    "name": "api.contacts.update"
+  },
+  {
+    "cli_command": "contacts access-exports create",
+    "method": "POST",
+    "path": "/contacts/{contact}/access-exports",
+    "name": "api.contacts.access-exports.store"
+  },
+  {
+    "cli_command": "contacts activities list",
+    "method": "GET",
+    "path": "/contacts/{contact}/activities",
+    "name": "api.contacts.activities.index"
+  },
+  {
+    "cli_command": "contacts activities create",
+    "method": "POST",
+    "path": "/contacts/{contact}/activities",
+    "name": "api.contacts.activities.store"
+  },
+  {
+    "cli_command": "contacts activities delete",
+    "method": "DELETE",
+    "path": "/contacts/{contact}/activities/{activity}",
+    "name": "api.contacts.activities.destroy"
+  },
+  {
+    "cli_command": "contacts activities update",
+    "method": "PATCH",
+    "path": "/contacts/{contact}/activities/{activity}",
+    "name": "api.contacts.activities.update"
+  },
+  {
+    "cli_command": "contacts companies",
+    "method": "GET",
+    "path": "/contacts/{contact}/companies",
+    "name": "api.contacts.companies"
+  },
+  {
+    "cli_command": "contacts consents list",
+    "method": "GET",
+    "path": "/contacts/{contact}/consents",
+    "name": "api.contacts.consents.index"
+  },
+  {
+    "cli_command": "contacts consents create",
+    "method": "POST",
+    "path": "/contacts/{contact}/consents",
+    "name": "api.contacts.consents.store"
+  },
+  {
+    "cli_command": "contacts email get",
+    "method": "GET",
+    "path": "/contacts/{contact}/email",
+    "name": "api.contacts.email.show"
+  },
+  {
+    "cli_command": "contacts email create",
+    "method": "POST",
+    "path": "/contacts/{contact}/email",
+    "name": "api.contacts.email.store"
+  },
+  {
+    "cli_command": "contacts follow-up",
+    "method": "POST",
+    "path": "/contacts/{contact}/follow-up",
+    "name": "api.contacts.follow-up"
+  },
+  {
+    "cli_command": "contacts identifiers list",
+    "method": "GET",
+    "path": "/contacts/{contact}/identifiers",
+    "name": "api.contacts.identifiers.index"
+  },
+  {
+    "cli_command": "contacts identifiers create",
+    "method": "POST",
+    "path": "/contacts/{contact}/identifiers",
+    "name": "api.contacts.identifiers.store"
+  },
+  {
+    "cli_command": "contacts identifiers delete",
+    "method": "DELETE",
+    "path": "/contacts/{contact}/identifiers/{identifier}",
+    "name": "api.contacts.identifiers.destroy"
+  },
+  {
+    "cli_command": "contacts identifiers update",
+    "method": "PATCH",
+    "path": "/contacts/{contact}/identifiers/{identifier}",
+    "name": "api.contacts.identifiers.update"
+  },
+  {
+    "cli_command": "contacts lifecycle-stage",
+    "method": "PUT",
+    "path": "/contacts/{contact}/lifecycle-stage",
+    "name": "api.contacts.lifecycle-stage"
+  },
+  {
+    "cli_command": "contacts merge",
+    "method": "POST",
+    "path": "/contacts/{contact}/merge",
+    "name": "api.contacts.merge"
+  },
+  {
+    "cli_command": "contacts merges list",
+    "method": "GET",
+    "path": "/contacts/{contact}/merges",
+    "name": "api.contacts.merges.index"
+  },
+  {
+    "cli_command": "contacts merges undo",
+    "method": "POST",
+    "path": "/contacts/{contact}/merges/{merge}/undo",
+    "name": "api.contacts.merges.undo"
+  },
+  {
+    "cli_command": "contacts notes list",
+    "method": "GET",
+    "path": "/contacts/{contact}/notes",
+    "name": "api.contacts.notes.index"
+  },
+  {
+    "cli_command": "contacts notes create",
+    "method": "POST",
+    "path": "/contacts/{contact}/notes",
+    "name": "api.contacts.notes.store"
+  },
+  {
+    "cli_command": "contacts notes delete",
+    "method": "DELETE",
+    "path": "/contacts/{contact}/notes/{note}",
+    "name": "api.contacts.notes.destroy"
+  },
+  {
+    "cli_command": "contacts notes update",
+    "method": "PATCH",
+    "path": "/contacts/{contact}/notes/{note}",
+    "name": "api.contacts.notes.update"
+  },
+  {
+    "cli_command": "contacts notes pin",
+    "method": "PUT",
+    "path": "/contacts/{contact}/notes/{note}/pin",
+    "name": "api.contacts.notes.pin"
+  },
+  {
+    "cli_command": "contacts notes revisions",
+    "method": "GET",
+    "path": "/contacts/{contact}/notes/{note}/revisions",
+    "name": "api.contacts.notes.revisions"
+  },
+  {
+    "cli_command": "contacts owner",
+    "method": "PUT",
+    "path": "/contacts/{contact}/owner",
+    "name": "api.contacts.owner"
+  },
+  {
+    "cli_command": "contacts tags create",
+    "method": "POST",
+    "path": "/contacts/{contact}/tags",
+    "name": "api.contacts.tags.store"
+  },
+  {
+    "cli_command": "contacts tags delete",
+    "method": "DELETE",
+    "path": "/contacts/{contact}/tags/{contactTag}",
+    "name": "api.contacts.tags.destroy"
+  },
+  {
+    "cli_command": "contacts timeline",
+    "method": "GET",
+    "path": "/contacts/{contact}/timeline",
+    "name": "api.contacts.timeline"
+  },
+  {
+    "cli_command": "crm entitlements",
+    "method": "GET",
+    "path": "/crm/entitlements",
+    "name": "api.crm.entitlements"
+  },
+  {
+    "cli_command": "crm retention get",
+    "method": "GET",
+    "path": "/crm/retention",
+    "name": "api.crm.retention.show"
+  },
+  {
+    "cli_command": "crm retention update",
+    "method": "PUT",
+    "path": "/crm/retention",
+    "name": "api.crm.retention.update"
+  },
+  {
+    "cli_command": "data-tables list",
+    "method": "GET",
+    "path": "/data-tables",
+    "name": "api.data-tables.index"
+  },
+  {
+    "cli_command": "data-tables create",
+    "method": "POST",
+    "path": "/data-tables",
+    "name": "api.data-tables.store"
+  },
+  {
+    "cli_command": "data-tables delete",
+    "method": "DELETE",
+    "path": "/data-tables/{dataTable}",
+    "name": "api.data-tables.destroy"
+  },
+  {
+    "cli_command": "data-tables get",
+    "method": "GET",
+    "path": "/data-tables/{dataTable}",
+    "name": "api.data-tables.show"
+  },
+  {
+    "cli_command": "data-tables update",
+    "method": "PATCH",
+    "path": "/data-tables/{dataTable}",
+    "name": "api.data-tables.update"
+  },
+  {
+    "cli_command": "data-tables rows list",
+    "method": "GET",
+    "path": "/data-tables/{dataTable}/rows",
+    "name": "api.data-tables.rows.index"
+  },
+  {
+    "cli_command": "data-tables rows upsert",
+    "method": "POST",
+    "path": "/data-tables/{dataTable}/rows",
+    "name": "api.data-tables.rows.upsert"
+  },
+  {
+    "cli_command": "data-tables rows replace",
+    "method": "PUT",
+    "path": "/data-tables/{dataTable}/rows",
+    "name": "api.data-tables.rows.replace"
+  },
+  {
+    "cli_command": "deals list",
+    "method": "GET",
+    "path": "/deals",
+    "name": "api.deals.index"
+  },
+  {
+    "cli_command": "deals create",
+    "method": "POST",
+    "path": "/deals",
+    "name": "api.deals.store"
+  },
+  {
+    "cli_command": "deals totals",
+    "method": "GET",
+    "path": "/deals/totals",
+    "name": "api.deals.totals"
+  },
+  {
+    "cli_command": "deals delete",
+    "method": "DELETE",
+    "path": "/deals/{deal}",
+    "name": "api.deals.destroy"
+  },
+  {
+    "cli_command": "deals get",
+    "method": "GET",
+    "path": "/deals/{deal}",
+    "name": "api.deals.show"
+  },
+  {
+    "cli_command": "deals update",
+    "method": "PATCH",
+    "path": "/deals/{deal}",
+    "name": "api.deals.update"
+  },
+  {
+    "cli_command": "deals move",
+    "method": "POST",
+    "path": "/deals/{deal}/move",
+    "name": "api.deals.move"
+  },
+  {
+    "cli_command": "feedback-hub digest get",
+    "method": "GET",
+    "path": "/feedback-hub/digest",
+    "name": "api.feedback-hub.digest.show"
+  },
+  {
+    "cli_command": "feedback-hub digest update",
+    "method": "PUT",
+    "path": "/feedback-hub/digest",
+    "name": "api.feedback-hub.digest.update"
+  },
+  {
+    "cli_command": "feedback-hub digest test",
+    "method": "POST",
+    "path": "/feedback-hub/digest/test",
+    "name": "api.feedback-hub.digest.test"
+  },
+  {
+    "cli_command": "feedback-hub helpdesk-sources list",
+    "method": "GET",
+    "path": "/feedback-hub/helpdesk-sources",
+    "name": "api.feedback-hub.helpdesk-sources.index"
+  },
+  {
+    "cli_command": "feedback-hub helpdesk-sources create",
+    "method": "POST",
+    "path": "/feedback-hub/helpdesk-sources",
+    "name": "api.feedback-hub.helpdesk-sources.store"
+  },
+  {
+    "cli_command": "feedback-hub helpdesk-sources private-scope",
+    "method": "PATCH",
+    "path": "/feedback-hub/helpdesk-sources/{source}/private-scope",
+    "name": "api.feedback-hub.helpdesk-sources.private-scope"
+  },
+  {
+    "cli_command": "forms attribution",
+    "method": "GET",
+    "path": "/forms/{form}/attribution",
+    "name": "api.forms.attribution"
+  },
+  {
+    "cli_command": "forms automations list",
+    "method": "GET",
+    "path": "/forms/{form}/automations",
+    "name": "api.forms.automations.index"
+  },
+  {
+    "cli_command": "forms automations create",
+    "method": "POST",
+    "path": "/forms/{form}/automations",
+    "name": "api.forms.automations.store"
+  },
+  {
+    "cli_command": "forms automations delete",
+    "method": "DELETE",
+    "path": "/forms/{form}/automations/{automation}",
+    "name": "api.forms.automations.destroy"
+  },
+  {
+    "cli_command": "forms automations get",
+    "method": "GET",
+    "path": "/forms/{form}/automations/{automation}",
+    "name": "api.forms.automations.show"
+  },
+  {
+    "cli_command": "forms automations update",
+    "method": "PUT",
+    "path": "/forms/{form}/automations/{automation}",
+    "name": "api.forms.automations.update"
+  },
+  {
+    "cli_command": "forms automations disable",
+    "method": "POST",
+    "path": "/forms/{form}/automations/{automation}/disable",
+    "name": "api.forms.automations.disable"
+  },
+  {
+    "cli_command": "forms automations enable",
+    "method": "POST",
+    "path": "/forms/{form}/automations/{automation}/enable",
+    "name": "api.forms.automations.enable"
+  },
+  {
+    "cli_command": "forms automations run",
+    "method": "POST",
+    "path": "/forms/{form}/automations/{automation}/run",
+    "name": "api.forms.automations.run"
+  },
+  {
+    "cli_command": "forms automations runs list",
+    "method": "GET",
+    "path": "/forms/{form}/automations/{automation}/runs",
+    "name": "api.forms.automations.runs.index"
+  },
+  {
+    "cli_command": "forms automations runs get",
+    "method": "GET",
+    "path": "/forms/{form}/automations/{automation}/runs/{run}",
+    "name": "api.forms.automations.runs.show"
+  },
+  {
+    "cli_command": "forms automations runs cancel",
+    "method": "POST",
+    "path": "/forms/{form}/automations/{automation}/runs/{run}/cancel",
+    "name": "api.forms.automations.runs.cancel"
+  },
+  {
+    "cli_command": "forms automations runs replay",
+    "method": "POST",
+    "path": "/forms/{form}/automations/{automation}/runs/{run}/replay",
+    "name": "api.forms.automations.runs.replay"
+  },
+  {
+    "cli_command": "forms automations versions list",
+    "method": "GET",
+    "path": "/forms/{form}/automations/{automation}/versions",
+    "name": "api.forms.automations.versions.index"
+  },
+  {
+    "cli_command": "forms automations versions get",
+    "method": "GET",
+    "path": "/forms/{form}/automations/{automation}/versions/{version}",
+    "name": "api.forms.automations.versions.show"
+  },
+  {
+    "cli_command": "forms automations versions restore",
+    "method": "POST",
+    "path": "/forms/{form}/automations/{automation}/versions/{version}/restore",
+    "name": "api.forms.automations.versions.restore"
+  },
+  {
+    "cli_command": "forms document-templates list",
+    "method": "GET",
+    "path": "/forms/{form}/document-templates",
+    "name": "api.forms.document-templates.index"
+  },
+  {
+    "cli_command": "forms document-templates create",
+    "method": "POST",
+    "path": "/forms/{form}/document-templates",
+    "name": "api.forms.document-templates.store"
+  },
+  {
+    "cli_command": "forms imports create",
+    "method": "POST",
+    "path": "/forms/{form}/imports",
+    "name": "api.forms.imports.store"
+  },
+  {
+    "cli_command": "forms imports show",
+    "method": "GET",
+    "path": "/forms/{form}/imports/{importRun}",
+    "name": "api.forms.imports.show"
+  },
+  {
+    "cli_command": "forms imports confirm",
+    "method": "POST",
+    "path": "/forms/{form}/imports/{importRun}/confirm",
+    "name": "api.forms.imports.confirm"
+  },
+  {
+    "cli_command": "forms imports dry-run",
+    "method": "POST",
+    "path": "/forms/{form}/imports/{importRun}/dry-run",
+    "name": "api.forms.imports.dry-run"
+  },
+  {
+    "cli_command": "forms imports reconcile",
+    "method": "GET",
+    "path": "/forms/{form}/imports/{importRun}/reconcile",
+    "name": "api.forms.imports.reconcile"
+  },
+  {
+    "cli_command": "forms imports resume",
+    "method": "POST",
+    "path": "/forms/{form}/imports/{importRun}/resume",
+    "name": "api.forms.imports.resume"
+  },
+  {
+    "cli_command": "forms imports retry",
+    "method": "POST",
+    "path": "/forms/{form}/imports/{importRun}/retry",
+    "name": "api.forms.imports.retry"
+  },
+  {
+    "cli_command": "forms imports rollback",
+    "method": "POST",
+    "path": "/forms/{form}/imports/{importRun}/rollback",
+    "name": "api.forms.imports.rollback"
+  },
+  {
+    "cli_command": "forms submissions documents list",
+    "method": "GET",
+    "path": "/forms/{form}/submissions/{submission}/documents",
+    "name": "api.forms.submissions.documents.index"
+  },
+  {
+    "cli_command": "forms submissions documents create",
+    "method": "POST",
+    "path": "/forms/{form}/submissions/{submission}/documents",
+    "name": "api.forms.submissions.documents.store"
+  },
+  {
+    "cli_command": "forms submissions documents get",
+    "method": "GET",
+    "path": "/forms/{form}/submissions/{submission}/documents/{document}",
+    "name": "api.forms.submissions.documents.show"
+  },
+  {
+    "cli_command": "forms submissions documents download",
+    "method": "GET",
+    "path": "/forms/{form}/submissions/{submission}/documents/{document}/download",
+    "name": "api.forms.submissions.documents.download"
+  },
+  {
+    "cli_command": "forms submissions documents retry",
+    "method": "POST",
+    "path": "/forms/{form}/submissions/{submission}/documents/{document}/retry",
+    "name": "api.forms.submissions.documents.retry"
+  },
+  {
+    "cli_command": "forms submissions download-file",
+    "method": "GET",
+    "path": "/forms/{form}/submissions/{submission}/files/{file}",
+    "name": "api.forms.submissions.files.download"
+  },
+  {
+    "cli_command": "forms submissions signing create",
+    "method": "POST",
+    "path": "/forms/{form}/submissions/{submission}/signing",
+    "name": "api.forms.submissions.signing.store"
+  },
+  {
+    "cli_command": "forms submissions signing get",
+    "method": "GET",
+    "path": "/forms/{form}/submissions/{submission}/signing/{envelope}",
+    "name": "api.forms.submissions.signing.show"
+  },
+  {
+    "cli_command": "forms submissions signing evidence",
+    "method": "GET",
+    "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/evidence",
+    "name": "api.forms.submissions.signing.evidence"
+  },
+  {
+    "cli_command": "forms submissions signing remind",
+    "method": "POST",
+    "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/remind",
+    "name": "api.forms.submissions.signing.remind"
+  },
+  {
+    "cli_command": "forms submissions signing send",
+    "method": "POST",
+    "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/send",
+    "name": "api.forms.submissions.signing.send"
+  },
+  {
+    "cli_command": "forms submissions signing signed-document",
+    "method": "GET",
+    "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/signed-document",
+    "name": "api.forms.submissions.signing.signed-document"
+  },
+  {
+    "cli_command": "forms submissions signing verify",
+    "method": "GET",
+    "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/verify",
+    "name": "api.forms.submissions.signing.verify"
+  },
+  {
+    "cli_command": "forms submissions signing void",
+    "method": "POST",
+    "path": "/forms/{form}/submissions/{submission}/signing/{envelope}/void",
+    "name": "api.forms.submissions.signing.void"
+  },
+  {
+    "cli_command": "forms webhooks list",
+    "method": "GET",
+    "path": "/forms/{form}/webhooks",
+    "name": "api.forms.webhooks.index"
+  },
+  {
+    "cli_command": "forms webhooks create",
+    "method": "POST",
+    "path": "/forms/{form}/webhooks",
+    "name": "api.forms.webhooks.store"
+  },
+  {
+    "cli_command": "forms webhooks delete",
+    "method": "DELETE",
+    "path": "/forms/{form}/webhooks/{webhook}",
+    "name": "api.forms.webhooks.destroy"
+  },
+  {
+    "cli_command": "forms webhooks get",
+    "method": "GET",
+    "path": "/forms/{form}/webhooks/{webhook}",
+    "name": "api.forms.webhooks.show"
+  },
+  {
+    "cli_command": "forms webhooks update",
+    "method": "PUT",
+    "path": "/forms/{form}/webhooks/{webhook}",
+    "name": "api.forms.webhooks.update"
+  },
+  {
+    "cli_command": "forms webhooks connection destinations",
+    "method": "GET",
+    "path": "/forms/{form}/webhooks/{webhook}/connection/destinations/{kind}",
+    "name": "api.forms.webhooks.connection.destinations"
+  },
+  {
+    "cli_command": "forms webhooks connection mapping",
+    "method": "GET",
+    "path": "/forms/{form}/webhooks/{webhook}/connection/mapping",
+    "name": "api.forms.webhooks.connection.mapping"
+  },
+  {
+    "cli_command": "forms webhooks connection test",
+    "method": "POST",
+    "path": "/forms/{form}/webhooks/{webhook}/connection/test",
+    "name": "api.forms.webhooks.connection.test"
+  },
+  {
+    "cli_command": "forms webhooks deliveries",
+    "method": "GET",
+    "path": "/forms/{form}/webhooks/{webhook}/deliveries",
+    "name": "api.forms.webhooks.deliveries"
+  },
+  {
+    "cli_command": "forms webhooks inspect",
+    "method": "GET",
+    "path": "/forms/{form}/webhooks/{webhook}/deliveries/{delivery}/inspect",
+    "name": "api.forms.webhooks.deliveries.inspect"
+  },
+  {
+    "cli_command": "forms webhooks deliveries replay",
+    "method": "POST",
+    "path": "/forms/{form}/webhooks/{webhook}/deliveries/{delivery}/replay",
+    "name": "api.forms.webhooks.deliveries.replay"
+  },
+  {
+    "cli_command": "forms webhooks end-rotation",
+    "method": "DELETE",
+    "path": "/forms/{form}/webhooks/{webhook}/previous-secret",
+    "name": "api.forms.webhooks.previous-secret.destroy"
+  },
+  {
+    "cli_command": "forms webhooks rotate-secret",
+    "method": "POST",
+    "path": "/forms/{form}/webhooks/{webhook}/rotate-secret",
+    "name": "api.forms.webhooks.rotate-secret"
+  },
+  {
+    "cli_command": "funnels analytics",
+    "method": "GET",
+    "path": "/funnels/{funnel}/analytics",
+    "name": "api.funnels.analytics"
+  },
+  {
+    "cli_command": "funnels attribution",
+    "method": "GET",
+    "path": "/funnels/{funnel}/attribution",
+    "name": "api.funnels.attribution"
+  },
+  {
+    "cli_command": "funnels automations list",
+    "method": "GET",
+    "path": "/funnels/{funnel}/automations",
+    "name": "api.funnels.automations.index"
+  },
+  {
+    "cli_command": "funnels automations create",
+    "method": "POST",
+    "path": "/funnels/{funnel}/automations",
+    "name": "api.funnels.automations.store"
+  },
+  {
+    "cli_command": "funnels automations delete",
+    "method": "DELETE",
+    "path": "/funnels/{funnel}/automations/{automation}",
+    "name": "api.funnels.automations.destroy"
+  },
+  {
+    "cli_command": "funnels automations get",
+    "method": "GET",
+    "path": "/funnels/{funnel}/automations/{automation}",
+    "name": "api.funnels.automations.show"
+  },
+  {
+    "cli_command": "funnels automations update",
+    "method": "PUT",
+    "path": "/funnels/{funnel}/automations/{automation}",
+    "name": "api.funnels.automations.update"
+  },
+  {
+    "cli_command": "funnels automations disable",
+    "method": "POST",
+    "path": "/funnels/{funnel}/automations/{automation}/disable",
+    "name": "api.funnels.automations.disable"
+  },
+  {
+    "cli_command": "funnels automations enable",
+    "method": "POST",
+    "path": "/funnels/{funnel}/automations/{automation}/enable",
+    "name": "api.funnels.automations.enable"
+  },
+  {
+    "cli_command": "funnels automations run",
+    "method": "POST",
+    "path": "/funnels/{funnel}/automations/{automation}/run",
+    "name": "api.funnels.automations.run"
+  },
+  {
+    "cli_command": "funnels automations runs list",
+    "method": "GET",
+    "path": "/funnels/{funnel}/automations/{automation}/runs",
+    "name": "api.funnels.automations.runs.index"
+  },
+  {
+    "cli_command": "funnels automations runs get",
+    "method": "GET",
+    "path": "/funnels/{funnel}/automations/{automation}/runs/{run}",
+    "name": "api.funnels.automations.runs.show"
+  },
+  {
+    "cli_command": "funnels automations runs cancel",
+    "method": "POST",
+    "path": "/funnels/{funnel}/automations/{automation}/runs/{run}/cancel",
+    "name": "api.funnels.automations.runs.cancel"
+  },
+  {
+    "cli_command": "funnels automations runs replay",
+    "method": "POST",
+    "path": "/funnels/{funnel}/automations/{automation}/runs/{run}/replay",
+    "name": "api.funnels.automations.runs.replay"
+  },
+  {
+    "cli_command": "funnels automations versions list",
+    "method": "GET",
+    "path": "/funnels/{funnel}/automations/{automation}/versions",
+    "name": "api.funnels.automations.versions.index"
+  },
+  {
+    "cli_command": "funnels automations versions get",
+    "method": "GET",
+    "path": "/funnels/{funnel}/automations/{automation}/versions/{version}",
+    "name": "api.funnels.automations.versions.show"
+  },
+  {
+    "cli_command": "funnels automations versions restore",
+    "method": "POST",
+    "path": "/funnels/{funnel}/automations/{automation}/versions/{version}/restore",
+    "name": "api.funnels.automations.versions.restore"
+  },
+  {
+    "cli_command": "lifecycle-stages list",
+    "method": "GET",
+    "path": "/lifecycle-stages",
+    "name": "api.lifecycle-stages.index"
+  },
+  {
+    "cli_command": "lifecycle-stages create",
+    "method": "POST",
+    "path": "/lifecycle-stages",
+    "name": "api.lifecycle-stages.store"
+  },
+  {
+    "cli_command": "lifecycle-stages reorder",
+    "method": "PUT",
+    "path": "/lifecycle-stages/order",
+    "name": "api.lifecycle-stages.reorder"
+  },
+  {
+    "cli_command": "lifecycle-stages delete",
+    "method": "DELETE",
+    "path": "/lifecycle-stages/{stage}",
+    "name": "api.lifecycle-stages.destroy"
+  },
+  {
+    "cli_command": "lifecycle-stages update",
+    "method": "PATCH",
+    "path": "/lifecycle-stages/{stage}",
+    "name": "api.lifecycle-stages.update"
+  },
+  {
+    "cli_command": "links list",
+    "method": "GET",
+    "path": "/links",
+    "name": "api.links.index"
+  },
+  {
+    "cli_command": "links create",
+    "method": "POST",
+    "path": "/links",
+    "name": "api.links.store"
+  },
+  {
+    "cli_command": "links imports create",
+    "method": "POST",
+    "path": "/links/imports",
+    "name": "api.links.imports.store"
+  },
+  {
+    "cli_command": "links imports get",
+    "method": "GET",
+    "path": "/links/imports/{linkImport}",
+    "name": "api.links.imports.show"
+  },
+  {
+    "cli_command": "links query",
+    "method": "GET",
+    "path": "/links/query",
+    "name": "api.links.query"
+  },
+  {
+    "cli_command": "links search",
+    "method": "GET",
+    "path": "/links/search",
+    "name": "api.links.search"
+  },
+  {
+    "cli_command": "links upsert",
+    "method": "POST",
+    "path": "/links/upsert",
+    "name": "api.links.upsert"
+  },
+  {
+    "cli_command": "links delete",
+    "method": "DELETE",
+    "path": "/links/{link}",
+    "name": "api.links.destroy"
+  },
+  {
+    "cli_command": "links get",
+    "method": "GET",
+    "path": "/links/{link}",
+    "name": "api.links.show"
+  },
+  {
+    "cli_command": "links update",
+    "method": "PATCH",
+    "path": "/links/{link}",
+    "name": "api.links.update"
+  },
+  {
+    "cli_command": "links attribution update",
+    "method": "PATCH",
+    "path": "/links/{link}/attribution",
+    "name": "api.links.attribution.update"
+  },
+  {
+    "cli_command": "links conversions create",
+    "method": "POST",
+    "path": "/links/{link}/conversions",
+    "name": "api.links.conversions.store"
+  },
+  {
+    "cli_command": "links destination-history",
+    "method": "GET",
+    "path": "/links/{link}/destination-history",
+    "name": "api.links.destination-history"
+  },
+  {
+    "cli_command": "links destinations list",
+    "method": "GET",
+    "path": "/links/{link}/destinations",
+    "name": "api.links.destinations.index"
+  },
+  {
+    "cli_command": "links destinations update",
+    "method": "PUT",
+    "path": "/links/{link}/destinations",
+    "name": "api.links.destinations.update"
+  },
+  {
+    "cli_command": "links force-delete",
+    "method": "DELETE",
+    "path": "/links/{link}/force",
+    "name": "api.links.force-delete"
+  },
+  {
+    "cli_command": "links qr",
+    "method": "GET",
+    "path": "/links/{link}/qr",
+    "name": "api.links.qr"
+  },
+  {
+    "cli_command": "links restore",
+    "method": "POST",
+    "path": "/links/{link}/restore",
+    "name": "api.links.restore"
+  },
+  {
+    "cli_command": "links review-request",
+    "method": "POST",
+    "path": "/links/{link}/review-request",
+    "name": "api.links.review-request"
+  },
+  {
+    "cli_command": "links stats counters",
+    "method": "GET",
+    "path": "/links/{link}/stats/counters",
+    "name": "api.links.stats.counters"
+  },
+  {
+    "cli_command": "links stats events",
+    "method": "GET",
+    "path": "/links/{link}/stats/events",
+    "name": "api.links.stats.events"
+  },
+  {
+    "cli_command": "links stats heatmap",
+    "method": "GET",
+    "path": "/links/{link}/stats/heatmap",
+    "name": "api.links.stats.heatmap"
+  },
+  {
+    "cli_command": "links stats locations",
+    "method": "GET",
+    "path": "/links/{link}/stats/locations",
+    "name": "api.links.stats.locations"
+  },
+  {
+    "cli_command": "links stats metrics",
+    "method": "GET",
+    "path": "/links/{link}/stats/metrics",
+    "name": "api.links.stats.metrics"
+  },
+  {
+    "cli_command": "links stats outcomes",
+    "method": "GET",
+    "path": "/links/{link}/stats/outcomes",
+    "name": "api.links.stats.outcomes"
+  },
+  {
+    "cli_command": "links stats views",
+    "method": "GET",
+    "path": "/links/{link}/stats/views",
+    "name": "api.links.stats.views"
+  },
+  {
+    "cli_command": "migrations start",
+    "method": "POST",
+    "path": "/migrations",
+    "name": "api.migrations.store"
+  },
+  {
+    "cli_command": "migrations plan",
+    "method": "POST",
+    "path": "/migrations/dry-run",
+    "name": "api.migrations.dry-run"
+  },
+  {
+    "cli_command": "migrations status",
+    "method": "GET",
+    "path": "/migrations/{run}",
+    "name": "api.migrations.show"
+  },
+  {
+    "cli_command": "migrations apply",
+    "method": "POST",
+    "path": "/migrations/{run}/apply",
+    "name": "api.migrations.apply"
+  },
+  {
+    "cli_command": "migrations cutover",
+    "method": "POST",
+    "path": "/migrations/{run}/cutover",
+    "name": "api.migrations.cutover"
+  },
+  {
+    "cli_command": "migrations reconcile",
+    "method": "POST",
+    "path": "/migrations/{run}/reconcile",
+    "name": "api.migrations.reconcile"
+  },
+  {
+    "cli_command": "migrations rollback",
+    "method": "POST",
+    "path": "/migrations/{run}/rollback",
+    "name": "api.migrations.rollback"
+  },
+  {
+    "cli_command": "pipelines list",
+    "method": "GET",
+    "path": "/pipelines",
+    "name": "api.pipelines.index"
+  },
+  {
+    "cli_command": "pipelines create",
+    "method": "POST",
+    "path": "/pipelines",
+    "name": "api.pipelines.store"
+  },
+  {
+    "cli_command": "pipelines delete",
+    "method": "DELETE",
+    "path": "/pipelines/{pipeline}",
+    "name": "api.pipelines.destroy"
+  },
+  {
+    "cli_command": "pipelines update",
+    "method": "PATCH",
+    "path": "/pipelines/{pipeline}",
+    "name": "api.pipelines.update"
+  },
+  {
+    "cli_command": "pipelines stages create",
+    "method": "POST",
+    "path": "/pipelines/{pipeline}/stages",
+    "name": "api.pipelines.stages.store"
+  },
+  {
+    "cli_command": "pipelines stages delete",
+    "method": "DELETE",
+    "path": "/pipelines/{pipeline}/stages/{stage}",
+    "name": "api.pipelines.stages.destroy"
+  },
+  {
+    "cli_command": "pipelines stages update",
+    "method": "PATCH",
+    "path": "/pipelines/{pipeline}/stages/{stage}",
+    "name": "api.pipelines.stages.update"
+  },
+  {
+    "cli_command": "sandbox list",
+    "method": "GET",
+    "path": "/sandbox/workspaces",
+    "name": "api.sandbox.workspaces.index"
+  },
+  {
+    "cli_command": "sandbox create",
+    "method": "POST",
+    "path": "/sandbox/workspaces",
+    "name": "api.sandbox.workspaces.store"
+  },
+  {
+    "cli_command": "sandbox delete",
+    "method": "DELETE",
+    "path": "/sandbox/workspaces/{team}",
+    "name": "api.sandbox.workspaces.destroy"
+  },
+  {
+    "cli_command": "surveys automations list",
+    "method": "GET",
+    "path": "/surveys/{survey}/automations",
+    "name": "api.surveys.automations.index"
+  },
+  {
+    "cli_command": "surveys automations create",
+    "method": "POST",
+    "path": "/surveys/{survey}/automations",
+    "name": "api.surveys.automations.store"
+  },
+  {
+    "cli_command": "surveys automations delete",
+    "method": "DELETE",
+    "path": "/surveys/{survey}/automations/{automation}",
+    "name": "api.surveys.automations.destroy"
+  },
+  {
+    "cli_command": "surveys automations get",
+    "method": "GET",
+    "path": "/surveys/{survey}/automations/{automation}",
+    "name": "api.surveys.automations.show"
+  },
+  {
+    "cli_command": "surveys automations update",
+    "method": "PUT",
+    "path": "/surveys/{survey}/automations/{automation}",
+    "name": "api.surveys.automations.update"
+  },
+  {
+    "cli_command": "surveys automations disable",
+    "method": "POST",
+    "path": "/surveys/{survey}/automations/{automation}/disable",
+    "name": "api.surveys.automations.disable"
+  },
+  {
+    "cli_command": "surveys automations enable",
+    "method": "POST",
+    "path": "/surveys/{survey}/automations/{automation}/enable",
+    "name": "api.surveys.automations.enable"
+  },
+  {
+    "cli_command": "surveys automations run",
+    "method": "POST",
+    "path": "/surveys/{survey}/automations/{automation}/run",
+    "name": "api.surveys.automations.run"
+  },
+  {
+    "cli_command": "surveys automations runs list",
+    "method": "GET",
+    "path": "/surveys/{survey}/automations/{automation}/runs",
+    "name": "api.surveys.automations.runs.index"
+  },
+  {
+    "cli_command": "surveys automations runs get",
+    "method": "GET",
+    "path": "/surveys/{survey}/automations/{automation}/runs/{run}",
+    "name": "api.surveys.automations.runs.show"
+  },
+  {
+    "cli_command": "surveys automations runs cancel",
+    "method": "POST",
+    "path": "/surveys/{survey}/automations/{automation}/runs/{run}/cancel",
+    "name": "api.surveys.automations.runs.cancel"
+  },
+  {
+    "cli_command": "surveys automations runs replay",
+    "method": "POST",
+    "path": "/surveys/{survey}/automations/{automation}/runs/{run}/replay",
+    "name": "api.surveys.automations.runs.replay"
+  },
+  {
+    "cli_command": "surveys automations versions list",
+    "method": "GET",
+    "path": "/surveys/{survey}/automations/{automation}/versions",
+    "name": "api.surveys.automations.versions.index"
+  },
+  {
+    "cli_command": "surveys automations versions get",
+    "method": "GET",
+    "path": "/surveys/{survey}/automations/{automation}/versions/{version}",
+    "name": "api.surveys.automations.versions.show"
+  },
+  {
+    "cli_command": "surveys automations versions restore",
+    "method": "POST",
+    "path": "/surveys/{survey}/automations/{automation}/versions/{version}/restore",
+    "name": "api.surveys.automations.versions.restore"
+  },
+  {
+    "cli_command": "tasks list",
+    "method": "GET",
+    "path": "/tasks",
+    "name": "api.tasks.index"
+  },
+  {
+    "cli_command": "tasks create",
+    "method": "POST",
+    "path": "/tasks",
+    "name": "api.tasks.store"
+  },
+  {
+    "cli_command": "tasks delete",
+    "method": "DELETE",
+    "path": "/tasks/{task}",
+    "name": "api.tasks.destroy"
+  },
+  {
+    "cli_command": "tasks get",
+    "method": "GET",
+    "path": "/tasks/{task}",
+    "name": "api.tasks.show"
+  },
+  {
+    "cli_command": "tasks update",
+    "method": "PATCH",
+    "path": "/tasks/{task}",
+    "name": "api.tasks.update"
+  },
+  {
+    "cli_command": "tasks complete",
+    "method": "POST",
+    "path": "/tasks/{task}/complete",
+    "name": "api.tasks.complete"
+  },
+  {
+    "cli_command": "tasks reopen",
+    "method": "POST",
+    "path": "/tasks/{task}/reopen",
+    "name": "api.tasks.reopen"
+  },
+  {
+    "cli_command": "tokens audit",
+    "method": "GET",
+    "path": "/tokens/{token}/audit",
+    "name": "api.tokens.audit"
+  }
+]

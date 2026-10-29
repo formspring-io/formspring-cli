@@ -11,12 +11,14 @@
     "build": "tsc",
     "dev": "node --import tsx ./bin/dev.js",
     "prepack": "npm run build",
+    "pretest": "tsc",
     "test": "vitest run",
     "test:watch": "vitest",
     "generate": "tsx scripts/generate-client.mts",
     "sync-schema": "node scripts/sync-schema.mjs",
     "check:parity": "tsx scripts/check-parity.mts",
-    "scaffold-commands": "tsx scripts/scaffold-commands.mts"
+    "scaffold-commands": "tsx scripts/scaffold-commands.mts",
+    "scaffold-resources": "tsx scripts/scaffold-resource-commands.mts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",

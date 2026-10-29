@@ -8,7 +8,7 @@ export default class AuthLogin extends FormspringCommand {
 
   static examples = [
     '<%= config.bin %> auth login --base-url https://formspring.io',
-    '<%= config.bin %> auth login --base-url http://pixel-forms.test --json',
+    '<%= config.bin %> auth login --base-url https://formspring.io --json',
   ]
 
   static flags = {
