@@ -48,6 +48,18 @@
     "name": "api.bookings.appointments.decline"
   },
   {
+    "cli_command": "bookings appointments no-show",
+    "method": "POST",
+    "path": "/bookings/appointments/{appointment}/no-show",
+    "name": "api.bookings.appointments.no-show"
+  },
+  {
+    "cli_command": "bookings appointments refund",
+    "method": "POST",
+    "path": "/bookings/appointments/{appointment}/refund",
+    "name": "api.bookings.appointments.refund"
+  },
+  {
     "cli_command": "bookings appointments retry-calendar-sync",
     "method": "POST",
     "path": "/bookings/appointments/{appointment}/retry-calendar-sync",
@@ -240,6 +252,12 @@
     "name": "api.contact-fields.store"
   },
   {
+    "cli_command": "contact-fields reorder",
+    "method": "PUT",
+    "path": "/contact-fields/order",
+    "name": "api.contact-fields.reorder"
+  },
+  {
     "cli_command": "contact-fields delete",
     "method": "DELETE",
     "path": "/contact-fields/{fieldKey}",
@@ -366,6 +384,18 @@
     "name": "api.contacts.store"
   },
   {
+    "cli_command": "contacts assigned",
+    "method": "GET",
+    "path": "/contacts/assigned",
+    "name": "api.contacts.assigned"
+  },
+  {
+    "cli_command": "contacts assigned seen",
+    "method": "PUT",
+    "path": "/contacts/assigned/seen",
+    "name": "api.contacts.assigned.seen"
+  },
+  {
     "cli_command": "contacts bulk create",
     "method": "POST",
     "path": "/contacts/bulk",
@@ -400,6 +430,12 @@
     "method": "GET",
     "path": "/contacts/exports/{contactExport}/download",
     "name": "api.contacts.exports.download"
+  },
+  {
+    "cli_command": "contacts imports list",
+    "method": "GET",
+    "path": "/contacts/imports",
+    "name": "api.contacts.imports.index"
   },
   {
     "cli_command": "contacts imports create",
@@ -796,6 +832,12 @@
     "method": "PATCH",
     "path": "/feedback-hub/helpdesk-sources/{source}/private-scope",
     "name": "api.feedback-hub.helpdesk-sources.private-scope"
+  },
+  {
+    "cli_command": "feedback-hub matching get",
+    "method": "GET",
+    "path": "/feedback-hub/matching",
+    "name": "api.feedback-hub.matching.show"
   },
   {
     "cli_command": "forms attribution",

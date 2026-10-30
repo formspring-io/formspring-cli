@@ -4,7 +4,7 @@
 
 ### Changed
 
-- Synced `schema/` with the current API: 653 REST operations (was 80), 845 agent tools (was 74), and a new
+- Synced `schema/` with the current API: 677 REST operations (was 80), 860 agent tools (was 74), and a new
   `schema/import-contract.json` describing the response import steps, limits and checksum.
 - `schema/routes.json` now keeps only the public route table (domain, method, uri, name). `npm run sync-schema`
   applies this automatically.
@@ -22,7 +22,7 @@
   `funnels analytics`, `bookings ...`), automations (`forms|funnels|surveys automations` with runs and versions,
   `automation-limits`), the feedback hub digest schedule, data tables, documents and signing, and the migration
   commands that were documented but missing (`forms imports`, `migrations`, `sandbox`, `tokens audit`,
-  `forms webhooks`). 261 commands are written from `schema/openapi.json` by `npm run scaffold-resources`; the list is
+  `forms webhooks`). 282 commands are written from `schema/openapi.json` by `npm run scaffold-resources`; the list is
   saved in `schema/cli-commands.json` and shown by `formspring commands --json`.
 - `--all` on cursor lists (and `api request GET ... --all`) to return every page in one result.
 - `--idempotency-key` on every write that accepts an `Idempotency-Key` header, and on `api request`.

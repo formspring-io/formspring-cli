@@ -18,7 +18,7 @@ const spec: ResourceSpec = {
 }
 
 export default class ContactsImportsRollbackResource extends ResourceCommand {
-  static description = "Undo a finished import: erase the contacts it created that nobody has worked on since (a note, task, deal, submission or merge keeps a contact). Queued; contacts the import only updated are not touched (contacts:write)"
+  static description = "Undo a finished import: erase the contacts it created that nobody has worked on since (a note, task, deal, submission or merge keeps a contact), and put back on the contacts it only updated the details it changed (identifiers it added, custom field values, consent, tags and lists) unless they were changed since. Queued (contacts:write)"
 
   static examples = ["<%= config.bin %> contacts imports rollback --contact-import VALUE --json"]
 

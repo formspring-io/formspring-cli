@@ -18,7 +18,7 @@ const spec: ResourceSpec = {
 }
 
 export default class ContactsEmailGetResource extends ResourceCommand {
-  static description = "Whether an email can be sent to this contact now and, if not, why (plan, no_address, suppressed); the open conversation if there is one (contacts:read)"
+  static description = "Whether an email can be sent to this contact now and, if not, why (plan, sample, no_address, suppressed); the open conversation if there is one (contacts:read)"
 
   static examples = ["<%= config.bin %> contacts email get --contact VALUE --json"]
 

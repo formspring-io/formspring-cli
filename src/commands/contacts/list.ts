@@ -99,7 +99,7 @@ const spec: ResourceSpec = {
       "name": "sort",
       "flag": "sort",
       "type": "string",
-      "description": "Sort key"
+      "description": "Sort key: last_seen_desc (default), last_seen_asc, created_desc, created_asc, name, tags_desc, tags_asc, owner_asc, owner_desc, or field:{key}:asc|desc for a custom field"
     }
   ],
   "hasBody": false,

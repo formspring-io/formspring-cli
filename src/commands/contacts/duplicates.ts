@@ -13,7 +13,7 @@ const spec: ResourceSpec = {
 }
 
 export default class ContactsDuplicatesResource extends ResourceCommand {
-  static description = "Groups of contacts that look like the same person; a suggestion only, nothing is merged until you merge (contacts:read)"
+  static description = "Groups of contacts that look like the same person, biggest first; cursor-paged (cursor, per_page up to 100); a suggestion only, nothing is merged until you merge (contacts:read)"
 
   static examples = ["<%= config.bin %> contacts duplicates --json"]
 

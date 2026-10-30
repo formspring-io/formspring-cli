@@ -13,7 +13,7 @@ const spec: ResourceSpec = {
 }
 
 export default class ContactsExportsCreateResource extends ResourceCommand {
-  static description = "Queue a CSV export of the contacts a filter set matches; poll the export for its signed download_url (contacts:read, and a role that may change contacts). A role without submissions:export gets only the non-identifying columns (id, name, company, city, source, owner, tags, lists, last_seen_at, created_at); asking for another column is a 422"
+  static description = "Queue a CSV export of the contacts a filter set matches, or of the ids named in `contacts`; poll the export for its signed download_url (contacts:read, and a role that may change contacts). A role without submissions:export gets only the non-identifying columns (id, name, company, city, source, owner, tags, lists, last_seen_at, created_at); asking for another column is a 422"
 
   static examples = ["<%= config.bin %> contacts exports create --json"]
 
