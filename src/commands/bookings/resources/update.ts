@@ -18,7 +18,7 @@ const spec: ResourceSpec = {
 }
 
 export default class BookingsResourcesUpdateResource extends ResourceCommand {
-  static description = "Rename a resource or change its kind (bookings:write)"
+  static description = "Change a resource: name, kind, pool, capacity or weekly hours (bookings:write)"
 
   static examples = ["<%= config.bin %> bookings resources update --booking-resource VALUE --json"]
 

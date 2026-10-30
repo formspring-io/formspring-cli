@@ -18,7 +18,7 @@ const spec: ResourceSpec = {
 }
 
 export default class ContactsMergesListResource extends ResourceCommand {
-  static description = "Merges into a contact, newest first, with whether each can be undone (contacts:read)"
+  static description = "Merges into a contact, newest first, with whether each can be undone; cursor-paged (contacts:read)"
 
   static examples = ["<%= config.bin %> contacts merges list --contact VALUE --json"]
 

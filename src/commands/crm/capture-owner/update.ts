@@ -13,7 +13,7 @@ const spec: ResourceSpec = {
 }
 
 export default class CrmCaptureOwnerUpdateResource extends ResourceCommand {
-  static description = "Set the members who own captured contacts, in turn order; an empty list means captured contacts have no owner (contacts:write)"
+  static description = "Set the members who own captured contacts, in turn order, for the workspace or for one form or booking page (form / booking_page); members can have working hours; an empty list means captured contacts have no owner (contacts:write)"
 
   static examples = ["<%= config.bin %> crm capture-owner update --json"]
 

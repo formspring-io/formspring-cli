@@ -521,6 +521,22 @@
     },
     {
         "method": "POST",
+        "path": "/bookings/appointments/{appointment}/no-show",
+        "name": "api.bookings.appointments.no-show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/bookings/appointments/{appointment}/refund",
+        "name": "api.bookings.appointments.refund",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
         "path": "/bookings/appointments/{appointment}/retry-calendar-sync",
         "name": "api.bookings.appointments.retry-calendar-sync",
         "transport": "rest",
@@ -800,6 +816,14 @@
         "mcp_tool": null
     },
     {
+        "method": "PUT",
+        "path": "/contact-fields/order",
+        "name": "api.contact-fields.reorder",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
         "method": "DELETE",
         "path": "/contact-fields/{fieldKey}",
         "name": "api.contact-fields.destroy",
@@ -968,6 +992,22 @@
         "mcp_tool": null
     },
     {
+        "method": "GET",
+        "path": "/contacts/assigned",
+        "name": "api.contacts.assigned",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/contacts/assigned/seen",
+        "name": "api.contacts.assigned.seen",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
         "method": "POST",
         "path": "/contacts/bulk",
         "name": "api.contacts.bulk.store",
@@ -1011,6 +1051,14 @@
         "method": "GET",
         "path": "/contacts/exports/{contactExport}/download",
         "name": "api.contacts.exports.download",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/contacts/imports",
+        "name": "api.contacts.imports.index",
         "transport": "rest",
         "cli_command": "api request",
         "mcp_tool": null
@@ -2113,6 +2161,22 @@
     },
     {
         "method": "GET",
+        "path": "/feedback-boards/{board}/scoring-versions",
+        "name": "api.feedback-boards.scoring-versions.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/feedback-boards/{board}/scoring-versions",
+        "name": "api.feedback-boards.scoring-versions.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
         "path": "/feedback-boards/{board}/statuses",
         "name": "api.feedback-boards.statuses.index",
         "transport": "rest",
@@ -2267,6 +2331,14 @@
         "method": "PATCH",
         "path": "/feedback-hub/helpdesk-sources/{source}/private-scope",
         "name": "api.feedback-hub.helpdesk-sources.private-scope",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/feedback-hub/matching",
+        "name": "api.feedback-hub.matching.show",
         "transport": "rest",
         "cli_command": "api request",
         "mcp_tool": null
@@ -3512,6 +3584,22 @@
         "mcp_tool": null
     },
     {
+        "method": "DELETE",
+        "path": "/knowledge/help-centers/{helpCenter}/widget-secret/previous",
+        "name": "api.knowledge.help-centers.widget-secret.previous.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/knowledge/help-centers/{helpCenter}/widget-secret/rotate",
+        "name": "api.knowledge.help-centers.widget-secret.rotate",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
         "method": "POST",
         "path": "/knowledge/imports",
         "name": "api.knowledge.imports.store",
@@ -4104,6 +4192,30 @@
         "mcp_tool": null
     },
     {
+        "method": "DELETE",
+        "path": "/sample-workspace",
+        "name": "api.sample-workspace.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/sample-workspace",
+        "name": "api.sample-workspace.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/sample-workspace",
+        "name": "api.sample-workspace.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
         "method": "GET",
         "path": "/sandbox/workspaces",
         "name": "api.sandbox.workspaces.index",
@@ -4171,6 +4283,22 @@
         "method": "PUT",
         "path": "/sdk-keys/{sdkKey}",
         "name": "api.sdk-keys.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/sdk-keys/{sdkKey}/previous-key",
+        "name": "api.sdk-keys.previous-key.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/sdk-keys/{sdkKey}/rotate",
+        "name": "api.sdk-keys.rotate",
         "transport": "rest",
         "cli_command": "api request",
         "mcp_tool": null
@@ -4329,6 +4457,30 @@
     },
     {
         "method": "GET",
+        "path": "/signing-requests/{envelope}/holds",
+        "name": "api.signing-requests.holds.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/signing-requests/{envelope}/holds",
+        "name": "api.signing-requests.holds.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/signing-requests/{envelope}/holds/{hold}/release",
+        "name": "api.signing-requests.holds.release",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
         "path": "/signing-requests/{envelope}/preview",
         "name": "api.signing-requests.preview",
         "transport": "rest",
@@ -4403,6 +4555,22 @@
         "method": "POST",
         "path": "/signing-requests/{envelope}/void",
         "name": "api.signing-requests.void",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/signing/retention",
+        "name": "api.signing.retention.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/signing/retention",
+        "name": "api.signing.retention.update",
         "transport": "rest",
         "cli_command": "api request",
         "mcp_tool": null
@@ -5109,6 +5277,30 @@
         "name": "api.tokens.audit",
         "transport": "rest",
         "cli_command": "tokens audit",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/workspace/automation-templates",
+        "name": "api.workspace.automation-templates.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/workspace/automation-templates/{template}",
+        "name": "api.workspace.automation-templates.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/workspace/automation-templates/{template}/install",
+        "name": "api.workspace.automation-templates.install",
+        "transport": "rest",
+        "cli_command": "api request",
         "mcp_tool": null
     },
     {

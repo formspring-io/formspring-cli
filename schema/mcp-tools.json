@@ -1723,6 +1723,27 @@
     },
     {
         "group": "Feedback",
+        "name": "list_feedback_scoring_versions",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Feedback",
+        "name": "set_feedback_scoring_formula",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Feedback",
+        "name": "get_feedback_hub_matching_metrics",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Feedback",
         "name": "list_issue_trackers",
         "description": "",
         "input_schema": null,
@@ -2745,6 +2766,27 @@
     },
     {
         "group": "CRM",
+        "name": "list_assigned_contacts",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM",
+        "name": "mark_assigned_contacts_seen",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM",
+        "name": "reorder_contact_fields",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM",
         "name": "set_contact_default_view",
         "description": "",
         "input_schema": null,
@@ -2984,6 +3026,13 @@
     {
         "group": "SDK keys",
         "name": "update_sdk_key",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "SDK keys",
+        "name": "rotate_sdk_key",
         "description": "",
         "input_schema": null,
         "mcp_only": false
@@ -3781,6 +3830,13 @@
     },
     {
         "group": "Links",
+        "name": "set_link_attribution",
+        "description": "Change how a short link attributes outcomes, like `PATCH /links/{id}/attribution`: whether the redirect appends the click id to the destination (append_click_id) and the lookback window in days (conversion_window_days, 1-90; null returns to the workspace default). Only the fields you send change. Requires `links:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Links",
         "name": "import_links",
         "description": "Bulk-create short links from CSV text, in the background. Columns: target_url (required), slug, comment, expires_at, utm_template, utm_source, utm_medium, utm_campaign, utm_term, utm_content. Every row is checked like the dashboard import (private-network and blocked destinations are refused, slug rules, plan limits). dry_run=true checks the file and writes nothing. The same import_key never creates a row twice. Poll get_link_import. Requires `links:write`.",
         "input_schema": null,
@@ -4195,7 +4251,21 @@
     {
         "group": "Automations",
         "name": "list_automation_templates",
-        "description": "List the ready-made automation templates the builder offers for a form, survey, funnel or booking page. Each template is a complete definition you can pass to create_automation. Requires `automations:read`.",
+        "description": "List the ready-made automation templates the builder offers for a form, survey, funnel or booking page, or the workspace template library (`target_type: \"workspace\"`, with what each needs and whether it can be installed now; use install_automation_template). Each template is a complete definition you can pass to create_automation. Requires `automations:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Automations",
+        "name": "get_automation_template",
+        "description": "Preview one template of the workspace automation template library: its trigger, steps in plain words, the settings it takes (for example who to email) and whether this workspace's plan can install it now (`available`, with the reason when not). Pass `parameters` to see it with your own settings. Requires `automations:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Automations",
+        "name": "install_automation_template",
+        "description": "Install a template of the workspace automation template library as a workspace automation. It goes through the same validation and plan gates as create_automation, and is saved switched off unless `activate` is true, so it can be read with get_automation and adjusted first. Requires `automations:write`.",
         "input_schema": null,
         "mcp_only": false
     },
@@ -4480,6 +4550,13 @@
         "mcp_only": false
     },
     {
+        "group": "Bookings",
+        "name": "refund_booking_payment",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
         "group": "Orders",
         "name": "list_orders",
         "description": "",
@@ -4601,6 +4678,13 @@
     {
         "group": "Knowledge",
         "name": "update_help_center_settings",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Knowledge",
+        "name": "rotate_help_widget_secret",
         "description": "",
         "input_schema": null,
         "mcp_only": false
@@ -5028,6 +5112,27 @@
     {
         "group": "Account",
         "name": "search_workspace",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Account",
+        "name": "get_sample_workspace",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Account",
+        "name": "add_sample_workspace",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Account",
+        "name": "remove_sample_workspace",
         "description": "",
         "input_schema": null,
         "mcp_only": false

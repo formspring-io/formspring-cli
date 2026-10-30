@@ -13,7 +13,7 @@ const spec: ResourceSpec = {
 }
 
 export default class BookingsResourcesCreateResource extends ResourceCommand {
-  static description = "Create a room, location or piece of equipment that hosts one appointment at a time (bookings:write)"
+  static description = "Create a room, location, piece of equipment or pool of interchangeable rooms (bookings:write)"
 
   static examples = ["<%= config.bin %> bookings resources create --json"]
 

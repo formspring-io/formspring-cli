@@ -19,7 +19,7 @@ const spec: ResourceSpec = {
 }
 
 export default class BookingsResourcesListResource extends ResourceCommand {
-  static description = "List rooms, locations and equipment that booking pages can share (bookings:read)"
+  static description = "List rooms, locations, equipment and pools that booking pages can share (bookings:read)"
 
   static examples = ["<%= config.bin %> bookings resources list --json"]
 
