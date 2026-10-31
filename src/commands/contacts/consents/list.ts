@@ -11,14 +11,26 @@ const spec: ResourceSpec = {
       "flag": "contact"
     }
   ],
-  "query": [],
+  "query": [
+    {
+      "name": "cursor",
+      "flag": "cursor",
+      "type": "string",
+      "description": "Opaque cursor from meta.next_cursor of the previous page of the history"
+    },
+    {
+      "name": "per_page",
+      "flag": "per-page",
+      "type": "integer"
+    }
+  ],
   "hasBody": false,
   "idempotent": false,
-  "paginated": false
+  "paginated": true
 }
 
 export default class ContactsConsentsListResource extends ResourceCommand {
-  static description = "The marketing-email consent state of a contact and its history, newest first (contacts:read)"
+  static description = "The consent state of a contact - marketing email at the top level, every channel (email, sms, phone, whatsapp, postal) under `channels` - and its history, newest first, 20 entries per page unless per_page (1-100) says otherwise; meta.next_cursor continues the history (contacts:read)"
 
   static examples = ["<%= config.bin %> contacts consents list --contact VALUE --json"]
 

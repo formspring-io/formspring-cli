@@ -11,14 +11,32 @@ const spec: ResourceSpec = {
       "flag": "company"
     }
   ],
-  "query": [],
+  "query": [
+    {
+      "name": "cursor",
+      "flag": "cursor",
+      "type": "string",
+      "description": "Opaque cursor from meta.next_cursor of the previous page"
+    },
+    {
+      "name": "per_page",
+      "flag": "per-page",
+      "type": "integer"
+    },
+    {
+      "name": "suggestions",
+      "flag": "suggestions",
+      "type": "string",
+      "description": "1 to add suggested people"
+    }
+  ],
   "hasBody": false,
   "idempotent": false,
-  "paginated": false
+  "paginated": true
 }
 
 export default class CompaniesContactsListResource extends ResourceCommand {
-  static description = "People linked to a company; suggestions=1 adds people sharing its email domain, which are only hints (contacts:read)"
+  static description = "People linked to a company, 200 per page (meta.next_cursor continues the list); suggestions=1 adds people sharing its email domain, which are only hints (contacts:read)"
 
   static examples = ["<%= config.bin %> companies contacts list --company VALUE --json"]
 

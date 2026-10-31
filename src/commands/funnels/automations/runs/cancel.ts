@@ -21,7 +21,7 @@ const spec: ResourceSpec = {
   ],
   "query": [],
   "hasBody": true,
-  "idempotent": false,
+  "idempotent": true,
   "paginated": false
 }
 
