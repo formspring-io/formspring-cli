@@ -127,6 +127,20 @@
     },
     {
         "group": "Forms",
+        "name": "record_form_crm_outcome",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Forms",
+        "name": "record_form_revenue_adjustment",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Forms",
         "name": "get_form_document",
         "description": "",
         "input_schema": null,
@@ -646,7 +660,7 @@
     {
         "group": "Surveys",
         "name": "list_survey_quotas",
-        "description": "List a survey's response quotas (caps that end the survey or keep going once N responses match) with live fill counts. Requires `surveys:read`.",
+        "description": "List a survey's response quotas (caps that end the survey or keep going once N responses match) with live fill counts. Pass `cursor` or `per_page` to page through them with `next_cursor`. Requires `surveys:read`.",
         "input_schema": null,
         "mcp_only": false
     },
@@ -723,7 +737,7 @@
     {
         "group": "Surveys",
         "name": "list_survey_dashboards",
-        "description": "List the team's survey analytics dashboards (custom chart boards). Requires `surveys:read`.",
+        "description": "List the team's survey analytics dashboards (custom chart boards). Pass `cursor` or `per_page` to page through them with `next_cursor`. Requires `surveys:read`.",
         "input_schema": null,
         "mcp_only": false
     },
@@ -822,6 +836,13 @@
         "group": "Surveys",
         "name": "get_survey_response_analytics",
         "description": "Response analytics for a survey, as on the dashboard responses page: total and completed responses, completion rate, average score, score distribution, outcome distribution and per-screen drop-off. For in-app display funnels use get_survey_display_analytics_tool. Requires `surveys:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Surveys",
+        "name": "get_survey_attribution",
+        "description": "Where a survey's responses came from, like `GET /surveys/{survey}/attribution`: responses per source (campaign utm_source, else referrer host, else direct), top campaigns, and how many carry each ad-platform click id. Credited by the shared attribution model (`first_non_direct`, `last_non_direct` or `linear`) and look-back window (1-90 days) - the answer names both as `attribution_model` and `attribution_window_days`, and falls back to the workspace setting. Responses whose respondent did not permit analytics are counted as unattributed, never guessed; sample, spam, unfinished and bot responses are left out. Optional `from` / `to` date range. Requires `surveys:read`.",
         "input_schema": null,
         "mcp_only": false
     },
@@ -1101,7 +1122,35 @@
     {
         "group": "Surveys",
         "name": "import_survey_invitations",
-        "description": "Add recipients to a wave from text or CSV (an address per line, optional name after a comma or semicolon). Returns counts of added, duplicate, invalid and opted-out or undeliverable addresses; the last are recorded but never emailed. Requires `surveys:write`.",
+        "description": "Add recipients to a wave from text or CSV (an address per line, optional name and survey language after commas: `email,name,lang`). Returns counts of added, duplicate, invalid and opted-out or undeliverable addresses; the last are recorded but never emailed. Requires `surveys:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Surveys",
+        "name": "list_survey_wave_schedules",
+        "description": "List a survey's recurrence rules (weekly, monthly, quarterly or every N days) with status, next due time, how many waves each created or skipped, the last outcome and whether automatic waves are switched on for the workspace. Requires `surveys:read`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Surveys",
+        "name": "create_survey_wave_schedule",
+        "description": "Create a recurrence rule that starts a new invitation wave on a schedule (weekly, monthly, quarterly or every N days, in a timezone, until an end date or a count). Recipients are copied from the previous wave under the audience rules; opted-out, bounced and recently-answered people are left out; reminders follow the cadence. Saving the rule sends nothing: waves are created automatically only once recurrence is switched on for the workspace. Requires `surveys:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Surveys",
+        "name": "update_survey_wave_schedule",
+        "description": "Change, pause or resume a recurrence rule (set `status` to paused or active). Resuming does not send slots that passed while it was paused. Requires `surveys:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Surveys",
+        "name": "delete_survey_wave_schedule",
+        "description": "Stop a recurrence rule and delete it on the queue. Waves it already created are kept with their recipients and responses. Requires `surveys:write`.",
         "input_schema": null,
         "mcp_only": false
     },
@@ -1346,6 +1395,13 @@
     {
         "group": "Polls",
         "name": "moderate_poll_event_question",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Polls",
+        "name": "update_poll_event_question",
         "description": "",
         "input_schema": null,
         "mcp_only": false
@@ -1723,6 +1779,27 @@
     },
     {
         "group": "Feedback",
+        "name": "get_feedback_board_sso",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Feedback",
+        "name": "set_feedback_board_sso",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Feedback",
+        "name": "disconnect_feedback_board_sso",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Feedback",
         "name": "list_feedback_scoring_versions",
         "description": "",
         "input_schema": null,
@@ -1744,7 +1821,42 @@
     },
     {
         "group": "Feedback",
+        "name": "list_feedback_prioritization",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Feedback",
+        "name": "refresh_feedback_account_revenue",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Feedback",
+        "name": "get_feedback_hub_matching_settings",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Feedback",
+        "name": "set_feedback_hub_matching_settings",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Feedback",
         "name": "list_issue_trackers",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Feedback",
+        "name": "list_issue_tracker_options",
         "description": "",
         "input_schema": null,
         "mcp_only": false
@@ -2116,6 +2228,62 @@
     {
         "group": "Response Desk",
         "name": "disconnect_desk_resend",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "get_desk_sender_setup",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "check_desk_sender_dns",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "send_desk_sender_probe",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "get_desk_sender_probe",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "create_desk_managed_sender",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "verify_desk_managed_sender",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "add_desk_managed_sender_address",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "delete_desk_managed_sender",
         "description": "",
         "input_schema": null,
         "mcp_only": false
@@ -2661,6 +2829,48 @@
     },
     {
         "group": "CRM",
+        "name": "request_contact_identifier_verification",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM",
+        "name": "list_contact_email_templates",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM",
+        "name": "save_contact_email_template",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM",
+        "name": "delete_contact_email_template",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM",
+        "name": "get_contact_email_signature",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM",
+        "name": "set_contact_email_signature",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM",
         "name": "list_contact_notes",
         "description": "",
         "input_schema": null,
@@ -3003,6 +3213,34 @@
         "mcp_only": false
     },
     {
+        "group": "Documents and signing",
+        "name": "get_signing_retention",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Documents and signing",
+        "name": "set_signing_retention",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Documents and signing",
+        "name": "place_signing_hold",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Documents and signing",
+        "name": "release_signing_hold",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
         "group": "SDK keys",
         "name": "list_sdk_keys",
         "description": "",
@@ -3138,7 +3376,7 @@
     {
         "group": "Funnels",
         "name": "get_funnel_attribution",
-        "description": "Source-to-outcome attribution report for a funnel, like the dashboard \"From source to outcome\" table and `GET /funnels/{funnel}/attribution`: leads, qualified leads, bookings, orders and CRM won/lost per source, attributed vs unattributed lead counts, and net revenue per currency (refunds subtracted, no currency conversion). `model` picks how a journey is credited: `journey_source` (default, one source per journey), `first_touch`, `last_touch` or `linear` (shared across visits, so counts can be fractions); the multi-touch models take `lookback_days` (1-90) to leave out visits that long before the converting visit. Optional `from` / `to` date range. Requires `funnels:analytics`.",
+        "description": "Source-to-outcome attribution report for a funnel, like the dashboard \"From source to outcome\" table and `GET /funnels/{funnel}/attribution`: leads, qualified leads, bookings, orders and CRM won/lost per source, attributed vs unattributed lead counts, and net revenue per currency (refunds subtracted, no currency conversion). `model` picks how a journey is credited: `journey_source` (one source per journey), `first_non_direct` (`first_touch`), `last_non_direct` (`last_touch`) or `linear` (shared across visits, so counts can be fractions); the multi-touch models take `lookback_days` / `window_days` (1-90) to leave out visits that long before the converting visit. The answer names the model and window as `attribution_model`, `attribution_window_days` and `attribution_label`. Optional `from` / `to` date range. Requires `funnels:analytics`.",
         "input_schema": null,
         "mcp_only": false
     },
@@ -3264,21 +3502,28 @@
     {
         "group": "Funnels",
         "name": "get_funnel_custom_domain",
-        "description": "Read a funnel's custom domain, path prefix and certificate issuance status (the same fields the dashboard polls), plus the hostname to point a CNAME at. Requires `funnels:read`.",
+        "description": "Read a funnel's custom domain, path prefix and certificate issuance status (the same fields the dashboard polls), plus the hostname to point a CNAME at and the DNS ownership state with the TXT record to publish. Requires `funnels:read`.",
         "input_schema": null,
         "mcp_only": false
     },
     {
         "group": "Funnels",
         "name": "set_funnel_custom_domain",
-        "description": "Set or clear a funnel's custom domain and optional path prefix. A changed domain resets issuance and queues a certificate request; pass null/omit `custom_domain` to clear it. Point a CNAME at the `edge_hostname` returned by get_funnel_custom_domain. Requires `funnels:write`.",
+        "description": "Set or clear a funnel's custom domain and optional path prefix. A changed domain resets issuance and queues a certificate request; pass null/omit `custom_domain` to clear it. Point a CNAME at the `edge_hostname` and publish the ownership TXT record returned by get_funnel_custom_domain, then call verify_funnel_custom_domain. Requires `funnels:write`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Funnels",
+        "name": "verify_funnel_custom_domain",
+        "description": "Check the DNS ownership record (TXT) of a funnel's custom domain now. Publish the record returned by get_funnel_custom_domain first; once it is found the domain is verified and the certificate is queued. Returns an error with the reason while the record is missing or wrong. Requires `funnels:write`.",
         "input_schema": null,
         "mcp_only": false
     },
     {
         "group": "Funnels",
         "name": "retry_funnel_custom_domain",
-        "description": "Re-queue certificate issuance for a funnel's custom domain (use after fixing DNS or after a failed attempt). Requires `funnels:write`.",
+        "description": "Re-queue certificate issuance for a funnel's custom domain (use after fixing DNS or after a failed attempt; held back until ownership of the domain is verified when verification is required). Requires `funnels:write`.",
         "input_schema": null,
         "mcp_only": false
     },
@@ -4165,9 +4410,58 @@
         "mcp_only": false
     },
     {
+        "group": "Bio pages (link-in-bio)",
+        "name": "list_bio_courses",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Bio pages (link-in-bio)",
+        "name": "get_bio_course",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Bio pages (link-in-bio)",
+        "name": "save_bio_course",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Bio pages (link-in-bio)",
+        "name": "publish_bio_course",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Bio pages (link-in-bio)",
+        "name": "place_bio_course",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Bio pages (link-in-bio)",
+        "name": "delete_bio_course",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Bio pages (link-in-bio)",
+        "name": "set_bio_course_access",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
         "group": "Automations",
         "name": "list_automations",
-        "description": "List automations for a form, survey, funnel or booking page, in run order, with run and failure counts. Requires `automations:read`.",
+        "description": "List automations for a form, survey, funnel or booking page, in run order, with run and failure counts. Pass `cursor` or `per_page` to page through them with `next_cursor`. Requires `automations:read`.",
         "input_schema": null,
         "mcp_only": false
     },
@@ -4272,7 +4566,7 @@
     {
         "group": "Automations",
         "name": "test_automation",
-        "description": "Dry-run an automation definition against a sample payload and report what each step would do. Nothing is sent, requested or saved and no run is recorded, so it is safe on a live automation. Works for forms, surveys, funnels and booking pages. Requires `automations:run`.",
+        "description": "Dry-run an automation definition against a sample payload, or against the redacted data of a past run (`from_run_id`), and report what each step would do. Nothing is sent, requested or saved and no run is recorded, so it is safe on a live automation. Works for forms, surveys, funnels and booking pages. Requires `automations:run`.",
         "input_schema": null,
         "mcp_only": false
     },
@@ -4294,6 +4588,20 @@
         "group": "Automations",
         "name": "cancel_automation_run",
         "description": "Cancel an automation run. It executes no further step, a delayed or waiting run is not woken again, and its child and branch runs are cancelled with it. Fails when the run had already finished. Requires `automations:run`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Automations",
+        "name": "resume_automation_run",
+        "description": "Resume an automation run that stopped: a failed run, a run that needs review, or a run paused by a limit. It continues at the step that stopped it; steps that already went out are not repeated. A run that needs review also needs `resolution`: `mark_sent` when the provider confirmed the request arrived, or `retry` to send it again (which may deliver it twice). Risk class: external_send, because with `retry` it can repeat an email, request or message; an agent should check with the provider first. Fails when the run is not in a state that can be resumed, so a repeated call does not queue it twice. Requires `automations:run`.",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Automations",
+        "name": "list_automation_test_inputs",
+        "description": "List the data the newest runs of an automation started with, as test inputs: secrets are removed and personal data (emails, phone numbers, names, addresses) is masked. Pick one and pass its `run_id` as `from_run_id` to `test_automation`. Requires `automations:read`.",
         "input_schema": null,
         "mcp_only": false
     },
@@ -4335,6 +4643,20 @@
     {
         "group": "Bookings",
         "name": "get_booking_analytics",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Bookings",
+        "name": "record_booking_crm_outcome",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Bookings",
+        "name": "record_booking_revenue_adjustment",
         "description": "",
         "input_schema": null,
         "mcp_only": false
@@ -4573,6 +4895,13 @@
     {
         "group": "Orders",
         "name": "get_orders_summary",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Orders",
+        "name": "refund_order",
         "description": "",
         "input_schema": null,
         "mcp_only": false
@@ -5104,6 +5433,13 @@
     },
     {
         "group": "Account",
+        "name": "get_operation",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Account",
         "name": "get_dashboard",
         "description": "",
         "input_schema": null,
@@ -5189,6 +5525,20 @@
     {
         "group": "Workspace",
         "name": "get_workspace_settings",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Workspace",
+        "name": "get_attribution_settings",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Workspace",
+        "name": "set_attribution_settings",
         "description": "",
         "input_schema": null,
         "mcp_only": false

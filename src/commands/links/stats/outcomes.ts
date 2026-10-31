@@ -11,14 +11,20 @@ const spec: ResourceSpec = {
       "flag": "link"
     }
   ],
-  "query": [],
+  "query": [
+    {
+      "name": "format",
+      "flag": "format",
+      "type": "string"
+    }
+  ],
   "hasBody": false,
   "idempotent": false,
   "paginated": false
 }
 
 export default class LinksStatsOutcomesResource extends ResourceCommand {
-  static description = "Raw clicks, estimated unique clicks, verified and unattributed conversions (links:analytics:read)"
+  static description = "Raw clicks, estimated unique clicks, verified and unattributed conversions, with the attribution model and window named in the answer; `format=csv` exports the conversions by type with the model and window on every row (links:analytics:read)"
 
   static examples = ["<%= config.bin %> links stats outcomes --link VALUE --json"]
 

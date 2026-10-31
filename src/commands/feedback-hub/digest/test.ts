@@ -13,7 +13,7 @@ const spec: ResourceSpec = {
 }
 
 export default class FeedbackHubDigestTestResource extends ResourceCommand {
-  static description = "Queue a test digest to the token user (feedback:write)"
+  static description = "Queue a test digest to the token user; `channel` is email (default) or slack, which posts to the saved webhook (feedback:write)"
 
   static examples = ["<%= config.bin %> feedback-hub digest test --json"]
 

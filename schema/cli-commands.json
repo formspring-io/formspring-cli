@@ -114,6 +114,18 @@
     "name": "api.bookings.pages.hosts.sync"
   },
   {
+    "cli_command": "bookings pages outcomes adjustments",
+    "method": "POST",
+    "path": "/bookings/pages/{bookingPage}/outcomes/adjustments",
+    "name": "api.bookings.pages.outcomes.adjustments"
+  },
+  {
+    "cli_command": "bookings pages outcomes crm",
+    "method": "POST",
+    "path": "/bookings/pages/{bookingPage}/outcomes/crm",
+    "name": "api.bookings.pages.outcomes.crm"
+  },
+  {
     "cli_command": "bookings pages resource assign",
     "method": "PUT",
     "path": "/bookings/pages/{bookingPage}/resource",
@@ -238,6 +250,48 @@
     "method": "GET",
     "path": "/contact-access-exports/{contactAccessExport}/download",
     "name": "api.contact-access-exports.download"
+  },
+  {
+    "cli_command": "contacts email-signature get",
+    "method": "GET",
+    "path": "/contact-email-signature",
+    "name": "api.contacts.email-signature.show"
+  },
+  {
+    "cli_command": "contacts email-signature update",
+    "method": "PUT",
+    "path": "/contact-email-signature",
+    "name": "api.contacts.email-signature.update"
+  },
+  {
+    "cli_command": "contacts email-templates list",
+    "method": "GET",
+    "path": "/contact-email-templates",
+    "name": "api.contacts.email-templates.index"
+  },
+  {
+    "cli_command": "contacts email-templates create",
+    "method": "POST",
+    "path": "/contact-email-templates",
+    "name": "api.contacts.email-templates.store"
+  },
+  {
+    "cli_command": "contacts email-templates delete",
+    "method": "DELETE",
+    "path": "/contact-email-templates/{contactEmailTemplate}",
+    "name": "api.contacts.email-templates.destroy"
+  },
+  {
+    "cli_command": "contacts email-templates get",
+    "method": "GET",
+    "path": "/contact-email-templates/{contactEmailTemplate}",
+    "name": "api.contacts.email-templates.show"
+  },
+  {
+    "cli_command": "contacts email-templates update",
+    "method": "PATCH",
+    "path": "/contact-email-templates/{contactEmailTemplate}",
+    "name": "api.contacts.email-templates.update"
   },
   {
     "cli_command": "contact-fields list",
@@ -594,6 +648,12 @@
     "name": "api.contacts.identifiers.update"
   },
   {
+    "cli_command": "contacts identifiers verification create",
+    "method": "POST",
+    "path": "/contacts/{contact}/identifiers/{identifier}/verification",
+    "name": "api.contacts.identifiers.verification.store"
+  },
+  {
     "cli_command": "contacts lifecycle-stage",
     "method": "PUT",
     "path": "/contacts/{contact}/lifecycle-stage",
@@ -810,6 +870,12 @@
     "name": "api.feedback-hub.digest.update"
   },
   {
+    "cli_command": "feedback-hub digest deliveries read",
+    "method": "POST",
+    "path": "/feedback-hub/digest/deliveries/read",
+    "name": "api.feedback-hub.digest.deliveries.read"
+  },
+  {
     "cli_command": "feedback-hub digest test",
     "method": "POST",
     "path": "/feedback-hub/digest/test",
@@ -838,6 +904,18 @@
     "method": "GET",
     "path": "/feedback-hub/matching",
     "name": "api.feedback-hub.matching.show"
+  },
+  {
+    "cli_command": "feedback-hub matching settings get",
+    "method": "GET",
+    "path": "/feedback-hub/matching/settings",
+    "name": "api.feedback-hub.matching.settings.show"
+  },
+  {
+    "cli_command": "feedback-hub matching settings update",
+    "method": "PUT",
+    "path": "/feedback-hub/matching/settings",
+    "name": "api.feedback-hub.matching.settings.update"
   },
   {
     "cli_command": "forms attribution",
@@ -916,6 +994,24 @@
     "method": "POST",
     "path": "/forms/{form}/automations/{automation}/runs/{run}/replay",
     "name": "api.forms.automations.runs.replay"
+  },
+  {
+    "cli_command": "forms automations runs resume",
+    "method": "POST",
+    "path": "/forms/{form}/automations/{automation}/runs/{run}/resume",
+    "name": "api.forms.automations.runs.resume"
+  },
+  {
+    "cli_command": "forms automations test",
+    "method": "POST",
+    "path": "/forms/{form}/automations/{automation}/test",
+    "name": "api.forms.automations.test"
+  },
+  {
+    "cli_command": "forms automations test-inputs",
+    "method": "GET",
+    "path": "/forms/{form}/automations/{automation}/test-inputs",
+    "name": "api.forms.automations.test-inputs"
   },
   {
     "cli_command": "forms automations versions list",
@@ -1248,6 +1344,24 @@
     "name": "api.funnels.automations.runs.replay"
   },
   {
+    "cli_command": "funnels automations runs resume",
+    "method": "POST",
+    "path": "/funnels/{funnel}/automations/{automation}/runs/{run}/resume",
+    "name": "api.funnels.automations.runs.resume"
+  },
+  {
+    "cli_command": "funnels automations test",
+    "method": "POST",
+    "path": "/funnels/{funnel}/automations/{automation}/test",
+    "name": "api.funnels.automations.test"
+  },
+  {
+    "cli_command": "funnels automations test-inputs",
+    "method": "GET",
+    "path": "/funnels/{funnel}/automations/{automation}/test-inputs",
+    "name": "api.funnels.automations.test-inputs"
+  },
+  {
     "cli_command": "funnels automations versions list",
     "method": "GET",
     "path": "/funnels/{funnel}/automations/{automation}/versions",
@@ -1554,6 +1668,18 @@
     "name": "api.sandbox.workspaces.destroy"
   },
   {
+    "cli_command": "sandbox workspaces allowlist get",
+    "method": "GET",
+    "path": "/sandbox/workspaces/{team}/allowlist",
+    "name": "api.sandbox.workspaces.allowlist.show"
+  },
+  {
+    "cli_command": "sandbox workspaces allowlist update",
+    "method": "PUT",
+    "path": "/sandbox/workspaces/{team}/allowlist",
+    "name": "api.sandbox.workspaces.allowlist.update"
+  },
+  {
     "cli_command": "surveys automations list",
     "method": "GET",
     "path": "/surveys/{survey}/automations",
@@ -1624,6 +1750,24 @@
     "method": "POST",
     "path": "/surveys/{survey}/automations/{automation}/runs/{run}/replay",
     "name": "api.surveys.automations.runs.replay"
+  },
+  {
+    "cli_command": "surveys automations runs resume",
+    "method": "POST",
+    "path": "/surveys/{survey}/automations/{automation}/runs/{run}/resume",
+    "name": "api.surveys.automations.runs.resume"
+  },
+  {
+    "cli_command": "surveys automations test",
+    "method": "POST",
+    "path": "/surveys/{survey}/automations/{automation}/test",
+    "name": "api.surveys.automations.test"
+  },
+  {
+    "cli_command": "surveys automations test-inputs",
+    "method": "GET",
+    "path": "/surveys/{survey}/automations/{automation}/test-inputs",
+    "name": "api.surveys.automations.test-inputs"
   },
   {
     "cli_command": "surveys automations versions list",

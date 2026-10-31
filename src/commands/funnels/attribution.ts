@@ -27,13 +27,26 @@ const spec: ResourceSpec = {
     {
       "name": "model",
       "flag": "model",
-      "type": "string"
+      "type": "string",
+      "description": "first_non_direct is first_touch and last_non_direct is last_touch under the shared attribution names; `model` in the answer keeps the funnel name, `attribution_model` the shared one."
     },
     {
       "name": "lookback_days",
       "flag": "lookback-days",
       "type": "integer",
-      "description": "Leave out visits more than this many days before the converting visit. Multi-touch models only."
+      "description": "Leave out visits more than this many days before the converting visit. Multi-touch models only. `window_days` is the same field under the shared name."
+    },
+    {
+      "name": "window_days",
+      "flag": "window-days",
+      "type": "integer",
+      "description": "Alias of lookback_days."
+    },
+    {
+      "name": "format",
+      "flag": "format",
+      "type": "string",
+      "description": "csv downloads the source rows with the model and window on every row."
     }
   ],
   "hasBody": false,

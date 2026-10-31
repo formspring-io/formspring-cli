@@ -11,14 +11,26 @@ const spec: ResourceSpec = {
       "flag": "contact"
     }
   ],
-  "query": [],
+  "query": [
+    {
+      "name": "cursor",
+      "flag": "cursor",
+      "type": "string",
+      "description": "Opaque cursor from meta.next_cursor of the previous page"
+    },
+    {
+      "name": "per_page",
+      "flag": "per-page",
+      "type": "integer"
+    }
+  ],
   "hasBody": false,
   "idempotent": false,
-  "paginated": false
+  "paginated": true
 }
 
 export default class ContactsNotesListResource extends ResourceCommand {
-  static description = "List notes, pinned first (contacts:read)"
+  static description = "List notes, pinned first; cursor-paged with meta.next_cursor, 100 per page unless per_page says otherwise (contacts:read)"
 
   static examples = ["<%= config.bin %> contacts notes list --contact VALUE --json"]
 

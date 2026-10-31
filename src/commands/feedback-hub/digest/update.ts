@@ -13,7 +13,7 @@ const spec: ResourceSpec = {
 }
 
 export default class FeedbackHubDigestUpdateResource extends ResourceCommand {
-  static description = "Set the Feedback Hub digest schedule (feedback:write)"
+  static description = "Set the Feedback Hub digest schedule: frequency, local hour, `channels` (email, slack, in_app), recipients and a write-only `slack_webhook_url` that is never returned (feedback:write)"
 
   static examples = ["<%= config.bin %> feedback-hub digest update --json"]
 

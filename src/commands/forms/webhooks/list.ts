@@ -11,14 +11,32 @@ const spec: ResourceSpec = {
       "flag": "form"
     }
   ],
-  "query": [],
+  "query": [
+    {
+      "name": "per_page",
+      "flag": "per-page",
+      "type": "integer"
+    },
+    {
+      "name": "pagination",
+      "flag": "pagination",
+      "type": "string",
+      "description": "Send `cursor` to switch this list to opaque cursor pagination (stable while rows change). Default is page-number pagination."
+    },
+    {
+      "name": "cursor",
+      "flag": "cursor",
+      "type": "string",
+      "description": "Opaque position from `meta.next_cursor` of the previous page. Implies cursor pagination; `page` is ignored."
+    }
+  ],
   "hasBody": false,
   "idempotent": false,
-  "paginated": false
+  "paginated": true
 }
 
 export default class FormsWebhooksListResource extends ResourceCommand {
-  static description = "List webhooks (webhooks:read)"
+  static description = "List webhooks (webhooks:read); every webhook of the form unless `pagination=cursor` or `cursor` is sent"
 
   static examples = ["<%= config.bin %> forms webhooks list --form VALUE --json"]
 

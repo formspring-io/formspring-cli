@@ -11,14 +11,33 @@ const spec: ResourceSpec = {
       "flag": "booking-page"
     }
   ],
-  "query": [],
+  "query": [
+    {
+      "name": "model",
+      "flag": "model",
+      "type": "string",
+      "description": "How credit is shared between a visitor's touches. Default: the workspace setting, else last_non_direct."
+    },
+    {
+      "name": "window_days",
+      "flag": "window-days",
+      "type": "integer",
+      "description": "Look-back window in days. Default: the workspace setting, else 30."
+    },
+    {
+      "name": "format",
+      "flag": "format",
+      "type": "string",
+      "description": "csv downloads the source rows with the model and window on every row."
+    }
+  ],
   "hasBody": false,
   "idempotent": false,
   "paginated": false
 }
 
 export default class BookingsPagesAnalyticsResource extends ResourceCommand {
-  static description = "Show booking page analytics (forms:read)"
+  static description = "Show booking page analytics; `sources` credits bookings by the shared attribution model and window (forms:read)"
 
   static examples = ["<%= config.bin %> bookings pages analytics --booking-page VALUE --json"]
 

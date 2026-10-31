@@ -23,6 +23,24 @@ const spec: ResourceSpec = {
       "flag": "to",
       "type": "string",
       "description": "End of the window."
+    },
+    {
+      "name": "model",
+      "flag": "model",
+      "type": "string",
+      "description": "How credit is shared between a visitor's touches. Default: the workspace setting, else last_non_direct."
+    },
+    {
+      "name": "window_days",
+      "flag": "window-days",
+      "type": "integer",
+      "description": "Look-back window in days. Default: the workspace setting, else 30."
+    },
+    {
+      "name": "format",
+      "flag": "format",
+      "type": "string",
+      "description": "csv downloads the source rows with the model and window on every row."
     }
   ],
   "hasBody": false,
