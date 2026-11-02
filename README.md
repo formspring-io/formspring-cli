@@ -15,8 +15,7 @@ npm link
 ## Authenticate
 
 ```bash
-formspring auth login --base-url https://formspring.io
-# or a local instance: formspring auth login --base-url http://localhost:8000
+formspring auth login
 formspring auth whoami --json
 ```
 

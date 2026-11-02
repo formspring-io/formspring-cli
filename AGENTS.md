@@ -5,7 +5,7 @@ Use `formspring` for scripted access to Formspring when MCP is unavailable or yo
 ## Setup
 
 ```bash
-formspring auth login --base-url https://formspring.io
+formspring auth login
 export FORMSPRING_TOKEN=...   # optional if profile saved
 ```
 
