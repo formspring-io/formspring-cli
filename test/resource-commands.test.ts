@@ -15,6 +15,7 @@ const manifest = JSON.parse(readFileSync(join(root, 'schema/cli-commands.json'),
   method: string
   path: string
   name: string
+  hand_written?: true
 }>
 
 function commandFiles(dir: string): string[] {
@@ -87,7 +88,15 @@ describe('resourceFlags', () => {
 describe('generated resource commands', () => {
   it('generates a substantial set of commands', () => {
     expect(generatedFiles.length).toBeGreaterThan(200)
-    expect(manifest.length).toBe(generatedFiles.length)
+    expect(manifest.filter((row) => !row.hand_written).length).toBe(generatedFiles.length)
+  })
+
+  it('lists a command file for every hand-written stand-in', () => {
+    const files = new Set(commandFiles(commandsDir).map((file) => relative(commandsDir, file).replace(/\.ts$/, '')))
+
+    for (const row of manifest.filter((entry) => entry.hand_written)) {
+      expect(files, row.cli_command).toContain(row.cli_command.split(' ').join('/'))
+    }
   })
 
   it.each(generatedFiles.map((file) => [relative(commandsDir, file), file]))('%s matches the OpenAPI document', async (_name, file) => {
@@ -131,6 +140,72 @@ describe('coverage of the priority resources', () => {
     'deals move',
     'tasks complete',
     'pipelines list',
+    // CRM data model
+    'crm objects list',
+    'crm objects get',
+    'crm objects create',
+    'crm objects update',
+    'crm objects delete',
+    'crm fields list',
+    'crm fields create',
+    'crm fields update',
+    'crm fields archive',
+    'crm fields restore',
+    'crm fields delete',
+    'crm fields options',
+    'crm relations list',
+    'crm relations create',
+    'crm relations delete',
+    'crm views list',
+    'crm views get',
+    'crm views create',
+    'crm views update',
+    'crm views delete',
+    'crm records list',
+    'crm records get',
+    'crm records create',
+    'crm records update',
+    'crm records delete',
+    'crm records restore',
+    'crm records upsert',
+    'crm records bulk',
+    'crm records batch create',
+    'crm records notes list',
+    'crm records tasks complete',
+    'crm trash list',
+    'crm trash restore',
+    'crm trash erase',
+    'crm favorites list',
+    'crm favorites add',
+    'crm favorites remove',
+    'crm import start',
+    'crm import dry-run',
+    'crm import run',
+    'crm import rollback',
+    'crm import status',
+    'crm export create',
+    'crm export get',
+    'crm export download',
+    'crm duplicates list',
+    'crm merge run',
+    'crm merge undo',
+    'crm layout get',
+    'crm layout update',
+    'crm permissions get',
+    'crm permissions update',
+    'crm schema export',
+    'crm schema apply',
+    'crm run-automation',
+    'crm dashboards list',
+    'crm dashboards get',
+    'crm dashboards create',
+    'crm dashboards update',
+    'crm dashboards delete',
+    'crm dashboards duplicate',
+    'crm dashboards widgets add',
+    'crm dashboards widgets update',
+    'crm dashboards widgets remove',
+    'crm dashboards widgets preview',
     // links
     'links list',
     'links imports create',
@@ -170,5 +245,30 @@ describe('coverage of the priority resources', () => {
     expect(files).toContain('links/import.ts')
     expect(files).toContain('contacts/import.ts')
     expect(files).toContain('contacts/export.ts')
+    expect(files).toContain('crm/schema/plan.ts')
+    expect(files).toContain('crm/objects/deactivate.ts')
+  })
+})
+
+describe('hand-written stand-ins for generated commands', () => {
+  /** Signed links carry their own signature, so these downloads are not addressed by the route's path parameters. */
+  const signedDownloads = new Set(['crm export download', 'crm files download'])
+  const standIns = manifest.filter((row) => row.hand_written)
+
+  it.each(standIns.map((row) => [row.cli_command, row]))('%s keeps the path parameters of its operation', async (_name, row) => {
+    const entry = row as (typeof manifest)[number]
+    const file = join(commandsDir, ...entry.cli_command.split(' ')) + '.ts'
+    const module = (await import(file)) as { default: { spec?: ResourceSpec; flags: Record<string, unknown> } }
+    const placeholders = [...entry.path.matchAll(/\{([^}]+)\}/g)].map((match) => flagNameFor(match[1], 'path'))
+
+    for (const flag of signedDownloads.has(entry.cli_command) ? [] : placeholders) {
+      expect(Object.keys(module.default.flags), `--${flag}`).toContain(flag)
+    }
+
+    if (module.default.spec) {
+      expect(module.default.spec.method).toBe(entry.method.toUpperCase())
+      expect(module.default.spec.path).toBe(entry.path)
+      expect(openapi.paths[entry.path]?.[entry.method.toLowerCase()]).toBeDefined()
+    }
   })
 })
