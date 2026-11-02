@@ -27,6 +27,7 @@ type OpenApiParameter = {
 type OpenApiOperation = {
   summary?: string
   parameters?: OpenApiParameter[]
+  requestBody?: unknown
   responses?: Record<string, { content?: Record<string, unknown> }>
 }
 
@@ -89,6 +90,38 @@ const PINNED_NAMES: Record<string, string> = {
   'forms.webhooks.previous-secret.destroy': 'forms webhooks end-rotation',
   'forms.webhooks.deliveries.inspect': 'forms webhooks inspect',
   'forms.submissions.files.download': 'forms submissions download-file',
+
+  // CRM data model: the names the docs and the agent guide use.
+  'crm.records.run-automation': 'crm run-automation',
+  'crm.trash.purge': 'crm trash erase',
+  'crm.trash.destroy': 'crm trash erase-one',
+  'crm.favorites.store': 'crm favorites add',
+  'crm.favorites.destroy': 'crm favorites remove',
+  'crm.favorites.order': 'crm favorites reorder',
+  'crm.imports.index': 'crm import list',
+  'crm.imports.store': 'crm import start',
+  'crm.imports.show': 'crm import status',
+  'crm.imports.update': 'crm import map',
+  'crm.imports.dry-run': 'crm import dry-run',
+  'crm.imports.run': 'crm import run',
+  'crm.imports.rollback': 'crm import rollback',
+  'crm.imports.errors': 'crm import errors',
+  'crm.exports.store': 'crm export create',
+  'crm.exports.show': 'crm export get',
+  'crm.exports.download': 'crm export download',
+  'crm.merges.index': 'crm merge list',
+  'crm.merges.store': 'crm merge run',
+  'crm.merges.undo': 'crm merge undo',
+  'crm.layout.destroy': 'crm layout reset',
+  'crm.schema.show': 'crm schema export',
+  'crm.schema.update': 'crm schema apply',
+  'crm.schema.applies.show': 'crm schema status',
+  'crm.dashboards.widgets.store': 'crm dashboards widgets add',
+  'crm.dashboards.widgets.destroy': 'crm dashboards widgets remove',
+  'crm.dashboards.preview': 'crm dashboards widgets preview',
+  'crm.dashboards.restore': 'crm dashboards restore-version',
+  'crm.files.store': 'crm files upload',
+  'crm.files.destroy': 'crm files delete',
 }
 
 /** Routes whose file response is not described in the OpenAPI document. */
@@ -143,7 +176,14 @@ const parity = JSON.parse(readFileSync(join(root, 'schema/parity-map.json'), 'ut
 
 const seenCommands = new Map<string, string>()
 const seenRoutes = new Set<string>()
-const manifest: Array<{ cli_command: string; method: string; path: string; name: string }> = []
+const manifest: Array<{
+  cli_command: string
+  method: string
+  path: string
+  name: string
+  /** A hand-written command stands in for the generated one (richer flags, waiting, file handling). */
+  hand_written?: true
+}> = []
 const generated = new Set<string>()
 const skippedNoSpec: string[] = []
 let kept = 0
@@ -211,7 +251,7 @@ for (const row of parity) {
     path: row.path,
     pathParams,
     query,
-    hasBody: ['POST', 'PUT', 'PATCH'].includes(method),
+    hasBody: ['POST', 'PUT', 'PATCH'].includes(method) || Boolean(operation.requestBody),
     idempotent,
     paginated: method === 'GET' && queryParams.some((param) => param.name === 'cursor'),
     ...(downloadType ? { download: { contentType: downloadType } } : {}),
@@ -225,7 +265,9 @@ for (const row of parity) {
     const existing = readFileSync(file, 'utf8')
 
     if (!existing.includes(MARKER) && !(REPLACES_LEGACY.has(command) && existing.includes('Generated from'))) {
+      // A hand-written command owns this name: keep it, but still list the route it covers.
       kept += 1
+      manifest.push({ cli_command: command, method, path: row.path, name: row.name, hand_written: true })
       continue
     }
   }

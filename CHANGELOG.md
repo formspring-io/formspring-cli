@@ -33,6 +33,24 @@
 - Tests for the HTTP layer, the generated commands (checked against `schema/openapi.json`) and end-to-end runs against a
   local stub API. CI now also fails when the generated commands drift from the schema.
 
+- The CRM data model (`/api/v1/crm/*`, 105 operations) is fully covered by named commands: `crm objects`,
+  `crm fields`, `crm relations`, `crm views`, `crm records` (with `notes`, `tasks`, `batch`, `upsert`, `bulk`, `timeline`),
+  `crm trash`, `crm favorites`, `crm import`, `crm export`, `crm files`, `crm duplicates`, `crm merge`, `crm layout`,
+  `crm permissions`, `crm schema`, `crm dashboards` (with `widgets`), `crm automations`, `crm calendar`,
+  `crm field-types` and `crm run-automation`.
+  - `crm records list`: `--filter field:operator:value` (repeatable, or a JSON tree / `@file`), `--filter-any`,
+    `--sort`, `--group-by`, `--aggregate`, `--view`, `--fields`, `--include`, `--limit` and `--all`.
+  - `--set field=value` / `field:=JSON` on `crm records create|update|upsert|bulk`; `--options` on `crm fields create|options`;
+    flag shortcuts for objects, fields, relations, views, merges, favorites, notes and tasks (every command still takes `--data`).
+  - `crm import start|map|dry-run|run|rollback|status|errors` with `--wait`; `crm export create --wait --output file.csv`;
+    `crm export download`, `crm files upload|download` (signed links are fetched without the token).
+  - `crm schema export|plan|apply|status` with file in/out, `--prune`, `--allow-destructive`, `--check`, `--async` and `--wait`.
+  - `crm objects deactivate|activate`.
+- `schema/cli-commands.json` marks commands that stand in for a generated one with `hand_written: true`;
+  `npm run scaffold-resources` keeps those files and still lists the route they cover. `ResourceCommand` gained hooks
+  (`queryFromFlags`, `bodyFromFlags`, `transformResult`, `bodyFlags`) so a stand-in only adds what differs.
+- `DELETE` operations that take a JSON body (`crm records batch delete`, `crm trash erase`) now get `--data` / `--stdin`.
+
 ### Notes
 
 - No version bump and no publish: the package stays private until release.

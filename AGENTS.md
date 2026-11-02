@@ -17,6 +17,7 @@ export FORMSPRING_TOKEN=...   # optional if profile saved
 - Prefer **named commands** when listed in `formspring commands --json`.
 - For any `/api/v1` route: **`formspring api request <METHOD> <path>`** with `--form`, `--funnel`, etc. for path params.
 - Resource groups (contacts, companies, deals, tasks, links, automations, data tables, documents, signing, bookings, ...) have named commands; path parameters are flags, e.g. `formspring contacts get --contact CONTACT_ID --json`.
+- CRM data model (custom objects, fields, records, views, import/export, schema, dashboards): `formspring crm ...`. Filter lists with `--filter status:is:active` (repeatable), set record values with `--set name=Acme --set amount:=5000`, and move a whole model with `crm schema export|plan|apply --file`.
 - Lists: add **`--all`** to walk every cursor page into one result.
 - Writes: add **`--idempotency-key <key>`** so a retry replays the first result instead of writing twice.
 - File downloads: **`--output <file>`** streams to disk (required for PDF and ZIP).

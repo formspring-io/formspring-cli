@@ -1,5 +1,7 @@
 import { Flags } from '@oclif/core'
+import type { CliConfig } from '../config.js'
 import { readRequestBody } from './body.js'
+import { pickDefined } from './crm.js'
 import { CliError } from './errors.js'
 import { FormspringCommand } from './formspring-command.js'
 import { printResult } from './output.js'
@@ -118,8 +120,57 @@ export function resourceFlags(spec: ResourceSpec) {
   return flags
 }
 
+/** The generated flags without the ones a hand-written command replaces. */
+export function withoutFlags<T extends Record<string, unknown>>(flags: T, names: readonly string[]): Record<string, any> {
+  return Object.fromEntries(Object.entries(flags).filter(([name]) => !names.includes(name)))
+}
+
 export abstract class ResourceCommand extends FormspringCommand {
   static spec: ResourceSpec
+
+  /** Hand-written commands: flags that fill a body key (flag name to body key), merged over --data. */
+  static bodyFlags: Record<string, string> = {}
+
+  /** Query string built from the spec's query flags. Override to add computed parameters. */
+  protected async queryFromFlags(): Promise<Record<string, QueryValue>> {
+    const { spec } = this.constructor as typeof ResourceCommand
+    const query: Record<string, QueryValue> = {}
+
+    for (const param of spec.query) {
+      const value = this.flags[param.flag]
+
+      if (value !== undefined) {
+        query[param.name] = value as QueryValue
+      }
+    }
+
+    return query
+  }
+
+  /** JSON body from --data / --stdin. Override to build the body from friendlier flags. */
+  protected async bodyFromFlags(): Promise<unknown> {
+    const base = await readRequestBody({
+      data: this.flags.data as string | undefined,
+      stdin: Boolean(this.flags.stdin),
+    })
+    const { bodyFlags } = this.constructor as typeof ResourceCommand
+    const picked = pickDefined(this.flags, bodyFlags)
+
+    if (Object.keys(picked).length === 0) {
+      return base
+    }
+
+    if (base !== undefined && (base === null || typeof base !== 'object' || Array.isArray(base))) {
+      throw new CliError('Cannot combine the body flags with a --data body that is not a JSON object.')
+    }
+
+    return { ...(base as Record<string, unknown> | undefined), ...picked }
+  }
+
+  /** Change the result before it is printed (for example to wait for a queued job). */
+  protected async transformResult(result: unknown, _context: { config: CliConfig; path: string }): Promise<unknown> {
+    return result
+  }
 
   async run(): Promise<void> {
     const { spec } = this.constructor as typeof ResourceCommand
@@ -132,15 +183,7 @@ export abstract class ResourceCommand extends FormspringCommand {
       ),
     )
 
-    const query: Record<string, QueryValue> = {}
-
-    for (const param of spec.query) {
-      const value = this.flags[param.flag]
-
-      if (value !== undefined) {
-        query[param.name] = value as QueryValue
-      }
-    }
+    const query = await this.queryFromFlags()
 
     if (spec.download) {
       const output = String(this.flags.output ?? '-')
@@ -169,12 +212,7 @@ export abstract class ResourceCommand extends FormspringCommand {
       throw new CliError('--idempotency-key must be 1 to 255 characters.')
     }
 
-    const body = spec.hasBody
-      ? await readRequestBody({
-          data: this.flags.data as string | undefined,
-          stdin: Boolean(this.flags.stdin),
-        })
-      : undefined
+    const body = spec.hasBody ? await this.bodyFromFlags() : undefined
 
     if (this.flags.verbose) {
       process.stderr.write(`${spec.method} ${path}\n`)
@@ -191,6 +229,6 @@ export abstract class ResourceCommand extends FormspringCommand {
           })
         : await restRequest({ config, method: spec.method, path, query, body, idempotencyKey })
 
-    printResult(result, this.flags.json)
+    printResult(result === undefined ? result : await this.transformResult(result, { config, path }), this.flags.json)
   }
 }

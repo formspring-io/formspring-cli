@@ -13,6 +13,8 @@ export type RestRequestOptions = {
   path: string
   query?: Record<string, QueryValue>
   body?: unknown
+  /** Multipart upload; sent instead of `body`. */
+  form?: FormData
   config: CliConfig
   /** Sent as the Idempotency-Key header so a repeated write is replayed, not repeated. */
   idempotencyKey?: string
@@ -64,10 +66,17 @@ function logDryRun(options: RestRequestOptions): void {
   if (body !== undefined) {
     process.stderr.write(`[dry-run] body: ${JSON.stringify(body)}\n`)
   }
+
+  if (options.form !== undefined) {
+    const parts = [...options.form.entries()].map(([name, value]) =>
+      typeof value === 'string' ? `${name}=${value}` : `${name}=<file ${value.name}, ${value.size} bytes>`,
+    )
+    process.stderr.write(`[dry-run] multipart: ${parts.join(', ')}\n`)
+  }
 }
 
 export async function restRequest<T = unknown>(options: RestRequestOptions): Promise<T> {
-  const { config, method, path, query, body, idempotencyKey } = options
+  const { config, method, path, query, body, form, idempotencyKey } = options
 
   if (config.dryRun) {
     logDryRun(options)
@@ -89,7 +98,9 @@ export async function restRequest<T = unknown>(options: RestRequestOptions): Pro
 
   const init: RequestInit = { method: method.toUpperCase(), headers }
 
-  if (body !== undefined && !['GET', 'HEAD'].includes(init.method ?? '')) {
+  if (form !== undefined) {
+    init.body = form
+  } else if (body !== undefined && !['GET', 'HEAD'].includes(init.method ?? '')) {
     headers['Content-Type'] = 'application/json'
     init.body = JSON.stringify(body)
   }
@@ -206,11 +217,39 @@ export async function restDownload(options: DownloadOptions): Promise<DownloadRe
   }
 
   const token = requireToken(config)
-  const response = await fetch(buildUrl(config, path, query), {
-    method: 'GET',
-    headers: { Authorization: `Bearer ${token}`, Accept: '*/*' },
-  })
 
+  return streamToFile(
+    await fetch(buildUrl(config, path, query), {
+      method: 'GET',
+      headers: { Authorization: `Bearer ${token}`, Accept: '*/*' },
+    }),
+    output,
+    force,
+  )
+}
+
+/**
+ * Download a signed, expiring link (an export or an uploaded file). These links carry
+ * their own signature and need no token, so none is sent.
+ */
+export async function restDownloadSigned(options: {
+  url: string
+  output: string
+  force?: boolean
+  config: CliConfig
+}): Promise<DownloadResult | undefined> {
+  const { config, url, output, force } = options
+
+  if (config.dryRun) {
+    process.stderr.write(`[dry-run] GET ${url}\n[dry-run] write to ${output}\n`)
+
+    return undefined
+  }
+
+  return streamToFile(await fetch(url, { method: 'GET', headers: { Accept: '*/*' } }), output, force)
+}
+
+async function streamToFile(response: Response, output: string, force?: boolean): Promise<DownloadResult> {
   if (!response.ok) {
     throw formatApiError(response.status, await response.text(), response.headers)
   }

@@ -750,10 +750,655 @@
     "name": "api.crm.capture-owner.update"
   },
   {
+    "cli_command": "crm dashboards record-widget-data",
+    "method": "GET",
+    "path": "/crm/dashboard-widgets/{widget}/data",
+    "name": "api.crm.dashboards.record-widget-data"
+  },
+  {
+    "cli_command": "crm dashboards list",
+    "method": "GET",
+    "path": "/crm/dashboards",
+    "name": "api.crm.dashboards.index"
+  },
+  {
+    "cli_command": "crm dashboards create",
+    "method": "POST",
+    "path": "/crm/dashboards",
+    "name": "api.crm.dashboards.store"
+  },
+  {
+    "cli_command": "crm dashboards catalog",
+    "method": "GET",
+    "path": "/crm/dashboards/catalog",
+    "name": "api.crm.dashboards.catalog"
+  },
+  {
+    "cli_command": "crm dashboards widgets preview",
+    "method": "POST",
+    "path": "/crm/dashboards/preview",
+    "name": "api.crm.dashboards.preview"
+  },
+  {
+    "cli_command": "crm dashboards delete",
+    "method": "DELETE",
+    "path": "/crm/dashboards/{dashboard}",
+    "name": "api.crm.dashboards.destroy"
+  },
+  {
+    "cli_command": "crm dashboards get",
+    "method": "GET",
+    "path": "/crm/dashboards/{dashboard}",
+    "name": "api.crm.dashboards.show"
+  },
+  {
+    "cli_command": "crm dashboards update",
+    "method": "PATCH",
+    "path": "/crm/dashboards/{dashboard}",
+    "name": "api.crm.dashboards.update"
+  },
+  {
+    "cli_command": "crm dashboards data",
+    "method": "GET",
+    "path": "/crm/dashboards/{dashboard}/data",
+    "name": "api.crm.dashboards.data"
+  },
+  {
+    "cli_command": "crm dashboards duplicate",
+    "method": "POST",
+    "path": "/crm/dashboards/{dashboard}/duplicate",
+    "name": "api.crm.dashboards.duplicate"
+  },
+  {
+    "cli_command": "crm dashboards unfavorite",
+    "method": "DELETE",
+    "path": "/crm/dashboards/{dashboard}/favorite",
+    "name": "api.crm.dashboards.unfavorite"
+  },
+  {
+    "cli_command": "crm dashboards favorite",
+    "method": "PUT",
+    "path": "/crm/dashboards/{dashboard}/favorite",
+    "name": "api.crm.dashboards.favorite"
+  },
+  {
+    "cli_command": "crm dashboards layout",
+    "method": "PUT",
+    "path": "/crm/dashboards/{dashboard}/layout",
+    "name": "api.crm.dashboards.layout"
+  },
+  {
+    "cli_command": "crm dashboards versions",
+    "method": "GET",
+    "path": "/crm/dashboards/{dashboard}/versions",
+    "name": "api.crm.dashboards.versions"
+  },
+  {
+    "cli_command": "crm dashboards restore-version",
+    "method": "POST",
+    "path": "/crm/dashboards/{dashboard}/versions/{version}/restore",
+    "name": "api.crm.dashboards.restore"
+  },
+  {
+    "cli_command": "crm dashboards widgets add",
+    "method": "POST",
+    "path": "/crm/dashboards/{dashboard}/widgets",
+    "name": "api.crm.dashboards.widgets.store"
+  },
+  {
+    "cli_command": "crm dashboards widgets remove",
+    "method": "DELETE",
+    "path": "/crm/dashboards/{dashboard}/widgets/{widget}",
+    "name": "api.crm.dashboards.widgets.destroy"
+  },
+  {
+    "cli_command": "crm dashboards widgets update",
+    "method": "PATCH",
+    "path": "/crm/dashboards/{dashboard}/widgets/{widget}",
+    "name": "api.crm.dashboards.widgets.update"
+  },
+  {
+    "cli_command": "crm dashboards widgets data",
+    "method": "GET",
+    "path": "/crm/dashboards/{dashboard}/widgets/{widget}/data",
+    "name": "api.crm.dashboards.widgets.data"
+  },
+  {
     "cli_command": "crm entitlements",
     "method": "GET",
     "path": "/crm/entitlements",
     "name": "api.crm.entitlements"
+  },
+  {
+    "cli_command": "crm export download",
+    "method": "GET",
+    "path": "/crm/exports/{crmExport}/download",
+    "name": "api.crm.exports.download",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm favorites list",
+    "method": "GET",
+    "path": "/crm/favorites",
+    "name": "api.crm.favorites.index"
+  },
+  {
+    "cli_command": "crm favorites add",
+    "method": "POST",
+    "path": "/crm/favorites",
+    "name": "api.crm.favorites.store",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm favorites reorder",
+    "method": "PUT",
+    "path": "/crm/favorites/order",
+    "name": "api.crm.favorites.order"
+  },
+  {
+    "cli_command": "crm favorites remove",
+    "method": "DELETE",
+    "path": "/crm/favorites/{favorite}",
+    "name": "api.crm.favorites.destroy"
+  },
+  {
+    "cli_command": "crm field-types",
+    "method": "GET",
+    "path": "/crm/field-types",
+    "name": "api.crm.field-types"
+  },
+  {
+    "cli_command": "crm files download",
+    "method": "GET",
+    "path": "/crm/files/{crmFile}/download",
+    "name": "api.crm.files.download",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm objects list",
+    "method": "GET",
+    "path": "/crm/objects",
+    "name": "api.crm.objects.index"
+  },
+  {
+    "cli_command": "crm objects create",
+    "method": "POST",
+    "path": "/crm/objects",
+    "name": "api.crm.objects.store",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm objects delete",
+    "method": "DELETE",
+    "path": "/crm/objects/{object}",
+    "name": "api.crm.objects.destroy"
+  },
+  {
+    "cli_command": "crm objects get",
+    "method": "GET",
+    "path": "/crm/objects/{object}",
+    "name": "api.crm.objects.show"
+  },
+  {
+    "cli_command": "crm objects update",
+    "method": "PATCH",
+    "path": "/crm/objects/{object}",
+    "name": "api.crm.objects.update",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm automations list",
+    "method": "GET",
+    "path": "/crm/objects/{object}/automations",
+    "name": "api.crm.automations.index"
+  },
+  {
+    "cli_command": "crm calendar list",
+    "method": "GET",
+    "path": "/crm/objects/{object}/calendar",
+    "name": "api.crm.calendar.index"
+  },
+  {
+    "cli_command": "crm duplicates list",
+    "method": "GET",
+    "path": "/crm/objects/{object}/duplicates",
+    "name": "api.crm.duplicates.index"
+  },
+  {
+    "cli_command": "crm export create",
+    "method": "POST",
+    "path": "/crm/objects/{object}/exports",
+    "name": "api.crm.exports.store",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm export get",
+    "method": "GET",
+    "path": "/crm/objects/{object}/exports/{export}",
+    "name": "api.crm.exports.show"
+  },
+  {
+    "cli_command": "crm fields list",
+    "method": "GET",
+    "path": "/crm/objects/{object}/fields",
+    "name": "api.crm.fields.index"
+  },
+  {
+    "cli_command": "crm fields create",
+    "method": "POST",
+    "path": "/crm/objects/{object}/fields",
+    "name": "api.crm.fields.store",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm fields reorder",
+    "method": "PUT",
+    "path": "/crm/objects/{object}/fields/order",
+    "name": "api.crm.fields.reorder"
+  },
+  {
+    "cli_command": "crm fields delete",
+    "method": "DELETE",
+    "path": "/crm/objects/{object}/fields/{field}",
+    "name": "api.crm.fields.destroy"
+  },
+  {
+    "cli_command": "crm fields get",
+    "method": "GET",
+    "path": "/crm/objects/{object}/fields/{field}",
+    "name": "api.crm.fields.show"
+  },
+  {
+    "cli_command": "crm fields update",
+    "method": "PATCH",
+    "path": "/crm/objects/{object}/fields/{field}",
+    "name": "api.crm.fields.update",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm fields archive",
+    "method": "POST",
+    "path": "/crm/objects/{object}/fields/{field}/archive",
+    "name": "api.crm.fields.archive"
+  },
+  {
+    "cli_command": "crm files upload",
+    "method": "POST",
+    "path": "/crm/objects/{object}/fields/{field}/files",
+    "name": "api.crm.files.store",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm files delete",
+    "method": "DELETE",
+    "path": "/crm/objects/{object}/fields/{field}/files/{file}",
+    "name": "api.crm.files.destroy"
+  },
+  {
+    "cli_command": "crm fields options",
+    "method": "PUT",
+    "path": "/crm/objects/{object}/fields/{field}/options",
+    "name": "api.crm.fields.options",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm fields restore",
+    "method": "POST",
+    "path": "/crm/objects/{object}/fields/{field}/restore",
+    "name": "api.crm.fields.restore"
+  },
+  {
+    "cli_command": "crm import list",
+    "method": "GET",
+    "path": "/crm/objects/{object}/imports",
+    "name": "api.crm.imports.index"
+  },
+  {
+    "cli_command": "crm import start",
+    "method": "POST",
+    "path": "/crm/objects/{object}/imports",
+    "name": "api.crm.imports.store",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm import status",
+    "method": "GET",
+    "path": "/crm/objects/{object}/imports/{import}",
+    "name": "api.crm.imports.show"
+  },
+  {
+    "cli_command": "crm import map",
+    "method": "PUT",
+    "path": "/crm/objects/{object}/imports/{import}",
+    "name": "api.crm.imports.update",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm import dry-run",
+    "method": "POST",
+    "path": "/crm/objects/{object}/imports/{import}/dry-run",
+    "name": "api.crm.imports.dry-run",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm import errors",
+    "method": "GET",
+    "path": "/crm/objects/{object}/imports/{import}/errors",
+    "name": "api.crm.imports.errors"
+  },
+  {
+    "cli_command": "crm import rollback",
+    "method": "POST",
+    "path": "/crm/objects/{object}/imports/{import}/rollback",
+    "name": "api.crm.imports.rollback",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm import run",
+    "method": "POST",
+    "path": "/crm/objects/{object}/imports/{import}/run",
+    "name": "api.crm.imports.run",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm layout reset",
+    "method": "DELETE",
+    "path": "/crm/objects/{object}/layout",
+    "name": "api.crm.layout.destroy"
+  },
+  {
+    "cli_command": "crm layout get",
+    "method": "GET",
+    "path": "/crm/objects/{object}/layout",
+    "name": "api.crm.layout.show"
+  },
+  {
+    "cli_command": "crm layout update",
+    "method": "PUT",
+    "path": "/crm/objects/{object}/layout",
+    "name": "api.crm.layout.update"
+  },
+  {
+    "cli_command": "crm layout versions",
+    "method": "GET",
+    "path": "/crm/objects/{object}/layout/versions",
+    "name": "api.crm.layout.versions"
+  },
+  {
+    "cli_command": "crm layout restore",
+    "method": "POST",
+    "path": "/crm/objects/{object}/layout/versions/{version}/restore",
+    "name": "api.crm.layout.restore"
+  },
+  {
+    "cli_command": "crm merge list",
+    "method": "GET",
+    "path": "/crm/objects/{object}/merges",
+    "name": "api.crm.merges.index"
+  },
+  {
+    "cli_command": "crm merge run",
+    "method": "POST",
+    "path": "/crm/objects/{object}/merges",
+    "name": "api.crm.merges.store",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm merge undo",
+    "method": "POST",
+    "path": "/crm/objects/{object}/merges/{merge}/undo",
+    "name": "api.crm.merges.undo"
+  },
+  {
+    "cli_command": "crm permissions get",
+    "method": "GET",
+    "path": "/crm/objects/{object}/permissions",
+    "name": "api.crm.permissions.show"
+  },
+  {
+    "cli_command": "crm permissions update",
+    "method": "PUT",
+    "path": "/crm/objects/{object}/permissions",
+    "name": "api.crm.permissions.update"
+  },
+  {
+    "cli_command": "crm records list",
+    "method": "GET",
+    "path": "/crm/objects/{object}/records",
+    "name": "api.crm.records.index",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm records create",
+    "method": "POST",
+    "path": "/crm/objects/{object}/records",
+    "name": "api.crm.records.store",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm records batch delete",
+    "method": "DELETE",
+    "path": "/crm/objects/{object}/records/batch",
+    "name": "api.crm.records.batch.destroy"
+  },
+  {
+    "cli_command": "crm records batch update",
+    "method": "PATCH",
+    "path": "/crm/objects/{object}/records/batch",
+    "name": "api.crm.records.batch.update"
+  },
+  {
+    "cli_command": "crm records batch create",
+    "method": "POST",
+    "path": "/crm/objects/{object}/records/batch",
+    "name": "api.crm.records.batch.store"
+  },
+  {
+    "cli_command": "crm records bulk",
+    "method": "POST",
+    "path": "/crm/objects/{object}/records/bulk",
+    "name": "api.crm.records.bulk",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm run-automation",
+    "method": "POST",
+    "path": "/crm/objects/{object}/records/run-automation",
+    "name": "api.crm.records.run-automation",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm records upsert",
+    "method": "POST",
+    "path": "/crm/objects/{object}/records/upsert",
+    "name": "api.crm.records.upsert",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm records delete",
+    "method": "DELETE",
+    "path": "/crm/objects/{object}/records/{record}",
+    "name": "api.crm.records.destroy"
+  },
+  {
+    "cli_command": "crm records get",
+    "method": "GET",
+    "path": "/crm/objects/{object}/records/{record}",
+    "name": "api.crm.records.show"
+  },
+  {
+    "cli_command": "crm records update",
+    "method": "PATCH",
+    "path": "/crm/objects/{object}/records/{record}",
+    "name": "api.crm.records.update",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm records notes list",
+    "method": "GET",
+    "path": "/crm/objects/{object}/records/{record}/notes",
+    "name": "api.crm.records.notes.index"
+  },
+  {
+    "cli_command": "crm records notes create",
+    "method": "POST",
+    "path": "/crm/objects/{object}/records/{record}/notes",
+    "name": "api.crm.records.notes.store",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm records notes delete",
+    "method": "DELETE",
+    "path": "/crm/objects/{object}/records/{record}/notes/{note}",
+    "name": "api.crm.records.notes.destroy"
+  },
+  {
+    "cli_command": "crm records notes update",
+    "method": "PATCH",
+    "path": "/crm/objects/{object}/records/{record}/notes/{note}",
+    "name": "api.crm.records.notes.update",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm records notes pin",
+    "method": "PUT",
+    "path": "/crm/objects/{object}/records/{record}/notes/{note}/pin",
+    "name": "api.crm.records.notes.pin",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm records restore",
+    "method": "POST",
+    "path": "/crm/objects/{object}/records/{record}/restore",
+    "name": "api.crm.records.restore"
+  },
+  {
+    "cli_command": "crm records tasks list",
+    "method": "GET",
+    "path": "/crm/objects/{object}/records/{record}/tasks",
+    "name": "api.crm.records.tasks.index"
+  },
+  {
+    "cli_command": "crm records tasks create",
+    "method": "POST",
+    "path": "/crm/objects/{object}/records/{record}/tasks",
+    "name": "api.crm.records.tasks.store",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm records tasks delete",
+    "method": "DELETE",
+    "path": "/crm/objects/{object}/records/{record}/tasks/{task}",
+    "name": "api.crm.records.tasks.destroy"
+  },
+  {
+    "cli_command": "crm records tasks update",
+    "method": "PATCH",
+    "path": "/crm/objects/{object}/records/{record}/tasks/{task}",
+    "name": "api.crm.records.tasks.update",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm records tasks complete",
+    "method": "POST",
+    "path": "/crm/objects/{object}/records/{record}/tasks/{task}/complete",
+    "name": "api.crm.records.tasks.complete"
+  },
+  {
+    "cli_command": "crm records tasks reopen",
+    "method": "POST",
+    "path": "/crm/objects/{object}/records/{record}/tasks/{task}/reopen",
+    "name": "api.crm.records.tasks.reopen"
+  },
+  {
+    "cli_command": "crm records timeline",
+    "method": "GET",
+    "path": "/crm/objects/{object}/records/{record}/timeline",
+    "name": "api.crm.records.timeline"
+  },
+  {
+    "cli_command": "crm relations list",
+    "method": "GET",
+    "path": "/crm/objects/{object}/relations",
+    "name": "api.crm.relations.index"
+  },
+  {
+    "cli_command": "crm relations create",
+    "method": "POST",
+    "path": "/crm/objects/{object}/relations",
+    "name": "api.crm.relations.store",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm relations delete",
+    "method": "DELETE",
+    "path": "/crm/objects/{object}/relations/{relation}",
+    "name": "api.crm.relations.destroy"
+  },
+  {
+    "cli_command": "crm relations update",
+    "method": "PATCH",
+    "path": "/crm/objects/{object}/relations/{relation}",
+    "name": "api.crm.relations.update",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm trash erase",
+    "method": "DELETE",
+    "path": "/crm/objects/{object}/trash",
+    "name": "api.crm.trash.purge",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm trash list",
+    "method": "GET",
+    "path": "/crm/objects/{object}/trash",
+    "name": "api.crm.trash.index"
+  },
+  {
+    "cli_command": "crm trash restore",
+    "method": "POST",
+    "path": "/crm/objects/{object}/trash/restore",
+    "name": "api.crm.trash.restore",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm trash erase-one",
+    "method": "DELETE",
+    "path": "/crm/objects/{object}/trash/{record}",
+    "name": "api.crm.trash.destroy"
+  },
+  {
+    "cli_command": "crm views list",
+    "method": "GET",
+    "path": "/crm/objects/{object}/views",
+    "name": "api.crm.views.index"
+  },
+  {
+    "cli_command": "crm views create",
+    "method": "POST",
+    "path": "/crm/objects/{object}/views",
+    "name": "api.crm.views.store",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm views delete",
+    "method": "DELETE",
+    "path": "/crm/objects/{object}/views/{view}",
+    "name": "api.crm.views.destroy"
+  },
+  {
+    "cli_command": "crm views get",
+    "method": "GET",
+    "path": "/crm/objects/{object}/views/{view}",
+    "name": "api.crm.views.show"
+  },
+  {
+    "cli_command": "crm views update",
+    "method": "PATCH",
+    "path": "/crm/objects/{object}/views/{view}",
+    "name": "api.crm.views.update",
+    "hand_written": true
   },
   {
     "cli_command": "crm retention get",
@@ -766,6 +1411,26 @@
     "method": "PUT",
     "path": "/crm/retention",
     "name": "api.crm.retention.update"
+  },
+  {
+    "cli_command": "crm schema export",
+    "method": "GET",
+    "path": "/crm/schema",
+    "name": "api.crm.schema.show",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm schema apply",
+    "method": "PUT",
+    "path": "/crm/schema",
+    "name": "api.crm.schema.update",
+    "hand_written": true
+  },
+  {
+    "cli_command": "crm schema status",
+    "method": "GET",
+    "path": "/crm/schema/applies/{apply}",
+    "name": "api.crm.schema.applies.show"
   },
   {
     "cli_command": "data-tables list",
