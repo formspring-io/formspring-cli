@@ -2143,6 +2143,216 @@
     },
     {
         "group": "Response Desk",
+        "name": "follow_desk_thread",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "unfollow_desk_thread",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "list_desk_labels",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "create_desk_label",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "update_desk_label",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "delete_desk_label",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "get_desk_live_board",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "list_desk_macros",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "run_desk_macro",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "list_desk_automation_rules",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "save_desk_automation_rule",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "delete_desk_automation_rule",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "list_desk_automation_runs",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "update_desk_routing_rule",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "set_desk_auto_resolve",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "get_desk_notification_preferences",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "set_desk_notification_preferences",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "list_desk_attributes",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "save_desk_attribute",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "delete_desk_attribute",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "list_desk_webhooks",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "save_desk_webhook",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "delete_desk_webhook",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "rotate_desk_webhook_secret",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "list_desk_webhook_deliveries",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "replay_desk_webhook_delivery",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "merge_desk_threads",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "list_desk_saved_views",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "save_desk_saved_view",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
+        "name": "delete_desk_saved_view",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "Response Desk",
         "name": "create_desk_macro",
         "description": "",
         "input_schema": null,
@@ -3012,6 +3222,384 @@
     {
         "group": "CRM",
         "name": "attach_company_feedback_account",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "list_crm_objects",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "get_crm_object",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "create_crm_object",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "update_crm_object",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "create_crm_field",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "update_crm_field",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "archive_crm_field",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "create_crm_relation",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "list_crm_records",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "list_crm_calendar",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "get_crm_record",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "create_crm_record",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "update_crm_record",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "delete_crm_record",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "search_crm_records",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "bulk_crm_records",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "list_crm_views",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "create_crm_view",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "update_crm_view",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "delete_crm_view",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "add_crm_record_note",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "create_crm_record_task",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "list_crm_merges",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "merge_crm_records",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "undo_crm_merge",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "list_crm_trash",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "restore_crm_trash",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "erase_crm_trash",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "list_crm_favorites",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "star_crm_favorite",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "reorder_crm_favorites",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "unstar_crm_favorite",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "upload_crm_file",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "get_crm_object_layout",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "update_crm_object_layout",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "get_crm_object_permissions",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "update_crm_object_permissions",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "get_crm_schema",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "plan_crm_schema",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "apply_crm_schema",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "get_crm_schema_apply",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "list_crm_dashboards",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "get_crm_dashboard",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "create_crm_dashboard",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "update_crm_dashboard",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "delete_crm_dashboard",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "add_crm_dashboard_widget",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "update_crm_dashboard_widget",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "remove_crm_dashboard_widget",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "arrange_crm_dashboard",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "duplicate_crm_dashboard",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "list_crm_dashboard_versions",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "restore_crm_dashboard_version",
+        "description": "",
+        "input_schema": null,
+        "mcp_only": false
+    },
+    {
+        "group": "CRM data model",
+        "name": "preview_crm_chart",
         "description": "",
         "input_schema": null,
         "mcp_only": false
@@ -4475,7 +5063,7 @@
     {
         "group": "Automations",
         "name": "create_automation",
-        "description": "Create a new automation on a form, survey, funnel or booking page, or on the workspace itself (`target_type: \"workspace\"`, for contact, account, desk and other workspace triggers). Same validation as the automation builder: the trigger must be valid for the owner type and trigger and step configs are checked against get_automation_config (kind: condition|action|delay|branch). Requires `automations:write`.",
+        "description": "Create a new automation on a form, survey, funnel or booking page, or on the workspace itself (`target_type: \"workspace\"`, for contact, account, desk and other workspace triggers). Same validation as the automation builder: the trigger must be valid for the owner type and trigger and step configs are checked against get_automation_config (kind: condition|action|delay|branch). Workspace automations can read and change data-model records with the crm_record_* actions (create, update, delete, find, upsert, link, unlink, add_note, create_task, set_owner), which act with the permissions of the member who owns the automation. Requires `automations:write`.",
         "input_schema": null,
         "mcp_only": false
     },
@@ -4503,7 +5091,7 @@
     {
         "group": "Automations",
         "name": "run_automation",
-        "description": "Manually trigger an automation (forms, surveys, funnels, booking pages). Requires `automations:run`.",
+        "description": "Manually trigger an automation (forms, surveys, funnels, booking pages). To run a workspace automation on records of the data model instead, give `object` (an object key) and `records` (up to 100 record ids): the automation must have the manual trigger with that object, and one run starts per record you may read. Requires `automations:run`.",
         "input_schema": null,
         "mcp_only": false
     },

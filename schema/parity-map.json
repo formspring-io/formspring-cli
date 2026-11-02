@@ -1601,8 +1601,824 @@
     },
     {
         "method": "GET",
+        "path": "/crm/dashboard-widgets/{widget}/data",
+        "name": "api.crm.dashboards.record-widget-data",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/dashboards",
+        "name": "api.crm.dashboards.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/dashboards",
+        "name": "api.crm.dashboards.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/dashboards/catalog",
+        "name": "api.crm.dashboards.catalog",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/dashboards/preview",
+        "name": "api.crm.dashboards.preview",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/dashboards/{dashboard}",
+        "name": "api.crm.dashboards.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/dashboards/{dashboard}",
+        "name": "api.crm.dashboards.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/crm/dashboards/{dashboard}",
+        "name": "api.crm.dashboards.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/dashboards/{dashboard}/data",
+        "name": "api.crm.dashboards.data",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/dashboards/{dashboard}/duplicate",
+        "name": "api.crm.dashboards.duplicate",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/dashboards/{dashboard}/favorite",
+        "name": "api.crm.dashboards.unfavorite",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/crm/dashboards/{dashboard}/favorite",
+        "name": "api.crm.dashboards.favorite",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/crm/dashboards/{dashboard}/layout",
+        "name": "api.crm.dashboards.layout",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/dashboards/{dashboard}/versions",
+        "name": "api.crm.dashboards.versions",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/dashboards/{dashboard}/versions/{version}/restore",
+        "name": "api.crm.dashboards.restore",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/dashboards/{dashboard}/widgets",
+        "name": "api.crm.dashboards.widgets.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/dashboards/{dashboard}/widgets/{widget}",
+        "name": "api.crm.dashboards.widgets.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/crm/dashboards/{dashboard}/widgets/{widget}",
+        "name": "api.crm.dashboards.widgets.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/dashboards/{dashboard}/widgets/{widget}/data",
+        "name": "api.crm.dashboards.widgets.data",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
         "path": "/crm/entitlements",
         "name": "api.crm.entitlements",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/exports/{crmExport}/download",
+        "name": "api.crm.exports.download",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/favorites",
+        "name": "api.crm.favorites.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/favorites",
+        "name": "api.crm.favorites.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/crm/favorites/order",
+        "name": "api.crm.favorites.order",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/favorites/{favorite}",
+        "name": "api.crm.favorites.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/field-types",
+        "name": "api.crm.field-types",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/files/{crmFile}/download",
+        "name": "api.crm.files.download",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects",
+        "name": "api.crm.objects.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects",
+        "name": "api.crm.objects.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/objects/{object}",
+        "name": "api.crm.objects.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}",
+        "name": "api.crm.objects.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/crm/objects/{object}",
+        "name": "api.crm.objects.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/automations",
+        "name": "api.crm.automations.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/calendar",
+        "name": "api.crm.calendar.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/duplicates",
+        "name": "api.crm.duplicates.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/exports",
+        "name": "api.crm.exports.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/exports/{export}",
+        "name": "api.crm.exports.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/fields",
+        "name": "api.crm.fields.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/fields",
+        "name": "api.crm.fields.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/crm/objects/{object}/fields/order",
+        "name": "api.crm.fields.reorder",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/objects/{object}/fields/{field}",
+        "name": "api.crm.fields.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/fields/{field}",
+        "name": "api.crm.fields.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/crm/objects/{object}/fields/{field}",
+        "name": "api.crm.fields.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/fields/{field}/archive",
+        "name": "api.crm.fields.archive",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/fields/{field}/files",
+        "name": "api.crm.files.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/objects/{object}/fields/{field}/files/{file}",
+        "name": "api.crm.files.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/crm/objects/{object}/fields/{field}/options",
+        "name": "api.crm.fields.options",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/fields/{field}/restore",
+        "name": "api.crm.fields.restore",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/imports",
+        "name": "api.crm.imports.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/imports",
+        "name": "api.crm.imports.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/imports/{import}",
+        "name": "api.crm.imports.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/crm/objects/{object}/imports/{import}",
+        "name": "api.crm.imports.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/imports/{import}/dry-run",
+        "name": "api.crm.imports.dry-run",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/imports/{import}/errors",
+        "name": "api.crm.imports.errors",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/imports/{import}/rollback",
+        "name": "api.crm.imports.rollback",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/imports/{import}/run",
+        "name": "api.crm.imports.run",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/objects/{object}/layout",
+        "name": "api.crm.layout.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/layout",
+        "name": "api.crm.layout.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/crm/objects/{object}/layout",
+        "name": "api.crm.layout.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/layout/versions",
+        "name": "api.crm.layout.versions",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/layout/versions/{version}/restore",
+        "name": "api.crm.layout.restore",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/merges",
+        "name": "api.crm.merges.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/merges",
+        "name": "api.crm.merges.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/merges/{merge}/undo",
+        "name": "api.crm.merges.undo",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/permissions",
+        "name": "api.crm.permissions.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/crm/objects/{object}/permissions",
+        "name": "api.crm.permissions.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/records",
+        "name": "api.crm.records.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/records",
+        "name": "api.crm.records.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/objects/{object}/records/batch",
+        "name": "api.crm.records.batch.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/crm/objects/{object}/records/batch",
+        "name": "api.crm.records.batch.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/records/batch",
+        "name": "api.crm.records.batch.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/records/bulk",
+        "name": "api.crm.records.bulk",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/records/run-automation",
+        "name": "api.crm.records.run-automation",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/records/upsert",
+        "name": "api.crm.records.upsert",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/objects/{object}/records/{record}",
+        "name": "api.crm.records.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/records/{record}",
+        "name": "api.crm.records.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/crm/objects/{object}/records/{record}",
+        "name": "api.crm.records.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/records/{record}/notes",
+        "name": "api.crm.records.notes.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/records/{record}/notes",
+        "name": "api.crm.records.notes.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/objects/{object}/records/{record}/notes/{note}",
+        "name": "api.crm.records.notes.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/crm/objects/{object}/records/{record}/notes/{note}",
+        "name": "api.crm.records.notes.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/crm/objects/{object}/records/{record}/notes/{note}/pin",
+        "name": "api.crm.records.notes.pin",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/records/{record}/restore",
+        "name": "api.crm.records.restore",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/records/{record}/tasks",
+        "name": "api.crm.records.tasks.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/records/{record}/tasks",
+        "name": "api.crm.records.tasks.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/objects/{object}/records/{record}/tasks/{task}",
+        "name": "api.crm.records.tasks.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/crm/objects/{object}/records/{record}/tasks/{task}",
+        "name": "api.crm.records.tasks.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/records/{record}/tasks/{task}/complete",
+        "name": "api.crm.records.tasks.complete",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/records/{record}/tasks/{task}/reopen",
+        "name": "api.crm.records.tasks.reopen",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/records/{record}/timeline",
+        "name": "api.crm.records.timeline",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/relations",
+        "name": "api.crm.relations.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/relations",
+        "name": "api.crm.relations.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/objects/{object}/relations/{relation}",
+        "name": "api.crm.relations.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/crm/objects/{object}/relations/{relation}",
+        "name": "api.crm.relations.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/objects/{object}/trash",
+        "name": "api.crm.trash.purge",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/trash",
+        "name": "api.crm.trash.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/trash/restore",
+        "name": "api.crm.trash.restore",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/objects/{object}/trash/{record}",
+        "name": "api.crm.trash.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/views",
+        "name": "api.crm.views.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/crm/objects/{object}/views",
+        "name": "api.crm.views.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/crm/objects/{object}/views/{view}",
+        "name": "api.crm.views.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/objects/{object}/views/{view}",
+        "name": "api.crm.views.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/crm/objects/{object}/views/{view}",
+        "name": "api.crm.views.update",
         "transport": "rest",
         "cli_command": "api request",
         "mcp_tool": null
@@ -1619,6 +2435,30 @@
         "method": "PUT",
         "path": "/crm/retention",
         "name": "api.crm.retention.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/schema",
+        "name": "api.crm.schema.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/crm/schema",
+        "name": "api.crm.schema.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/crm/schema/applies/{apply}",
+        "name": "api.crm.schema.applies.show",
         "transport": "rest",
         "cli_command": "api request",
         "mcp_tool": null
@@ -1739,6 +2579,94 @@
         "method": "POST",
         "path": "/deals/{deal}/move",
         "name": "api.deals.move",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/attributes",
+        "name": "api.desk.attributes.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/attributes",
+        "name": "api.desk.attributes.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/desk/attributes/{deskAttribute}",
+        "name": "api.desk.attributes.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/desk/attributes/{deskAttribute}",
+        "name": "api.desk.attributes.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/auto-resolve",
+        "name": "api.desk.auto-resolve.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/desk/auto-resolve",
+        "name": "api.desk.auto-resolve.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/automation-rules",
+        "name": "api.desk.automation-rules.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/automation-rules",
+        "name": "api.desk.automation-rules.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/desk/automation-rules/{automationRule}",
+        "name": "api.desk.automation-rules.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/desk/automation-rules/{automationRule}",
+        "name": "api.desk.automation-rules.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/automation-runs",
+        "name": "api.desk.automation-runs.index",
         "transport": "rest",
         "cli_command": "api request",
         "mcp_tool": null
@@ -1896,6 +2824,94 @@
         "mcp_tool": null
     },
     {
+        "method": "GET",
+        "path": "/desk/labels",
+        "name": "api.desk.labels.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/labels",
+        "name": "api.desk.labels.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/desk/labels/{label}",
+        "name": "api.desk.labels.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/desk/labels/{label}",
+        "name": "api.desk.labels.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/live",
+        "name": "api.desk.live.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/macros",
+        "name": "api.desk.macros.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/macros",
+        "name": "api.desk.macros.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/desk/macros/{macro}",
+        "name": "api.desk.macros.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/desk/macros/{macro}",
+        "name": "api.desk.macros.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/notification-preferences",
+        "name": "api.desk.notification-preferences.show",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PUT",
+        "path": "/desk/notification-preferences",
+        "name": "api.desk.notification-preferences.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
         "method": "POST",
         "path": "/desk/queues",
         "name": "api.desk.queues.store",
@@ -1931,6 +2947,38 @@
         "method": "GET",
         "path": "/desk/reports/export",
         "name": "api.desk.reports.export",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/routing-rules",
+        "name": "api.desk.routing-rules.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/routing-rules",
+        "name": "api.desk.routing-rules.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/desk/routing-rules/{routingRule}",
+        "name": "api.desk.routing-rules.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/desk/routing-rules/{routingRule}",
+        "name": "api.desk.routing-rules.update",
         "transport": "rest",
         "cli_command": "api request",
         "mcp_tool": null
@@ -2032,11 +3080,139 @@
         "mcp_tool": null
     },
     {
+        "method": "DELETE",
+        "path": "/desk/threads/{thread}/followers",
+        "name": "api.desk.threads.followers.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/threads/{thread}/followers",
+        "name": "api.desk.threads.followers.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/threads/{thread}/followers",
+        "name": "api.desk.threads.followers.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/threads/{thread}/macros/{macro}",
+        "name": "api.desk.threads.macros.run",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/threads/{thread}/merge",
+        "name": "api.desk.threads.merge",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
         "method": "POST",
         "path": "/desk/threads/{thread}/messages",
         "name": "api.desk.threads.messages.store",
         "transport": "rest",
         "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/views",
+        "name": "api.desk.views.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/views",
+        "name": "api.desk.views.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/desk/views/{view}",
+        "name": "api.desk.views.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/desk/views/{view}",
+        "name": "api.desk.views.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/webhooks",
+        "name": "api.desk.webhooks.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/webhooks",
+        "name": "api.desk.webhooks.store",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "DELETE",
+        "path": "/desk/webhooks/{deskWebhook}",
+        "name": "api.desk.webhooks.destroy",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "PATCH",
+        "path": "/desk/webhooks/{deskWebhook}",
+        "name": "api.desk.webhooks.update",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "GET",
+        "path": "/desk/webhooks/{deskWebhook}/deliveries",
+        "name": "api.desk.webhooks.deliveries.index",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/webhooks/{deskWebhook}/deliveries/{deskWebhookDelivery}/replay",
+        "name": "api.desk.webhooks.deliveries.replay",
+        "transport": "rest",
+        "cli_command": "api request",
+        "mcp_tool": null
+    },
+    {
+        "method": "POST",
+        "path": "/desk/webhooks/{deskWebhook}/rotate-secret",
+        "name": "api.desk.webhooks.rotate-secret",
+        "transport": "rest",
+        "cli_command": "forms webhooks rotate-secret",
         "mcp_tool": null
     },
     {
