@@ -7,8 +7,8 @@ export default class AuthLogin extends FormspringCommand {
   static description = 'Sign in via device authorization (browser) and save API token'
 
   static examples = [
-    '<%= config.bin %> auth login --base-url https://formspring.io',
-    '<%= config.bin %> auth login --base-url https://formspring.io --json',
+    '<%= config.bin %> auth login',
+    '<%= config.bin %> auth login --json',
   ]
 
   static flags = {

@@ -37,7 +37,7 @@ function requireToken(config: CliConfig): string {
     throw new CliError(
       'No API token configured.',
       1,
-      'formspring auth login --base-url https://formspring.io',
+      'formspring auth login',
     )
   }
 

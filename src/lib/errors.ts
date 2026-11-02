@@ -73,7 +73,7 @@ function matchHint(
   details: ApiErrorDetails,
 ): string | undefined {
   if (status === 401) {
-    return 'formspring auth login --base-url <your-app-url>'
+    return 'formspring auth login'
   }
 
   if (status === 402) {

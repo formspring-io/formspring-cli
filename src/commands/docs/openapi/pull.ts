@@ -12,7 +12,7 @@ export default class DocsOpenapiPull extends FormspringCommand {
   static description = 'Download openapi.json from the app into schema/ (local sync helper)'
 
   static examples = [
-    '<%= config.bin %> docs openapi pull --base-url https://formspring.io',
+    '<%= config.bin %> docs openapi pull',
   ]
 
   static flags = {
